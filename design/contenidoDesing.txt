@@ -1,0 +1,7 @@
+Esta carpeta tiene que tener un boceto o diseño del sitio incluyendo.
+
+● Logo
+● Colores
+● Tipografías
+
+"Este contenido es Opcional"
