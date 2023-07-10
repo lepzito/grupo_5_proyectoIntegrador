@@ -1,0 +1,6 @@
+Los colores se elejiran de acuerdo al los colores que convinen con el icono nuestro
+Entre ellos estan:
+-Naranja
+-Negro
+-Violeta
+-Blanco
