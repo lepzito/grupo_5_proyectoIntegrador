@@ -1,6 +1,6 @@
 # TECNO - JUY
 
-![TECNO - JUY Logo](/sprint1/design/logo.png)
+![TECNO - JUY Logo](design/logo.png)
 
 ## Descripción del Proyecto
 
