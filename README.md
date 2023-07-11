@@ -32,7 +32,7 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 - Mauro: Descripcion.
 - Lujan: Descripcion.
 - Samuel: Descripcion
-- Brian: Descripcion.
+- Brian: (Hola, soy Brian)commit
 - Miguel: Descripcion.
 - Daniel: Descripcion.
 
