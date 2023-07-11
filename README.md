@@ -32,7 +32,7 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 - Mauro: Descripcion.
 - Lujan: Descripcion.
 - Samuel: Descripcion
-- Brian: Descripcion.
+- Brian: (Ema) estudiante de Digital House, pendiente a un proyecto.Soy de San Salvador De Jujuy. 
 - Miguel: Descripcion.
 - Daniel: Descripcion.
 
