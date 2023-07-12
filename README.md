@@ -29,7 +29,7 @@ TECNO - JUY está dirigido a entusiastas de la tecnología, gamers y cualquier p
 Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Developer de Digital House. Cada uno aporta sus conocimientos y habilidades al proyecto:
 
 - Lucas ([lepzito](https://github.com/lepzito)): En constante aprendizaje en el mundo de la programación. Soy originario de Abra Pampa, provincia de Jujuy.
-- Mauro: Descripcion.
+- Mauro: Hola Soy estudiante de Digital House nacido en San Salvador De Jujuy.
 - Lujan: Descripcion.
 - Samuel: Descripcion
 - Brian: (Ema) estudiante de Digital House, pendiente a un proyecto.Soy de San Salvador De Jujuy. 
