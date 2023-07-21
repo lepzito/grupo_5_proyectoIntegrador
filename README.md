@@ -45,3 +45,7 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 5. [Compra Gamer](https://www.compragamer.com/)
 
 ¡Gracias por visitar TECNO - JUY!
+
+## Link de Tablero de TRELLO
+
+https://trello.com/b/QPep3s7h/sprint-1
