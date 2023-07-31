@@ -94,7 +94,7 @@ header {
   display: none;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) {
+@media screen and (min-width: 769px) {
   .logo img {
     max-width: 210px;
   }
