@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+/*:::::Pie de Pagina*/
+.pie-pagina {
+  width: 100%;
+  background-color: black;
+}
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box-1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 40px;
+}
+
+.pie-pagina .grupo-1 .box-1 {
+  color: #fff;
+  font-size: 20px;
+}
+.pie-pagina .grupo-1 .box-1 b {
+  color: #efefef;
+}
+.pie-pagina .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: #0d2033;
+  text-align: center;
+  transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .box-2 ul {
+  list-style: none;
+}
+.pie-pagina .grupo-1 .box-2 ul li {
+  margin-bottom: 5px;
+}
+.pie-pagina .grupo-1 .box-2 ul li a {
+  text-decoration-line: none;
+  font-size: 17px;
+  color: #efefef;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+  color: mediumvioletred;
+  border: orange solid 1px;
+  border-radius: 3px;
+}
+.pie-pagina .grupo-2 {
+  background-color: orange;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
+}
+.pie-pagina .grupo-2 small {
+  font-size: 15px;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pie-pagina .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+  .pie-pagina .grupo-1 .box-1 h2 {
+    display: none;
+  }
+  .pie-pagina .grupo-1 .box-1 .red-social {
+    position: relative;
+    left: 50%;
+    display: flex;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pie-pagina .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(1, 2fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+  .pie-pagina .grupo-1 .box-1 {
+    margin: unset;
+  }
+  .pie-pagina .grupo-1 .box-1 h2 {
+    display: none;
+  }
+  .pie-pagina .grupo-1 .box-1 .red-social {
+    display: flex;
+    position: relative;
+    left: 18%;
+  }
+}
