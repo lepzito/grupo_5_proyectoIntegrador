@@ -1,0 +1,111 @@
+/** {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+/* Estilos para el header */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-width: 144px;
+  padding: 5px;
+}
+
+/*
+.searchProduct {
+  max-width: 400px;
+  margin: 0 10px;
+  border: gray 1px solid;
+  border-radius: 7px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  max-width: none;
+} */
+/*
+
+.searchProduct input {
+  border: none;
+  padding: 5px;
+  width: calc(100% - 40px);
+}*/
+
+.right-navbar button {
+  border: none;
+  background-color: transparent;
+  width: 40px;
+}
+
+.right-navbar button i {
+  font-size: 20px;
+  color: white;
+  transition: color 300ms;
+}
+
+.right-navbar button i:hover {
+  color: v;
+}
+
+.main-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-navbar ul {
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.main-navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.main-navbar .right-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.main-navbar .left-navbar {
+  display: none;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  .logo img {
+    max-width: 210px;
+  }
+  .main-navbar .left-navbar {
+    display: flex;
+  }
+  .main-navbar {
+    grid-gap: 46px;
+    flex-wrap: nowrap;
+  }
+  .left-navbar {
+    grid-gap: 20px;
+  }
+}
