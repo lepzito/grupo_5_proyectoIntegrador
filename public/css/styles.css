@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    width: 100vw;
+    ;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.encabezado__navBar {
+    display: none;
+}
+
+.encabezado__navBar-text {
+    display: none;
+}
+
+.main-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+li
+.main-navbar ul {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.main-navbar .right-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main-navbar .left-navbar {
+    display: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+.main-navbar2 {
+    display: none;
+}
+
+.main-navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.logo img {
+    max-width: 144px;
+    padding: 5px;
+}
+
+
+.right-navbar button {
+    border: none;
+    background-color: transparent;
+    width: 40px;
+}
+
+.right-navbar button i {
+    font-size: 20px;
+    color: white;
+    transition: color 300ms;
+}
+
+.right-navbar button i:hover {
+    color: violet;
+}
+
+.MContainer {
+    padding: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+.sectionContainer__container-buyDesc {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px 0px;
+    border-bottom: #000 solid 1px;
+}
+
+.product-image {
+    width: 30vw;
+}
+
+.product-name {
+    font-size: 20px;
+    align-self: center;
+    width: 100%;
+}
+
+.product-amount {
+    font-size: 18px;
+    width: 50%;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 20px;
+    width: 50%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.container-product-desc {
+    padding: 0px 0px;
+    margin: 5px;
+    align-self: center;
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container-button span {
+    font-size: 24px
+}
+
+.container-totalcost {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.container-totalcost b {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container-totalcost button {
+    font-size: 20px;
+    color: #fff;
+    width: 90%;
+    background-color: #000;
+    transition: all 70ms;
+    align-self: center;
+    margin-top: 20px;
+    border-radius: 5%;
+}
+
+.container-totalcost button:active {
+    background-color: #fa6023;
+    font-weight: bold;
+}
+
+
+/* Estilos para tablets con un ancho mínimo de 669px y un máximo de 1024px */
+
+@media (min-width: 500px) and (max-width: 1023px) {
+    .product-image {
+        width: 175px;
+        height: 150px;
+    }
+
+    .product-name {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .encabezado {
+        flex-wrap: wrap;
+    }
+
+    .main-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-navbar2 {
+        display: flex;
+        width: 100%;
+    }
+
+    .main-navbar ul {
+        list-style: none;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-navbar > a {
+        display: none ;
+    }
+
+    .main-navbar2 ul {
+        list-style: none;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-navbar2 a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .main-navbar .right-navbar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-navbar2 .left-navbar {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .encabezado__navBar {
+        width: 20vw;
+        color: #666;
+        display: flex;
+        background-color: white;
+        border: solid 2px;
+        border-radius: 5%;
+        border-color: #ebebeb;
+        padding: 5px;
+        margin-left: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .encabezado__navBar-text {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex-grow: 1;
+        display: flex;
+    }
+
+    .lupa {
+        color: black;
+        background-color: #ffffff;
+        border: #ffffff;
+        margin-top: 2px;
+        margin-left: 4px;
+        border-left: #ebebeb solid 2px;
+    }
+
+}
