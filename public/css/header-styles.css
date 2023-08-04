@@ -1,25 +1,19 @@
-/** {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}*/
-
-/* Estilos para el header */
 header {
   background-color: #000;
   color: #fff;
-  padding: 10px;
-  font-weight: bold;
+  width: 100vw;
+  border-bottom: 4px solid orange;
 }
-
 .encabezado {
   display: flex;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
   justify-content: space-between;
+}
+.main-navbar i {
+  margin-left: 15px;
+  font-size: 20px;
+  color: white;
 }
 
 .logo img {
@@ -27,86 +21,162 @@ header {
   padding: 5px;
 }
 
-/*
-.searchProduct {
-  max-width: 400px;
-  margin: 0 10px;
-  border: gray 1px solid;
-  border-radius: 7px;
-  background-color: white;
+.icons {
   display: flex;
   align-items: center;
-  max-width: none;
-} */
-/*
-
-.searchProduct input {
-  border: none;
-  padding: 5px;
-  width: calc(100% - 40px);
-}*/
-
-.right-navbar button {
+  margin-right: 15px;
+  grid-gap: 12px;
+}
+.icons .lupa {
   border: none;
   background-color: transparent;
-  width: 40px;
 }
 
-.right-navbar button i {
-  font-size: 20px;
+.icons .lupa i {
+  font-size: 17px;
   color: white;
-  transition: color 300ms;
 }
-
-.right-navbar button i:hover {
-  color: v;
+.icons i {
+  font-size: 17px;
+  color: white;
 }
-
-.main-navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-navbar ul {
-  list-style: none;
-  margin: 10px;
-  padding: 0;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.main-navbar a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 8px;
-  font-size: 18px;
-}
-
-.main-navbar .right-navbar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-.main-navbar .left-navbar {
+.icons .corazon {
+  position: absolute;
+  top: -99999px;
   display: none;
 }
-
-@media screen and (min-width: 769px) {
-  .logo img {
-    max-width: 210px;
+.main-navbar2 {
+  display: none;
+}
+.search-bar {
+  display: none;
+}
+.container-search-bar {
+  display: none;
+}
+/* Estilos para tablets, la pantalla mostrara el icono del corazon */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .icons .corazon {
+    display: block;
+    position: static;
   }
-  .main-navbar .left-navbar {
-    display: flex;
-  }
-  .main-navbar {
-    grid-gap: 46px;
-    flex-wrap: nowrap;
-  }
-  .left-navbar {
-    grid-gap: 20px;
+  .container-search-bar {
+    display: none;
   }
 }
+/* Estilos para desktop y pantallas mas grandes, se mostrara la search bar y los menus productos,
+pc armadas y smartphones, desparecera el menu hamburguesa */
+
+@media screen and (min-width: 769px) {
+  .encabezado {
+    margin: 0 auto;
+  }
+  .logo img {
+    max-width: 300px;
+    width: 25vw;
+    padding: 0;
+    margin: 25px;
+  }
+  .main-navbar {
+    display: none;
+  }
+  .icons .corazon {
+    display: block;
+    position: static;
+  }
+  .main-navbar2 {
+    display: block;
+  }
+  .main-navbar2 nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+  .main-navbar2 nav ul li a {
+    color: white;
+    font-size: 23px;
+    text-decoration: none;
+  }
+  .main-navbar2 nav ul li {
+    list-style: none;
+  }
+  .icons {
+    padding: 20px;
+  }
+  .icons i {
+    font-size: 23px;
+  }
+  .icons .lupa i {
+    display: none;
+    position: absolute;
+    top: -999999px;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid orange;
+  }
+  .container-search-bar {
+    display: block;
+  }
+  .container-search-bar .input {
+    border: 0;
+    outline: none;
+    color: #8b7d77;
+  }
+
+  .search_wrap {
+    margin: 38px auto;
+  }
+
+  .search_wrap .search_box {
+    position: relative;
+    width: 45vw;
+    height: 33px;
+    max-width: 555px;
+  }
+
+  .search_wrap .search_box .input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 18px;
+  }
+
+  .search_wrap .search_box .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .search_wrap .search_box .btn:hover {
+    background: orange;
+  }
+
+  .search_wrap .search_box .btn.btn_common .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 20px;
+  }
+
+  .search_wrap.search_wrap_1 .search_box .btn {
+    right: 0;
+  }
+  .search_wrap.search_wrap_1 .search_box .input {
+    padding-right: 80px;
+  }
+}
+
+/*Fin Estilos del Header*/

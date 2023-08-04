@@ -1,219 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecno-JUY</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tecno-JUY</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="\css\footer-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Iconos-->
+    <script
+      src="https://kit.fontawesome.com/eb496ab1a0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fontawesome.com/icons?d=gallery&m=free"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/normalize.css" />
+  </head>
 
-  <link rel="stylesheet" href="\css\footer-styles.css" />
-  <link rel="stylesheet" href="/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <!--Iconos-->
-  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fontawesome.com/icons?d=gallery&m=free" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/css/normalize.css">
-</head>
+  <body>
+    <header>
+      <div class="encabezado">
+        <div class="main-navbar">
+          <a href="#"> <i class="fas fa-bars"></i></a>
+        </div>
+        <div class="logo">
+          <img src="\images\logo.png" alt="Logo de TECNO-JUY" />
+        </div>
+        <div class="container-search-bar">
+          <div class="search_wrap search_wrap_1">
+            <div class="search_box">
+              <input type="text" class="input" placeholder="Buscar..." />
+              <div class="btn btn_common">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<body>
-  <header>
-    <span class="main-navbar">
-        <a href="#"> <i class="fas fa-bars"></i></a>
-      </span>
-    <div class="encabezado">
-      <div class="logo">
-        <img src="\images\logo.png" alt="Logo de TECNO-JUY" />
-      </div>
+        <div class="icons">
+          <!---Aqui tener en cuenta el tipo de boton que va a hacer la lupa y poner un place holder --->
 
-      <div class="encabezado__navBar">
-        <span class="encabezado__navBar-text">
-            Buscar productos, marcas;
-        </span>
-        <button class="lupa"> 
-            <i class="fa-solid fa-magnifying-glass"></i> 
-        </button>
-
-    </div>
-
-    <nav class="main-navbar">
-      <ul class="right-navbar">
-        <li>
-          <button type="button">
+          <button class="lupa" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-        </li>
-        <li>
           <a href="#"><i class="fa-solid fa-user"></i></a>
-        </li>
-        <li>
+          <a href="" class="corazon"><i class="fa-solid fa-heart"></i></a>
           <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </li>
-      </ul>
-    </nav>
-
-    </div>
-
-    <nav class="main-navbar2">
-      <ul class="left-navbar">
-        <li ><a href="#">Pc Armadas</a></li>
-        <li><a href="#">Smartphones</a></li>
-        <li><a href="#">Productos</a></li>
-      </ul>
-    </nav>
-    
-  </header>
-
-  <main class="MContainer">
-    <h1>TU CARRITO DE COMPRAS</h1>
-    <section class="sectionContainer">
-      <article class="sectionContainer__container-buyDesc">
-        <div>
-          <img class="product-image" src="/images/images_products/placa-video.png" alt="img_grafic_card">
-        </div>
-        <div class="container-product-desc">
-          <span class="product-name">NVIDIA GeForce RTX 2080 8GB OC DDR6 </span>
-          <div class="product-price">
-            <span>$330.000</span>
-          </div>
-          <div class="product-amount">
-            <span>1</span>
-          </div>
-        </div>
-        <div class="container-button">
-          <span><i class="fa-solid fa-x"></i></span>
-          <span><i class="fa-solid fa-plus"></i></span>
-          <span><i class="fa-solid fa-minus"></i></span>
-        </div>
-      </article>
-    
-      <article class="sectionContainer__container-buyDesc">
-        <div>
-          <img class="product-image" src="/images/images_products/monitor.jpeg" alt="img_grafic_card">
-        </div>
-        <div class="container-product-desc">
-          <span class="product-name">Monitor del cual desconozco las especificaciones </span>
-          <div class="product-price">
-            <span>$130.000</span>
-          </div>
-          <div class="product-amount">
-            <span>1</span>
-          </div>
-        </div>
-        <div class="container-button">
-          <span><i class="fa-solid fa-x"></i></span>
-          <span><i class="fa-solid fa-plus"></i></span>
-          <span><i class="fa-solid fa-minus"></i></span>
-        </div>
-      </article>
-
-
-      <article class="sectionContainer__container-buyDesc">
-        <div>
-          <img class="product-image" src="/images/images_products/mouse-infarex.jpg" alt="img_grafic_card">
-        </div>
-        <div class="container-product-desc">
-          <span class="product-name">Mouse Gamer XPG INFAREX M20 Optical RGB 5000DPI </span>
-          <div class="product-price">
-            <span>$16.000</span>
-          </div>
-          <div class="product-amount">
-            <span>2</span>
-          </div>
-        </div>
-        <div class="container-button">
-          <span><i class="fa-solid fa-x"></i></span>
-          <span><i class="fa-solid fa-plus"></i></span>
-          <span><i class="fa-solid fa-minus"></i></span>
-        </div>
-      </article>
-
-    </section>
-
-    <h2>Total a pagar</h2>
-     <div class="container-totalcost">
-
-      <b>Cantidad de productos: 4</b>
-      <b>Costo de envío: Gratis</b>
-      <b>Total a pagar: $446.000</b>
-
-      <button>Continuar con la compra</button>
-     </div>
-
-
-
-
-
-
-
-  </main>
-
-
-  <footer class="pie-pagina">
-    <div class="grupo-1">
-      <div class="box-1">
-        <div class="direccion">
-          <i class="fa-solid fa-location-dot"></i>
-          <b> Direccion</b>
-        </div>
-        <div class="e-mail">
-          <i class="fa-solid fa-envelope-open"></i>
-          <b> E-mail</b>
-        </div>
-        <div class="whatsapp">
-          <i class="fa-brands fa-whatsapp"></i>
-          <b> WhatsApp o Teléfono</b>
-        </div>
-        <div class="nosotros">
-          <i class="fa-solid fa-users"></i>
-          <b> Nosotros</b>
         </div>
       </div>
-      <div class="box-2">
-        <ul>
-          <li>
-            <a href="#"
-              ><i class="fa-solid fa-play"></i> <b>Condiciones de uso</b></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><i class="fa-solid fa-play"></i> <b>Servicio al cliente</b></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><i class="fa-solid fa-play"></i>
-              <b>Botón de arrepentimiento</b></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><i class="fa-solid fa-play"></i>
-              <b>Políticas de garantía</b></a
-            >
-          </li>
-        </ul>
+      <div class="main-navbar2">
+        <nav>
+          <ul>
+            <li><a href="#">Pc Armadas</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Productos</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <div class="box-1">
-        <h2>SIGUENOS</h2>
-        <div class="red-social">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-instagram"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-youtube"></a>
+    <main class="MContainer">
+      <h1>TU CARRITO DE COMPRAS</h1>
+      <section class="sectionContainer">
+        <article class="sectionContainer__container-buyDesc">
+          <div>
+            <img
+              class="product-image"
+              src="/images/images_products/placa-video.png"
+              alt="img_grafic_card"
+            />
+          </div>
+          <div class="container-product-desc">
+            <span class="product-name"
+              >NVIDIA GeForce RTX 2080 8GB OC DDR6
+            </span>
+            <div class="product-price">
+              <span>$330.000</span>
+            </div>
+            <div class="product-amount">
+              <span>1</span>
+            </div>
+          </div>
+          <div class="container-button">
+            <span><i class="fa-solid fa-x"></i></span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            <span><i class="fa-solid fa-minus"></i></span>
+          </div>
+        </article>
+
+        <article class="sectionContainer__container-buyDesc">
+          <div>
+            <img
+              class="product-image"
+              src="/images/images_products/monitor.jpeg"
+              alt="img_grafic_card"
+            />
+          </div>
+          <div class="container-product-desc">
+            <span class="product-name"
+              >Monitor del cual desconozco las especificaciones
+            </span>
+            <div class="product-price">
+              <span>$130.000</span>
+            </div>
+            <div class="product-amount">
+              <span>1</span>
+            </div>
+          </div>
+          <div class="container-button">
+            <span><i class="fa-solid fa-x"></i></span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            <span><i class="fa-solid fa-minus"></i></span>
+          </div>
+        </article>
+
+        <article class="sectionContainer__container-buyDesc">
+          <div>
+            <img
+              class="product-image"
+              src="/images/images_products/mouse-infarex.jpg"
+              alt="img_grafic_card"
+            />
+          </div>
+          <div class="container-product-desc">
+            <span class="product-name"
+              >Mouse Gamer XPG INFAREX M20 Optical RGB 5000DPI
+            </span>
+            <div class="product-price">
+              <span>$16.000</span>
+            </div>
+            <div class="product-amount">
+              <span>2</span>
+            </div>
+          </div>
+          <div class="container-button">
+            <span><i class="fa-solid fa-x"></i></span>
+            <span><i class="fa-solid fa-plus"></i></span>
+            <span><i class="fa-solid fa-minus"></i></span>
+          </div>
+        </article>
+      </section>
+
+      <h2>Total a pagar</h2>
+      <div class="container-totalcost">
+        <b>Cantidad de productos: 4</b>
+        <b>Costo de envío: Gratis</b>
+        <b>Total a pagar: $446.000</b>
+
+        <button>Continuar con la compra</button>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box-1">
+          <div class="direccion">
+            <i class="fa-solid fa-location-dot"></i>
+            <b> Direccion</b>
+          </div>
+          <div class="e-mail">
+            <i class="fa-solid fa-envelope-open"></i>
+            <b> E-mail</b>
+          </div>
+          <div class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <b> WhatsApp o Teléfono</b>
+          </div>
+          <div class="nosotros">
+            <i class="fa-solid fa-users"></i>
+            <b> Nosotros</b>
+          </div>
+        </div>
+        <div class="box-2">
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i> <b>Condiciones de uso</b></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i> <b>Servicio al cliente</b></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <b>Botón de arrepentimiento</b></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <b>Políticas de garantía</b></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="box-3">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="grupo-2">
-      <small
-        >&copy; 2023 <b>TECNO-JUY</b> - Todos los Derechos Reservados.</small
-      >
-    </div>
-  </footer> 
-</body>
-
+      <div class="grupo-2">
+        <small
+          >&copy; 2023 <b>TECNO-JUY</b> - Todos los Derechos Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
 </html>

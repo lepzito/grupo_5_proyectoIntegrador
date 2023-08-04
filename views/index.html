@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tecno-JUY</title>
+    <link rel="stylesheet" href="/css/styles-index.css" />
     <link rel="stylesheet" href="\css\header-styles.css" />
     <link rel="stylesheet" href="\css\footer-styles.css" />
 
-    <link rel="stylesheet" href="/css/styles-index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -33,33 +33,40 @@
   <body>
     <header>
       <div class="encabezado">
+        <div class="main-navbar">
+          <a href="#"> <i class="fas fa-bars"></i></a>
+        </div>
         <div class="logo">
           <img src="\images\logo.png" alt="Logo de TECNO-JUY" />
         </div>
+        <div class="container-search-bar">
+          <div class="search_wrap search_wrap_1">
+            <div class="search_box">
+              <input type="text" class="input" placeholder="Buscar..." />
+              <div class="btn btn_common">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <nav class="main-navbar">
-          <ul class="left-navbar">
-            <li style="width: 116px"><a href="#">Pc Armadas</a></li>
+        <div class="icons">
+          <!---Aqui tener en cuenta el tipo de boton que va a hacer la lupa y poner un place holder --->
+
+          <button class="lupa" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <a href="" class="corazon"><i class="fa-solid fa-heart"></i></a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+      <div class="main-navbar2">
+        <nav>
+          <ul>
+            <li><a href="#">Pc Armadas</a></li>
             <li><a href="#">Smartphones</a></li>
             <li><a href="#">Productos</a></li>
-          </ul>
-          <ul class="right-navbar">
-            <li>
-              <button type="button">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-user"></i></a>
-            </li>
-            <li>
-              <a href="/carrito.html"
-                ><i class="fa-solid fa-cart-shopping"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#"> <i class="fas fa-bars"></i></a>
-            </li>
           </ul>
         </nav>
       </div>
