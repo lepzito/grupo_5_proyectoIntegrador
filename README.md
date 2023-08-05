@@ -38,9 +38,8 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 
 ## Sitios de Inspiración para Nuestro E-commerce
 
-1. [ArmyTech](https://ArmyTech.com.ar/)
-2. [Venex](https://www.venex.com.ar/)
-   
+1. [ArmyTech](https://ArmyTech.com.ar/) - De aqui tomamos ideas para el login y register.
+2. [Venex](https://www.venex.com.ar/)-De aqui para el carrito de compras.
 4. [ADIDAS](https://www.adidas.com/) - De la pagina de Adidas nos gusto la parte de **foorter_newsletter**, creemos que es una formas atractiva de hacer que los clientes se registren en nuestro sitio web y obtengan un 10%de descuento en la primer compra, ademas tambien la parte del **header** ya que lo consideramos visualmente estetico. 
 5. [Fullh4rd](https://www.fullh4rd.com.ar)
 6. [Compra Gamer](https://www.compragamer.com/) - de CompraGamer nos parecio una buena idea copiar su parte del main la extructura en si es simple y atractiva, tambien la parte del footer.

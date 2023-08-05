@@ -11,13 +11,17 @@ app.get("/productDetail", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "productDetail.html"))
 );
 
-app.get("/carrito.html", (req, res) =>
+app.get("/carrito", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "carrito.html"))
 );
-
-app.get("/carrito.html", (req, res) =>
-  res.sendFile(path.join(__dirname, "views", "carrito.html"))
-);
-app.get("/login-register.html", (req, res) =>
+app.get("/login-register", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "login-register.html"))
 );
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "login.html"));
+});
+
+app.post("/procesar-datos", (req, res) => {
+  res.redirect("/");
+});
