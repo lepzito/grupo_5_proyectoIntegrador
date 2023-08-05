@@ -11,10 +11,13 @@ app.get("/productDetail", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "productDetail.html"))
 );
 
-app.get("/carrito", (req, res) =>
+app.get("/carrito.html", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "carrito.html"))
 );
-app.get("/register", (req, res) =>
+app.get("/login-register.html", (req, res) =>
+  res.sendFile(path.join(__dirname, "views", "login-register.html"))
+);
+app.get("/register.html", (req, res) =>
   res.sendFile(path.join(__dirname, "views", "register.html"))
 );
 app.get("/login", (req, res) => {

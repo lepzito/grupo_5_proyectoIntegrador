@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style-login-register.css"> 
+    <title>Formulario Login y Register</title>
+</head>
+<body>
+
+
+    <div class="conteiner">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="elegir"></div>
+                <button type="button" class="presionar-boton" onclick="login()">Iniciar Sesion</button>
+                <button type="button" class="presionar-boton" onclick="register()">Registrarse</button>
+            </div>
+            <div class="redes-sociales">
+                <img src="images/google.png" alt="icono_google">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="Nombre de Usuario" required>
+                <input type="password" class="input-field" placeholder="Contraseña" required>
+                <input type="checkbox" class="check-box"> <span>Recordar Contraseña</span>
+                <button type="submit" class="submit-btn">Acceder</button>
+                <p class="olvidar-contraseña">¿Se te olvido la Contraseña?<a href="">Click Aqui</a></p>
+            </form>
+ 
+            <form  id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="Nombre Completo" required>
+                <input type="text" class="input-field" placeholder="Nombre de Usuario" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Contraseña" required>
+                <input type="password" class="input-field" placeholder="Repetir Contraseña" required>
+                <input type="checkbox" class="check-box"> <span class="terminos-condiciones">Acepto los<a href="#">terminos y condiciones.</a></span>
+                <button type="submit" class="submit-btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById("login")
+        var y = document.getElementById("register")
+        var z = document.getElementById("elegir")
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "120px";
+        }
+    </script>
+
+</body>
+</html>
