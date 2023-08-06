@@ -19,9 +19,7 @@ body {
 .splide .splide__slide img {
   width: 100%;
   height: 400px;
-
   object-fit: cover;
-  cursor: pointer;
 }
 .my-slider-progress {
   background: #ccc;
@@ -39,7 +37,17 @@ body {
   fill: orange;
 }
 /* Fin Estilos del slider de banners */
+.multiple-slider {
+  width: 100%;
+  height: 100 px;
+}
+.multiple-slider .splide__slide img {
+  width: 100%;
+  height: 100px;
 
+  object-fit: cover;
+  cursor: pointer;
+}
 /* Estilos de últimas novedades y ofertas */
 .latest-title {
   font-size: 30px;
@@ -334,5 +342,8 @@ body {
   .join-button {
     margin-left: 20px;
     padding: 10px 10px;
+  }
+  .logos-slide img {
+    height: 8vh;
   }
 }
