@@ -71,8 +71,16 @@ body {
 .Ofertas {
   margin-bottom: 50px;
 }
-.logos {
-  margin-bottom: 20px;
+.see-more {
+  margin: 8px 0 0 18px;
+}
+.see-more a {
+  text-decoration-color: black;
+}
+.see-more span {
+  font-size: 17px;
+  color: black;
+  font-weight: 600;
 }
 /* Fin Estilos de últimas novedades y ofertas */
 
@@ -146,6 +154,7 @@ body {
   overflow: hidden;
   background-color: white;
   white-space: nowrap;
+  margin-bottom: 20px;
 }
 .logos::before,
 .logos::after {
@@ -247,16 +256,25 @@ body {
 }
 
 /* Estilos para pantallas de escritorio */
-@media screen and (min-width: 769px) and (max-width: 1279px) {
+@media screen and (min-width: 769px) {
+  .latest-title,
+  .latest-title-2 {
+    font-size: 36px;
+    margin: 40px 0 10px 6%;
+  }
   .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    overflow-x: unset;
+    scroll-snap-type: inherit;
+    max-width: 90%;
   }
 
   .product-card {
-    width: 30%;
-    margin: 0 5px;
+    width: 100%;
   }
+
   .latest-title::after {
     content: "";
     position: absolute;
@@ -277,7 +295,7 @@ body {
     position: absolute;
     bottom: -2px; /* Posicionamos la línea debajo del título */
     left: 0;
-    width: 305px;
+    width: 420px;
     height: 3px;
     background-color: black; /* Color morado/violeta */
     opacity: 0; /* Inicialmente la línea será transparente */
@@ -292,7 +310,7 @@ body {
     position: absolute;
     bottom: -2px; /* Posicionamos la línea debajo del título */
     left: 0;
-    width: 117px;
+    width: 160px;
     height: 3px;
     background-color: black; /* Color morado/violeta */
     opacity: 0; /* Inicialmente la línea será transparente */
@@ -302,48 +320,19 @@ body {
   .latest-title-2:hover::after {
     opacity: 1; /* Al hacer hover, la línea se iluminará */
   }
-  .join-button {
-    margin-left: 20px;
-    padding: 10px 10px;
-  }
-}
-
-/* Estilos para pantallas más grandes */
-@media screen and (min-width: 1280px) {
-  .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
-  }
-  .title-line {
-    display: none;
-  }
-  .product-card {
-    width: 22%;
-    margin: 0 5px;
-  }
-  .banner-container {
-    margin: 0 auto;
-  }
-  .latest-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px; /* Posicionamos la línea debajo del título */
-    left: 0;
-    width: 305px;
-    height: 3px;
-    background-color: black; /* Color morado/violeta */
-    opacity: 0; /* Inicialmente la línea será transparente */
-    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
-  }
-
-  .latest-title:hover::after {
-    opacity: 1; /* Al hacer hover, la línea se iluminará */
-  }
-  .join-button {
-    margin-left: 20px;
-    padding: 10px 10px;
+  .see-more {
+    text-align: right;
+    margin: 8px 5% 0 0;
   }
   .logos-slide img {
-    height: 8vh;
+    height: 7.4vh;
+  }
+  .banner-text h4 {
+    font-size: 26px;
+  }
+  .join-button {
+    font-size: 35px;
+    margin-left: 44px;
+    padding: 10px 10px;
   }
 }

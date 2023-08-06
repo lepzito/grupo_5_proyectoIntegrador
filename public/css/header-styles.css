@@ -86,6 +86,7 @@ pc armadas y smartphones, desparecera el menu hamburguesa */
   }
   .main-navbar2 {
     display: block;
+    margin-bottom: 20px;
   }
   .main-navbar2 nav ul {
     display: flex;
