@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }*/
-/*:::::Pie de Pagina*/
+/*:::::Pie de Pagina-¡Aclaracion el sitio esta en mobile last!*/
 .pie-pagina {
   width: 100%;
   background-color: black;
@@ -68,7 +68,11 @@
   text-decoration-line: none;
   font-size: 15px;
   color: #efefef;
+  display: flex;
+  grid-gap: 6px;
+  align-items: center;
 }
+
 .pie-pagina .grupo-1 .red-social {
   display: flex;
 }
@@ -86,45 +90,9 @@
 .pie-pagina .grupo-2 small {
   font-size: 15px;
 }
-/*tables*/
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .pie-pagina .grupo-1 {
-    width: 90%;
-    grid-template-columns: repeat(2, 2fr);
-    grid-gap: 30px;
-    padding: 35px 0px;
-  }
-  .pie-pagina .grupo-1 .box-3 h2 {
-    display: none;
-  }
-  .pie-pagina .grupo-1 .box-3 .red-social {
-    display: flex;
-  }
-  .pie-pagina .grupo-1 .box-3 {
-    margin-left: 65%;
-  }
-  .pie-pagina .grupo-1 .box-3 .red-social {
-    display: flex;
-    margin: 0 auto;
-    grid-gap: 5px;
-  }
-  .pie-pagina .grupo-1 .box-3 .red-social a {
-    background-color: #071c42;
-    line-height: 40px;
-    border-radius: 5px;
-  }
-}
+
 /*Celulares*/
 @media screen and (max-width: 480px) {
-  .logos-slide img {
-    height: 4vh;
-  }
-  .banner-text {
-    font-size: 15px;
-  }
-  .banner-container .join-button {
-    font-size: 20px;
-  }
   .pie-pagina .grupo-1 {
     width: 90%;
     grid-template-columns: repeat(1, 2fr);
@@ -151,5 +119,39 @@
   }
   .pie-pagina .grupo-1 .box-3 .red-social a {
     background-color: unset;
+  }
+}
+/*tables*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pie-pagina .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+  .pie-pagina .grupo-1 .box-3 h2 {
+    display: none;
+  }
+  .pie-pagina .grupo-1 .box-3 .red-social {
+    display: flex;
+  }
+  .pie-pagina .grupo-1 .box-3 {
+    position: relative;
+    left: 50%;
+  }
+  .pie-pagina .grupo-1 .box-3 .red-social {
+    display: flex;
+    margin: 0 auto;
+    grid-gap: 5px;
+  }
+  .pie-pagina .grupo-1 .box-3 .red-social a {
+    background-color: #071c42;
+    line-height: 40px;
+    border-radius: 5px;
+  }
+  .pie-pagina .grupo-1 .box-2 ul li a {
+    display: flex;
+    grid-gap: 6px;
+    align-items: center;
   }
 }

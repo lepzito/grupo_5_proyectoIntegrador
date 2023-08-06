@@ -11,86 +11,36 @@ body {
   background-color: #f5f5f5;
 }
 
-/* Estilos del slider */
-.slider-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.slider {
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 0.25rem 0.5rem #21212126;
-  /* Agrega posición relativa para contener los botones de navegación */
-  position: relative;
-}
-
-.slider img {
+/* Estilos del slider de banners*/
+.splide {
   width: 100%;
-  max-height: 100%; /* La imagen se ajustará proporcionadamente al slider */
-  scroll-snap-align: start;
-  object-fit: contain; /* Ajusta la imagen dentro del slider sin distorsionar */
+  height: 400px;
 }
+.splide .splide__slide img {
+  width: 100%;
+  height: 400px;
 
-/* Estilos de los botones de navegación */
-.slider-nav {
-  display: flex;
-  column-gap: 1rem;
-  position: absolute;
-  bottom: -1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  object-fit: cover;
+  cursor: pointer;
 }
+.my-slider-progress {
+  background: #ccc;
+}
+.splide__arrow {
+  background: transparent;
+}
+.my-slider-progress-bar {
+  background: orange;
+  height: 5px;
+  transition: width 400ms ease;
+  width: 0;
+}
+.splide__arrow svg {
+  fill: orange;
+}
+/* Fin Estilos del slider de banners */
 
-.slider-nav a {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: red;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-}
-
-.slider-nav a:hover {
-  opacity: 1;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-.logos {
-  overflow: hidden;
-  background-color: white;
-  white-space: nowrap;
-}
-.logos::before,
-.logos::after {
-  position: absolute;
-  height: 10vh;
-  content: "";
-  z-index: 2;
-}
-
-.logos-slide {
-  position: relative;
-  bottom: 0;
-  display: inline-block;
-  animation: 25s slide infinite linear;
-}
-.logos-slide img {
-  height: 10vh;
-  margin: 0 10px;
-}
-/* Estilos de últimas novedades */
+/* Estilos de últimas novedades y ofertas */
 .latest-title {
   font-size: 30px;
   text-align: left;
@@ -99,8 +49,24 @@ body {
   color: black;
   font-weight: bold;
 }
-
-/* Estilos de la línea debajo del título */
+.Ultimas-Novedades {
+  margin-bottom: 50px;
+}
+.latest-title-2 {
+  font-size: 30px;
+  text-align: left;
+  position: relative;
+  margin: 40px 0 10px 10px;
+  color: black;
+  font-weight: bold;
+}
+.Ofertas {
+  margin-bottom: 50px;
+}
+.logos {
+  margin-bottom: 20px;
+}
+/* Fin Estilos de últimas novedades y ofertas */
 
 /* Estilos básicos del carrusel */
 .carousel-container {
@@ -111,6 +77,7 @@ body {
   max-width: 600px;
   margin: 0px auto;
   scroll-snap-type: x mandatory;
+  justify-content: flex-start;
 }
 
 /* Estilos para la tarjeta de productos */
@@ -165,6 +132,40 @@ body {
   position: absolute;
   top: -32px;
 }
+/* estilos logos de marcas slider infinito */
+
+.logos {
+  overflow: hidden;
+  background-color: white;
+  white-space: nowrap;
+}
+.logos::before,
+.logos::after {
+  position: absolute;
+  height: 10vh;
+  content: "";
+  z-index: 2;
+}
+
+.logos-slide {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logos-slide img {
+  margin: 0 10px;
+  height: 4vh;
+}
+/* estilos logos de marcas slider infinito */
 
 .banner-container {
   display: flex;
@@ -175,18 +176,19 @@ body {
 }
 
 .banner-text {
-  font-size: 19px;
+  margin-left: 6px;
   font-weight: bold;
   margin: 20px 0;
-  color: (0, 0, 0, 0.9);
 }
 
 .join-button {
   color: black;
-  padding: 10px 20px;
-  font-size: 25px;
+  padding: 10px 13px;
+  margin: 0 7px;
+  font-size: 20px;
   border: none;
-  border-radius: 5px;
+  background-color: #fad66e;
+  border-radius: 30px;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
@@ -197,43 +199,42 @@ body {
   background-color: #ff6702; /* Al hacer hover, el botón se iluminará con un tono más claro de naranja */
 }
 
-/* Estilos para dispositivos móviles */
-@media screen and (max-width: 480px) {
-  .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
-  }
-
-  .product-card {
-    width: 100%; /* Mostrar solo una tarjeta a la vez en dispositivos móviles */
-  }
-}
-
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .encabezado {
+    height: 120px;
+  }
+  .logo img {
+    max-width: 175px;
+  }
   .carousel-container {
     max-width: 100%;
     justify-content: flex-start;
   }
-
+  .latest-title-2 {
+    font-size: 35px;
+  }
+  .latest-title {
+    font-size: 35px;
+  }
   .product-card {
-    width: 35%;
-    margin: 0 5px;
+    width: 45%;
+    margin: 0 10px;
   }
-  .latest-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px; /* Posicionamos la línea debajo del título */
-    left: 0;
-    width: 305px;
-    height: 3px;
-    background-color: black; /* Color morado/violeta */
-    opacity: 0; /* Inicialmente la línea será transparente */
-    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
+  .logos-slide img {
+    height: 6vh;
+  }
+  .banner-text {
+    font-size: 22px;
+    max-width: 496px;
+  }
+  .join-button i {
+    font-size: 36px;
   }
 
-  .latest-title:hover::after {
-    opacity: 1; /* Al hacer hover, la línea se iluminará */
+  .join-button {
+    margin-left: 20px;
+    padding: 10px 10px;
   }
 }
 
@@ -243,9 +244,7 @@ body {
     max-width: 100%;
     justify-content: flex-start;
   }
-  .title-line {
-    display: none;
-  }
+
   .product-card {
     width: 30%;
     margin: 0 5px;
@@ -264,6 +263,40 @@ body {
 
   .latest-title:hover::after {
     opacity: 1; /* Al hacer hover, la línea se iluminará */
+  }
+  .latest-title::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Posicionamos la línea debajo del título */
+    left: 0;
+    width: 305px;
+    height: 3px;
+    background-color: black; /* Color morado/violeta */
+    opacity: 0; /* Inicialmente la línea será transparente */
+    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
+  }
+
+  .latest-title:hover::after {
+    opacity: 1; /* Al hacer hover, la línea se iluminará */
+  }
+  .latest-title-2::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Posicionamos la línea debajo del título */
+    left: 0;
+    width: 117px;
+    height: 3px;
+    background-color: black; /* Color morado/violeta */
+    opacity: 0; /* Inicialmente la línea será transparente */
+    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
+  }
+
+  .latest-title-2:hover::after {
+    opacity: 1; /* Al hacer hover, la línea se iluminará */
+  }
+  .join-button {
+    margin-left: 20px;
+    padding: 10px 10px;
   }
 }
 
@@ -297,5 +330,9 @@ body {
 
   .latest-title:hover::after {
     opacity: 1; /* Al hacer hover, la línea se iluminará */
+  }
+  .join-button {
+    margin-left: 20px;
+    padding: 10px 10px;
   }
 }
