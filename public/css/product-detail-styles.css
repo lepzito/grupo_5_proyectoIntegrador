@@ -1,55 +1,5 @@
 /* content1 */
-.text-conten1 p{
-  text-align: center;
-}
-.text-conten1 h6{
-    color: gray;
-}
 
-.boton1{
-    width: 110px;
-    background-color: orangered;
-    color: white;
-    border: orangered;
-}
-.boton1:hover{
- background-color: purple;
-}
-.text-conten1 h5{
-  text-align: right;
-  margin-right: 10px;
-  margin-top: -15px;
-}
-.text-conten1 h5:hover{
-  color: purple;
-}
-.text-conten1 i{  
-    
-   color: orangered;
-   border: orangered;
-} 
-.text-conten1 i:hover{
-  color: purple;
-  
-}
-.text-conten1 h1{
-  text-align: center;
-}
-.text-conten1 h1:hover{
-  color: purple;
-}
-.text-conten1 h5{
-  color: orangered;
-}
-.text-conten1 p{
-  margin-top: -18px;
-  text-align: left;
-  margin-left: 110px;
-  color: orangered;
-}
-.text-conten1 p:hover{
-  color: purple;
-}
 /* content2 */
 
 
@@ -204,7 +154,7 @@
   }
   .content5  h4{
     text-align: center;
-    color: orangered;
+   
   }
   .content5 h4:hover{
     color: purple;
@@ -226,42 +176,138 @@
    margin-top: auto;
    
   }
-
- /* Estilos para tablets */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
-  }
-
-  .product-card {
-    width: 35%;
-    margin: 0 5px;
+  
+  
+  
+ /* Estilos para pantallas de celular */
+@media screen and (min-width: 360px) and (max-width: 769px){
+  .content2 img{
+    margin-left: 6px;
   }
 }
 
 /* Estilos para pantallas de escritorio */
 @media screen and (min-width: 769px) and (max-width: 1279px) {
-  .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
+  
+  .content1 h1 {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: 450px;
   }
+  .content2 img{
+    margin-top: -50px;
+    width: 400px;
+  }
+  .content3 h2 {
+    text-align: left;
+    font-size: 50px;
+    margin-left: 450px;
+    margin-top: -320px;
+}
+.content3 h3 {
+  text-align: left;
+  margin-top: -80px;
+  margin-left: 650px;
+  font-size: 32px;
+}
+.boton3 {
+  padding: 12px;
+  padding-left: 50px;
+  width: 200px;
+  padding: auto;
+  background-color: orangered;
+  border: orangered;
+  color: white;
+  display: flex;
+  text-align: center;
+  margin-left: 450px;
+  margin-top: -30px;
+}
+.boton4 {
+  padding: 10px;
+  padding-left: 40px;
+  width: 180px;
+  padding: auto;
+  margin-top: -38px;
+  color: orangered;
+  display: flex;
+  margin-left: 700px;
+}
+  
+.content4 {
+  text-align: right;
+  margin-left: 450px;
+  margin-top: 0px;
+  text-align: left;
+}
 
-  .product-card {
-    width: 30%;
-    margin: 0 5px;
-  }
+.content5 h4{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 }
 
 /* Estilos para pantallas más grandes */
-@media screen and (min-width: 1280px) {
-  .carousel-container {
-    max-width: 100%;
-    justify-content: flex-start;
+@media screen and (min-width: 1280px){
+  .content1 h1 {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: 450px;
   }
+  .content2 img{
+    margin-top: -50px;
+    width: 400px;
+  }
+  .content3 h2 {
+    text-align: left;
+    font-size: 50px;
+    margin-left: 450px;
+    margin-top: -320px;
+}
+.content3 h3 {
+  text-align: left;
+  margin-top: -80px;
+  margin-left: 650px;
+  font-size: 32px;
+}
+.boton3 {
+  padding: 12px;
+  padding-left: 50px;
+  width: 200px;
+  padding: auto;
+  background-color: orangered;
+  border: orangered;
+  color: white;
+  display: flex;
+  text-align: center;
+  margin-left: 450px;
+  margin-top: -30px;
+}
+.boton4 {
+  padding: 10px;
+  padding-left: 40px;
+  width: 180px;
+  padding: auto;
+  margin-top: -38px;
+  color: orangered;
+  display: flex;
+  margin-left: 700px;
+}
+  
+.content4 {
+  text-align: right;
+  margin-left: 450px;
+  margin-top: 0px;
+  text-align: left;
+}
 
-  .product-card {
-    width: 22%;
-    margin: 0 5px;
-  }
+.content5 h4{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
 }
