@@ -1,6 +1,22 @@
 Los colores se elejiran de acuerdo al los colores que convinen con el icono nuestro
 Entre ellos estan:
--Naranja
--Negro
--Violeta
--Blanco
+
+--tonos de naranja:
+-orange
+-#fad66e; (precios background color)
+-#ff6507;
+
+-Black (predominante en header y footer y en la tipografia)
+
+-Violeta(este color se usara en casos puntuales, como en el footer en los iconos:hover)
+
+
+-- tonos de blanco y gris:
+-white: (predominante en el backgroun- color del main)
+#f5f5f5;
+#efefef;
+
+
+Ofertas color de tipografia:
+
+ --- color: #2d8d04;
