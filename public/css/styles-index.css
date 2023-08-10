@@ -14,12 +14,11 @@ body {
 /* Estilos del slider de banners*/
 .splide {
   width: 100%;
-  height: 400px;
+  background-color: orange;
 }
 .splide .splide__slide img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .my-slider-progress {
   background: #ccc;
@@ -34,7 +33,7 @@ body {
   width: 0;
 }
 .splide__arrow svg {
-  fill: orange;
+  fill: white;
 }
 /* Fin Estilos del slider de banners */
 .multiple-slider {
@@ -50,7 +49,7 @@ body {
 }
 /* Estilos de últimas novedades y ofertas */
 .latest-title {
-  font-size: 30px;
+  font-size: 25px;
   text-align: left;
   position: relative;
   margin: 40px 0 10px 10px;
@@ -61,7 +60,7 @@ body {
   margin-bottom: 50px;
 }
 .latest-title-2 {
-  font-size: 30px;
+  font-size: 25px;
   text-align: left;
   position: relative;
   margin: 40px 0 10px 10px;

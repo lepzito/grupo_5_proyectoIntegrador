@@ -2,7 +2,7 @@ header {
   background-color: #000;
   color: #fff;
   width: 100vw;
-  border-bottom: 4px solid orange;
+  border-bottom: 4px solid #ff6507;
 }
 .encabezado {
   display: flex;

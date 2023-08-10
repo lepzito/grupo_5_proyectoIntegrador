@@ -106,10 +106,12 @@
   .pie-pagina .grupo-1 .box-1 p {
     display: inline-block;
     color: #efefef;
+    font-size: 13px;
   }
   .pie-pagina .grupo-1 .box-2 p {
     display: inline-block;
     color: #efefef;
+    font-size: 13px;
   }
   .pie-pagina .grupo-1 .box-3 h2 {
     display: none;
