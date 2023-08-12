@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <%- include("./partials/head") %>
+  <body>
+    <!-- Header -->
+    <%- include("./partials/header") %>
+    <!-- Page content -->
+    <main>
+      <section class="Banners__splide">
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="\images\images_slider\first-splide.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="\images\images_slider\second-splide.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="\images\images_slider\first-splide.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="my-slider-progress">
+          <div class="my-slider-progress-bar"></div>
+        </div>
+        <script src="\js\script-splide.js"></script>
+      </section>
+      <!-- Ultimas novedades productos -->
+      <section class="Ultimas-Novedades">
+        <div class="latest-title"><h3>Últimas Novedades</h3></div>
+        <div class="carousel-container">
+          <% productsIndex.forEach((product)=>{ if (product.ofert===false) {%>
+
+          <div class="product-card">
+            <a href="/products/<%= product.id%>">
+              <div class="container-product-image">
+                <img
+                  class="product-image"
+                  src="<%=product.img %>"
+                  alt="productosNovedad"
+                />
+              </div>
+              <div class="container-descripcion-product">
+                <div class="product-name">
+                  <p><%= product.nombre %></p>
+                </div>
+                <div class="product-price">
+                  <span><%= product.precio %></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <%}});%>
+        </div>
+        <div class="see-more">
+          <a href=""><span>VER TODO</span></a>
+        </div>
+      </section>
+      <!-- Ofertas productos -->
+      <section class="Ofertas">
+        <div class="latest-title-2"><h3>Ofertas</h3></div>
+        <div class="carousel-container">
+          <% productsIndex.forEach((product)=>{ if (product.ofert===true) {%>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product">
+                <span> <%=product.descuento%></span>
+              </div>
+              <img
+                class="product-image"
+                src="<%=product.img %>"
+                alt="productosOferta"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name"><p><%=product.nombre %></p></div>
+              <div class="product-price">
+                <span> <%=product.precio %></span>
+              </div>
+            </div>
+          </div>
+          <%}});%>
+        </div>
+
+        <div class="see-more">
+          <a href=""><span>VER TODO</span></a>
+        </div>
+      </section>
+      <section class="slider__infinit__logos">
+        <div class="logos">
+          <div class="logos-slide">
+            <img src="\images\images_slider\1.png" alt="" />
+            <img src="\images\images_slider\2.png" alt="" />
+            <img src="\images\images_slider\3.png" alt="" />
+            <img src="\images\images_slider\4.png" alt="" />
+            <img src="\images\images_slider\5.png" alt="" />
+            <img src="\images\images_slider\6.png" alt="" />
+            <img src="\images\images_slider\7.png" alt="" />
+            <img src="\images\images_slider\8.png" alt="" />
+          </div>
+          <div class="logos-slide">
+            <img src="\images\images_slider\1.png" alt="" />
+            <img src="\images\images_slider\2.png" alt="" />
+            <img src="\images\images_slider\3.png" alt="" />
+            <img src="\images\images_slider\4.png" alt="" />
+            <img src="\images\images_slider\5.png" alt="" />
+            <img src="\images\images_slider\6.png" alt="" />
+            <img src="\images\images_slider\7.png" alt="" />
+            <img src="\images\images_slider\8.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="banner-discount">
+        <div class="banner-container">
+          <div class="banner-text">
+            <h4>¡Únete Gratis por Primera Vez y Obtén un 10% de Descuento!</h4>
+          </div>
+          <a class="join-button" href="/login-register"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <%- include("./partials/footer") %>
+  </body>
+</html>

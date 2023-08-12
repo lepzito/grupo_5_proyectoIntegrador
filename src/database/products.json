@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "ofert": false,
+    "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
+    "precio": "$ 77.000",
+    "img": "/images/images_products/monitor.png"
+  },
+  {
+    "id": 2,
+    "ofert": false,
+    "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
+    "precio": "$ 120.000",
+    "img": "/images/images_products/silla-gamer.png"
+  },
+  {
+    "id": 3,
+    "ofert": false,
+    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
+    "precio": "$ 520.000",
+    "img": "/images/images_products/notebook-gamer.png"
+  },
+  {
+    "id": 4,
+    "ofert": false,
+    "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
+    "precio": "$ 20.000",
+    "img": "/images/images_products/mouse-gamer.png"
+  },
+  {
+    "id": 5,
+    "ofert": false,
+    "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
+    "precio": "$ 320.000",
+    "img": "/images/images_products/placa-video.png"
+  },
+  {
+    "id": 6,
+    "ofert": false,
+    "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
+    "precio": "$ 77.000",
+    "img": "/images/images_products/monitor.png"
+  },
+  {
+    "id": 7,
+    "ofert": true,
+    "descuento": "11% OFF",
+    "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
+    "precio": "$ 120.000",
+    "img": "/images/images_products/silla-gamer.png"
+  },
+  {
+    "id": 8,
+    "ofert": true,
+    "descuento": "10% OFF",
+    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
+    "precio": "$ 520.000",
+    "img": "/images/images_products/notebook-gamer.png"
+  },
+  {
+    "id": 9,
+    "ofert": true,
+    "descuento": "10% OFF",
+    "nombre": "Apple iPhone 8 Plus",
+    "precio": "$ 200.000",
+    "img": "/images/images_products/iphone.png"
+  },
+  {
+    "id": 10,
+    "ofert": true,
+    "descuento": "15% OFF",
+    "nombre": "Samsung Galaxy S9",
+    "precio": "$ 60.000",
+    "img": "/images/images_products/galaxy-s9.png"
+  },
+  {
+    "id": 11,
+    "ofert": true,
+    "descuento": "15% OFF",
+    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
+    "precio": "$ 520.000",
+    "img": "/images/images_products/notebook-gamer.png"
+  },
+  {
+    "id": 12,
+    "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
+    "precio": "$ 20.000",
+    "img": "/images/images_products/mouse-gamer.png"
+  },
+  {
+    "id": 13,
+    "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
+    "precio": "$ 320.000",
+    "img": "/images/images_products/placa-video.png"
+  },
+  {
+    "id": 14,
+    "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
+    "precio": "$ 77.000",
+    "img": "/images/images_products/monitor.png"
+  },
+  {
+    "id": 15,
+    "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
+    "precio": "$ 120.000",
+    "img": "/images/images_products/silla-gamer.png"
+  },
+  {
+    "id": 16,
+    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
+    "precio": "$ 520.000",
+    "img": "/images/images_products/notebook-gamer.png"
+  }
+]
