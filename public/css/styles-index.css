@@ -38,7 +38,6 @@ body {
 /* Fin Estilos del slider de banners */
 .multiple-slider {
   width: 100%;
-  height: 100 px;
 }
 .multiple-slider .splide__slide img {
   width: 100%;
