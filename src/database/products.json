@@ -37,80 +37,86 @@
   {
     "id": 6,
     "ofert": false,
-    "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
-    "precio": "$ 77.000",
-    "img": "/images/images_products/monitor.png"
+    "nombre": "Joystick Inalámbrico Sony DualSense PS5 Blanco",
+    "precio": "$ 59.999",
+    "img": "/images/images_products/jostick.png"
   },
   {
     "id": 7,
-    "ofert": true,
-    "descuento": "6% OFF",
-    "nombre": "Xiaomi Amazfit Bip Smartwatch",
-    "precio": "$ 100.000",
-    "img": "/images/images_products/relojxiaomi.png"
+    "ofert": false,
+    "nombre": "Megaport Pc Gamer Amd fx-6100 Gaming",
+    "precio": "$ 267.452",
+    "img": "/images/images_products/pcgamer.png"
   },
   {
     "id": 8,
-    "ofert": true,
-    "descuento": "10% OFF",
-    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
-    "precio": "$ 520.000",
-    "img": "/images/images_products/notebook-gamer.png"
+    "ofert": false,
+    "nombre": "Auriculares Gamer Xbox 360  Inalámbricos",
+    "precio": "$ 69.975",
+    "img": "/images/images_products/auricularesrojos.png"
   },
   {
     "id": 9,
     "ofert": true,
-    "descuento": "10% OFF",
-    "nombre": "Apple iPhone 8 Plus",
-    "precio": "$ 10000",
+    "descuento": "11% OFF",
+    "nombre": "APPLE IPHONE 8 PLUS 2/3 GB 256 GB detección facial hexa-core NFC IOS 16 4g LTE",
+    "precio": "$ 10.000",
     "img": "/images/images_products/iphone.png"
   },
   {
     "id": 10,
     "ofert": true,
     "descuento": "15% OFF",
-    "nombre": "Samsung Galaxy S9",
+    "nombre": "Samsung Galaxy S9 Plus Review",
     "precio": "$ 60.000",
     "img": "/images/images_products/galaxy-s9.png"
   },
   {
     "id": 11,
     "ofert": true,
-    "descuento": "15% OFF",
-    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
-    "precio": "$ 520.000",
-    "img": "/images/images_products/notebook-gamer.png"
+    "descuento": "3% OFF",
+    "nombre": "Teclado Gamer Razer Huntsman Mini Sw Analog",
+    "precio": "$ 6.000",
+    "img": "/images/images_products/teclado.png"
   },
   {
     "id": 12,
     "ofert": true,
     "descuento": "10% OFF",
-    "nombre": "Iphone 7",
+    "nombre": "Apple iPhone 7 32 GB - Oro Rosa (AT&T)",
     "precio": "$100.000",
     "img": "/images/images_products/iphone7rosado.png"
   },
   {
     "id": 13,
-    "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
-    "precio": "$ 320.000",
-    "img": "/images/images_products/placa-video.png"
+    "ofert": true,
+    "descuento": "6% OFF",
+    "nombre": "Xiaomi Amazfit Bip Smartwatch",
+    "precio": "$ 59.985",
+    "img": "/images/images_products/relojxiaomi.png"
   },
   {
     "id": 14,
-    "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
-    "precio": "$ 77.000",
-    "img": "/images/images_products/monitor.png"
+    "ofert": true,
+    "descuento": "25% OFF",
+    "nombre": "Laptop Gaming Computer Lenovo",
+    "precio": "$ 300.000",
+    "img": "/images/images_products/lenovo.png"
   },
   {
     "id": 15,
-    "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
-    "precio": "$ 120.000",
-    "img": "/images/images_products/silla-gamer.png"
+    "descuento": "5% OFF" ,
+    "ofert": true,
+    "nombre": "Samsung Gear Iconx Airpods Auriculares Bluetooth",
+    "precio": "$ 10.000",
+    "img": "/images/images_products/auris.png"
   },
   {
     "id": 16,
-    "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
-    "precio": "$ 520.000",
-    "img": "/images/images_products/notebook-gamer.png"
+    "ofert": true,
+    "descuento": "12% OFF",
+    "nombre": "Tablet Sony Xperia Z4",
+    "precio": "$ 70.000",
+    "img": "/images/images_products/tablet.png"
   }
 ]
