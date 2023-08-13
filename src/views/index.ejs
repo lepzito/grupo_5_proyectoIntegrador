@@ -32,7 +32,7 @@
       <section class="Ultimas-Novedades">
         <div class="latest-title"><h3>Últimas Novedades</h3></div>
         <div class="carousel-container">
-          <% productsIndex.forEach((product)=>{ if (product.ofert===false) {%>
+          <%productsIndex.forEach((product)=>{ if(product.ofert===false){%>
 
           <div class="product-card">
             <a href="/products/<%= product.id%>">
@@ -63,7 +63,7 @@
       <section class="Ofertas">
         <div class="latest-title-2"><h3>Ofertas</h3></div>
         <div class="carousel-container">
-          <% productsIndex.forEach((product)=>{ if (product.ofert===true) {%>
+          <% productsIndex.forEach((product)=>{ if(product.ofert) {%>
           <div class="product-card">
             <div class="container-product-image">
               <div class="ofert-product">
@@ -89,30 +89,8 @@
           <a href=""><span>VER TODO</span></a>
         </div>
       </section>
-      <section class="slider__infinit__logos">
-        <div class="logos">
-          <div class="logos-slide">
-            <img src="\images\images_slider\1.png" alt="" />
-            <img src="\images\images_slider\2.png" alt="" />
-            <img src="\images\images_slider\3.png" alt="" />
-            <img src="\images\images_slider\4.png" alt="" />
-            <img src="\images\images_slider\5.png" alt="" />
-            <img src="\images\images_slider\6.png" alt="" />
-            <img src="\images\images_slider\7.png" alt="" />
-            <img src="\images\images_slider\8.png" alt="" />
-          </div>
-          <div class="logos-slide">
-            <img src="\images\images_slider\1.png" alt="" />
-            <img src="\images\images_slider\2.png" alt="" />
-            <img src="\images\images_slider\3.png" alt="" />
-            <img src="\images\images_slider\4.png" alt="" />
-            <img src="\images\images_slider\5.png" alt="" />
-            <img src="\images\images_slider\6.png" alt="" />
-            <img src="\images\images_slider\7.png" alt="" />
-            <img src="\images\images_slider\8.png" alt="" />
-          </div>
-        </div>
-      </section>
+      <%- include("./partials/slider-marcas") %>
+
       <section class="banner-discount">
         <div class="banner-container">
           <div class="banner-text">

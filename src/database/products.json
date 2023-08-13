@@ -2,6 +2,7 @@
   {
     "id": 1,
     "ofert": false,
+    "productHome": true,
     "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
     "precio": "$ 77.000",
     "img": "/images/images_products/monitor.png"
@@ -9,12 +10,16 @@
   {
     "id": 2,
     "ofert": false,
+    "productHome": true,
+
     "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
     "precio": "$ 120.000",
     "img": "/images/images_products/silla-gamer.png"
   },
   {
     "id": 3,
+
+    "productHome": true,
     "ofert": false,
     "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
     "precio": "$ 520.000",
@@ -22,6 +27,8 @@
   },
   {
     "id": 4,
+
+    "productHome": true,
     "ofert": false,
     "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
     "precio": "$ 20.000",
