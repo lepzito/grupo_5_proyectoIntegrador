@@ -14,9 +14,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.set("view engine", "ejs");
 
 /*------------------------------------------------------------------*/
-app.use((req, res, next) => {
-  res.status(404).render("not-found");
-});
+
 app.use("/", rutasMain);
 
 app.use("/products", rutasProductos);

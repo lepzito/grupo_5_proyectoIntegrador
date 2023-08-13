@@ -7,18 +7,20 @@
     "precio": "$ 77.000",
     "tipo": "Monitores",
     "img": "/images/images_products/monitor.png",
-    "descripcion": "Aqui ira la descripcion del producto",
+    "descripcion": "Una experiencia visual de calidad. Este monitor de 32\" te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 2560 x 1440 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Una de sus virtudes es que posee pantalla antirreflejo, de esta manera no verás reflejado lo que está detrás de vos y vas a evitar forzar tu vista para enfocar el contenido. Su tiempo de respuesta de un milisegundo lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos.",
     "caracteristicas": {
-      "Color": "NEGRO",
-      "Capacidad": "8gb",
-      "Frecuencia": "3200hz",
-      "Tipo": "DDR4"
+      "Tamaño de la pantalla": "32\"",
+      "Tipo de resolución": " QHD",
+      "Es curvo": "Si",
+      "Es reclinable": "Si",
+      "Con altavoces incorporados": "Si"
     }
   },
   {
     "id": 2,
     "ofert": false,
     "productHome": true,
+    "tipo": "Escritorio",
     "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
     "precio": "$ 120.000",
     "img": "/images/images_products/silla-gamer.png"
@@ -142,5 +144,19 @@
     "nombre": "Tablet Sony Xperia Z4",
     "precio": "$ 70.000",
     "img": "/images/images_products/tablet.png"
+  },
+  {
+    "id": 17,
+    "nombre": "Tablet Sony Xperia Z4",
+    "precio": "$ 70.000",
+    "tipo": "Monitores",
+    "img": "/images/images_products/tablet.png",
+    "descripcion": "Aqui ira la descripcion del producto",
+    "caracteristicas": {
+      "Color": "NEGRO",
+      "Capacidad": "8gb",
+      "Frecuencia": "3200hz",
+      "Tipo": "DDR4"
+    }
   }
 ]
