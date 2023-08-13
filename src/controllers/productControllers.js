@@ -23,5 +23,17 @@ const productControllers = {
     let product = products().find((product) => product.id == idProduct);
     res.render("productDetail", { product: product });
   },
+  search: function (req, res) {
+    let loQueBuscoElUsario = req.query.search;
+    let productosResultantes = [];
+    for (let i = 0; i < products().length; i++) {
+      if (products()[i].nombre.includes(loQueBuscoElUsario)) {
+        productosResultantes.push(products()[i]);
+      }
+    }
+    res.render("productResults", {
+      productosResultantes: productosResultantes,
+    });
+  },
 };
 module.exports = productControllers;

@@ -9,10 +9,19 @@
     <div class="container-search-bar">
       <div class="search_wrap search_wrap_1">
         <div class="search_box">
-          <input type="text" class="input" placeholder="Buscar..." />
-          <div class="btn btn_common">
-            <i class="fas fa-search"></i>
-          </div>
+          <form action="/products/search/" method="GET">
+            <input
+              type="text"
+              class="input"
+              name="search"
+              placeholder="Buscar..."
+            />
+            <div class="btn btn_common">
+              <button type="submit" class="fas fa-search">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
