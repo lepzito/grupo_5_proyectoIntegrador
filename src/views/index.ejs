@@ -32,10 +32,11 @@
       <section class="Ultimas-Novedades">
         <div class="latest-title"><h3>Últimas Novedades</h3></div>
         <div class="carousel-container">
-          <%productsIndex.forEach((product)=>{ if(product.ofert===false){%>
+          <%productsIndex.forEach((product)=>{%>
+          <%if(product.ofert===false&&product.productHome){%>
 
           <div class="product-card">
-            <a href="/products/<%= product.id%>">
+            <a href="/products/product/<%= product.id%>">
               <div class="container-product-image">
                 <img
                   class="product-image"
@@ -63,24 +64,27 @@
       <section class="Ofertas">
         <div class="latest-title-2"><h3>Ofertas</h3></div>
         <div class="carousel-container">
-          <% productsIndex.forEach((product)=>{ if(product.ofert) {%>
+          <% productsIndex.forEach((product)=>{%>
+          <%if(product.ofert&&product.productHome) {%>
           <div class="product-card">
-            <div class="container-product-image">
-              <div class="ofert-product">
-                <span> <%=product.descuento%></span>
+            <a href="/products/product/<%= product.id%>">
+              <div class="container-product-image">
+                <div class="ofert-product">
+                  <span> <%=product.descuento%></span>
+                </div>
+                <img
+                  class="product-image"
+                  src="<%=product.img %>"
+                  alt="productosOferta"
+                />
               </div>
-              <img
-                class="product-image"
-                src="<%=product.img %>"
-                alt="productosOferta"
-              />
-            </div>
-            <div class="container-descripcion-product">
-              <div class="product-name"><p><%=product.nombre %></p></div>
-              <div class="product-price">
-                <span> <%=product.precio %></span>
+              <div class="container-descripcion-product">
+                <div class="product-name"><p><%=product.nombre%></p></div>
+                <div class="product-price">
+                  <span> <%=product.precio %></span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <%}});%>
         </div>

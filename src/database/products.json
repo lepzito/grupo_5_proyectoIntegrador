@@ -5,20 +5,26 @@
     "productHome": true,
     "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
     "precio": "$ 77.000",
-    "img": "/images/images_products/monitor.png"
+    "tipo": "Monitores",
+    "img": "/images/images_products/monitor.png",
+    "caracteristicas": {
+      "Color": "NEGRO",
+      "Capacidad": "8gb",
+      "Frecuencia": "3200hz",
+      "Tipo": "DDR4"
+    },
+    "descripcion": "Aqui ira la descripcion del producto"
   },
   {
     "id": 2,
     "ofert": false,
     "productHome": true,
-
     "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
     "precio": "$ 120.000",
     "img": "/images/images_products/silla-gamer.png"
   },
   {
     "id": 3,
-
     "productHome": true,
     "ofert": false,
     "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
@@ -27,7 +33,6 @@
   },
   {
     "id": 4,
-
     "productHome": true,
     "ofert": false,
     "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
@@ -36,6 +41,7 @@
   },
   {
     "id": 5,
+    "productHome": true,
     "ofert": false,
     "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
     "precio": "$ 320.000",
@@ -43,6 +49,7 @@
   },
   {
     "id": 6,
+    "productHome": true,
     "ofert": false,
     "nombre": "Joystick Inalámbrico Sony DualSense PS5 Blanco",
     "precio": "$ 59.999",
@@ -50,6 +57,7 @@
   },
   {
     "id": 7,
+    "productHome": true,
     "ofert": false,
     "nombre": "Megaport Pc Gamer Amd fx-6100 Gaming",
     "precio": "$ 267.452",
@@ -57,6 +65,7 @@
   },
   {
     "id": 8,
+    "productHome": true,
     "ofert": false,
     "nombre": "Auriculares Gamer Xbox 360  Inalámbricos",
     "precio": "$ 69.975",
@@ -64,6 +73,7 @@
   },
   {
     "id": 9,
+    "productHome": true,
     "ofert": true,
     "descuento": "11% OFF",
     "nombre": "APPLE IPHONE 8 PLUS 2/3 GB 256 GB detección facial hexa-core NFC IOS 16 4g LTE",
@@ -72,6 +82,7 @@
   },
   {
     "id": 10,
+    "productHome": true,
     "ofert": true,
     "descuento": "15% OFF",
     "nombre": "Samsung Galaxy S9 Plus Review",
@@ -80,6 +91,7 @@
   },
   {
     "id": 11,
+    "productHome": true,
     "ofert": true,
     "descuento": "3% OFF",
     "nombre": "Teclado Gamer Razer Huntsman Mini Sw Analog",
@@ -88,6 +100,7 @@
   },
   {
     "id": 12,
+    "productHome": true,
     "ofert": true,
     "descuento": "10% OFF",
     "nombre": "Apple iPhone 7 32 GB - Oro Rosa (AT&T)",
@@ -96,6 +109,7 @@
   },
   {
     "id": 13,
+    "productHome": true,
     "ofert": true,
     "descuento": "6% OFF",
     "nombre": "Xiaomi Amazfit Bip Smartwatch",
@@ -104,6 +118,7 @@
   },
   {
     "id": 14,
+    "productHome": true,
     "ofert": true,
     "descuento": "25% OFF",
     "nombre": "Laptop Gaming Computer Lenovo",
@@ -112,7 +127,8 @@
   },
   {
     "id": 15,
-    "descuento": "5% OFF" ,
+    "descuento": "5% OFF",
+    "productHome": true,
     "ofert": true,
     "nombre": "Samsung Gear Iconx Airpods Auriculares Bluetooth",
     "precio": "$ 10.000",
@@ -120,6 +136,7 @@
   },
   {
     "id": 16,
+    "productHome": true,
     "ofert": true,
     "descuento": "12% OFF",
     "nombre": "Tablet Sony Xperia Z4",

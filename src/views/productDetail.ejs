@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=product.nombre%></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/product-detail-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="content-img">
+        <img src="<%=product.img%>" alt="imagenproduct" />
+      </div>
+      <div class="title-product">
+        <h1><%=product.nombre%></h1>
+      </div>
+      <div class="type-product">
+        <p>>> <%=product.tipo%></p>
+      </div>
+      <div class="price">
+        <p>¡Precio de contado!</p>
+        <h2><%=product.precio%></h2>
+        <div class="cuotas"><h4>CUOTAS</h4></div>
+      </div>
+
+      <div class="content-medios">
+        <div class="medio">
+          <i class="fa-solid fa-truck"></i>
+          <p>Envío gratis a todo el país</p>
+        </div>
+        <div class="medio">
+          <i class="fa-solid fa-delete-left"></i>
+
+          <p>Devolución gratis. Tenés 30 días desde que lo recibís.</p>
+        </div>
+        <div class="medio">
+          <i class="fa-solid fa-user-shield"></i>
+          <p>
+            Compra Protegida. recibí el producto que esperabas o te devolvemos
+            tú dinero.
+          </p>
+        </div>
+        <hr />
+      </div>
+      <div class="buttons">
+        <button class="agregar-carrito" type="submit">
+          Agregar al carrito
+        </button>
+      </div>
+      <div class="descripcion">
+        <hr />
+        <h3>Descripcion</h3>
+        <p><%=product.descripcion%></p>
+      </div>
+      <div class="especificaciones">
+        <hr />
+        <br />
+        <h3>Especificaciones</h3>
+
+        <table>
+          <tr>
+            <th>Característica</th>
+            <th>Valor</th>
+          </tr>
+          <% for (const propiedad in product.caracteristicas) { %>
+          <tr>
+            <td><%= propiedad %></td>
+            <td><%= product.caracteristicas[propiedad] %></td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
