@@ -7,13 +7,13 @@
     "precio": "$ 77.000",
     "tipo": "Monitores",
     "img": "/images/images_products/monitor.png",
+    "descripcion": "Aqui ira la descripcion del producto",
     "caracteristicas": {
       "Color": "NEGRO",
       "Capacidad": "8gb",
       "Frecuencia": "3200hz",
       "Tipo": "DDR4"
-    },
-    "descripcion": "Aqui ira la descripcion del producto"
+    }
   },
   {
     "id": 2,
