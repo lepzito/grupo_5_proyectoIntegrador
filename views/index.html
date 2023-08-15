@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecno-JUY</title>
+
+    <link
+      rel="stylesheet"
+      href="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css
+    "
+    />
+    <link rel="stylesheet" href="\css\normalize.css" />
+    <link rel="stylesheet" href="\css\styles-index.css" />
+    <link rel="stylesheet" href="\css\header-styles.css" />
+    <link rel="stylesheet" href="\css\footer-styles.css" />
+    <!--Tipografia-->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Iconos-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--scripts-->
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js
+    "></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="encabezado">
+        <div class="main-navbar">
+          <a href="#"> <i class="fas fa-bars"></i></a>
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="\images\logo.png" alt="Logo de TECNO-JUY"
+          /></a>
+        </div>
+        <div class="container-search-bar">
+          <div class="search_wrap search_wrap_1">
+            <div class="search_box">
+              <input type="text" class="input" placeholder="Buscar..." />
+              <div class="btn btn_common">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="icons">
+          <!---Aqui tener en cuenta el tipo de boton que va a hacer la lupa y poner un place holder --->
+
+          <button class="lupa" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="/login-register"><i class="fa-solid fa-user"></i></a>
+          <a href="" class="corazon"><i class="fa-solid fa-heart"></i></a>
+          <a href="/carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+      <div class="main-navbar2">
+        <nav>
+          <ul>
+            <li><a href="#">Pc Armadas</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Productos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="Banners__splide">
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="\images\images_slider\first-splide.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="\images\images_slider\second-splide.jpg" alt="" />
+              </li>
+              <li class="splide__slide">
+                <img src="\images\images_slider\first-splide.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-slider-progress">
+          <div class="my-slider-progress-bar"></div>
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var splide = new Splide(".splide", {
+              type: "loop",
+              perPage: 1,
+              autoplay: true,
+            });
+            splide.mount();
+            var bar = document.querySelector(".my-slider-progress-bar");
+
+            if (bar) {
+              splide.on("moved", function () {
+                var end = splide.length;
+                var rate = Math.min((splide.index + 1) / end, 1);
+                bar.style.width = String(100 * rate) + "%";
+              });
+            } else {
+              console.error(
+                "El elemento .my-slider-progress-bar no se encontró en el DOM."
+              );
+            }
+          });
+        </script>
+      </section>
+      <section class="Ultimas-Novedades">
+        <div class="latest-title"><h3>Últimas Novedades</h3></div>
+        <div class="carousel-container">
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\monitor.png"
+                alt="Producto 1"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Monitor gamer ViewSonic XG3220 LCD TFT 32" negro 100V/240V
+                </p>
+              </div>
+              <div class="product-price"><span>$ 180.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\silla-gamer.png"
+                alt="Producto 2"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Silla Sillon Gamer Pc Escritorio The Game House Ergonomica
+                </p>
+              </div>
+              <div class="product-price"><span>$ 120.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\notebook-gamer.png"
+                alt="Producto 3"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb
+                </p>
+              </div>
+              <div class="product-price"><span>$ 520.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\mouse-gamer.png"
+                alt="Producto 4"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc</p>
+              </div>
+              <div class="product-price"><span>$ 20.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\placa-video.png"
+                alt="Producto 5"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte</p>
+              </div>
+              <div class="product-price"><span>$ 320.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\monitor.png"
+                alt="Producto 1"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Monitor gamer ViewSonic XG3220 LCD TFT 32" negro 100V/240V
+                </p>
+              </div>
+              <div class="product-price"><span>$ 180.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\silla-gamer.png"
+                alt="Producto 2"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Silla Sillon Gamer Pc Escritorio The Game House Ergonomica
+                </p>
+              </div>
+              <div class="product-price"><span>$ 120.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <img
+                class="product-image"
+                src="\images\images_products\notebook-gamer.png"
+                alt="Producto 3"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>
+                  Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb
+                </p>
+              </div>
+              <div class="product-price"><span>$ 520.000</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="see-more">
+          <a href=""><span>VER TODO</span></a>
+        </div>
+      </section>
+      <section class="Ofertas">
+        <div class="latest-title-2"><h3>Ofertas</h3></div>
+        <div class="carousel-container">
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>10% OFF</span></div>
+              <img
+                class="product-image"
+                src="\images\images_products\iphone.png"
+                alt="Producto 1"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name"><p>Apple iPhone 8 Plus</p></div>
+              <div class="product-price"><span>$ 100.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>15% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\galaxy-s9.png"
+                alt="Producto 2"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name"><p>Samsung Galaxy S9</p></div>
+              <div class="product-price"><span>$ 60.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>5% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\auris.png"
+                alt="Producto 3"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>Auriculares bluetooth denver bth-205bk</p>
+              </div>
+              <div class="product-price"><span>$ 5.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>20% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\pack-gamer.png"
+                alt="Producto 4"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>Pack Mouse, Teclado y Auriculares Gamer</p>
+              </div>
+              <div class="product-price"><span>$ 10.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>3% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\ddr4.png"
+                alt="Producto 5"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>DDR4 SDRAM Computer data storage G.Skill DIMM</p>
+              </div>
+              <div class="product-price"><span>$ 20.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>10% OFF</span></div>
+              <img
+                class="product-image"
+                src="\images\images_products\iphone.png"
+                alt="Producto 1"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name"><p>Apple iPhone 8 Plus</p></div>
+              <div class="product-price"><span>$ 100.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>15% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\galaxy-s9.png"
+                alt="Producto 2"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name"><p>Samsung Galaxy S9</p></div>
+              <div class="product-price"><span>$ 60.000</span></div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="container-product-image">
+              <div class="ofert-product"><span>5% OFF</span></div>
+
+              <img
+                class="product-image"
+                src="\images\images_products\auris.png"
+                alt="Producto 3"
+              />
+            </div>
+            <div class="container-descripcion-product">
+              <div class="product-name">
+                <p>Auriculares bluetooth denver bth-205bk</p>
+              </div>
+              <div class="product-price"><span>$ 5.000</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="see-more">
+          <a href=""><span>VER TODO</span></a>
+        </div>
+      </section>
+      <section class="slider__infinit__logos">
+        <div class="logos">
+          <div class="logos-slide">
+            <img src="\images\images_slider\1.png" alt="" />
+            <img src="\images\images_slider\2.png" alt="" />
+            <img src="\images\images_slider\3.png" alt="" />
+            <img src="\images\images_slider\4.png" alt="" />
+            <img src="\images\images_slider\5.png" alt="" />
+            <img src="\images\images_slider\6.png" alt="" />
+            <img src="\images\images_slider\7.png" alt="" />
+            <img src="\images\images_slider\8.png" alt="" />
+          </div>
+          <div class="logos-slide">
+            <img src="\images\images_slider\1.png" alt="" />
+            <img src="\images\images_slider\2.png" alt="" />
+            <img src="\images\images_slider\3.png" alt="" />
+            <img src="\images\images_slider\4.png" alt="" />
+            <img src="\images\images_slider\5.png" alt="" />
+            <img src="\images\images_slider\6.png" alt="" />
+            <img src="\images\images_slider\7.png" alt="" />
+            <img src="\images\images_slider\8.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="banner-discount">
+        <div class="banner-container">
+          <div class="banner-text">
+            <h4>¡Únete Gratis por Primera Vez y Obtén un 10% de Descuento!</h4>
+          </div>
+          <a class="join-button" href="/login-register"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box-1">
+          <div class="direccion">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>San Martin 1992</p>
+          </div>
+          <div class="e-mail">
+            <i class="fa-solid fa-envelope-open"></i>
+            <p>suppor@tecnojuy.com</p>
+          </div>
+          <div class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <p>3885959593</p>
+          </div>
+          <div class="nosotros">
+            <i class="fa-solid fa-users"></i>
+            <p>Nosotros</p>
+          </div>
+        </div>
+        <div class="box-2">
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <p>Condiciones de uso</p></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <p>Servicio al cliente</p></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <p>Botón de arrepentimiento</p></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-play"></i>
+                <p>Políticas de garantía</p></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="box-3">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa-brands fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-twitter"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small
+          >&copy; 2023 <b>TECNO-JUY</b> - Todos los Derechos Reservados.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
