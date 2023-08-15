@@ -47,4 +47,4 @@
 ## Conclusiones
 
 - Una comunicacion fluida y ponerse al dia con las actividades del playground y con las clases sera imprescindible,
-  para afrontar de buena manera los sprints posteriores.
+  para afrontar de buena manera los sprints posteriores..
