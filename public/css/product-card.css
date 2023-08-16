@@ -1,0 +1,67 @@
+.product-card {
+  flex: 0 0 auto;
+  width: 100%; /* Las tarjetas ocuparán todo el ancho disponible */
+  max-width: 250px; /* Establecemos un máximo para que no se hagan demasiado grandes */
+  margin: 10px;
+  text-align: center;
+  scroll-snap-align: center;
+  background-color: white;
+  transition: transform 0.3s; /* Agregamos una transición para el efecto hover */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Al hacer hover, la tarjeta se agrandará un 5% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Le agregamos una sombra al hacer hover */
+}
+.container-descripcion-product {
+  background-color: white;
+  position: relative;
+}
+.container-product-image {
+  padding: 4px;
+  height: 150px;
+  background-color: #efefef;
+  position: relative;
+}
+.product-image {
+  max-width: 100%;
+  height: 100%;
+}
+.ofert-product {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 12px;
+  background-color: white;
+  color: #2d8d04;
+  font-weight: bold;
+  border: 1px solid #efefef;
+}
+.product-name {
+  margin-top: 15px;
+  color: black;
+}
+
+.product-price {
+  color: black;
+  font-size: 15px;
+  background-color: #fad66e;
+  position: absolute;
+  top: -32px;
+}
+.product-card a {
+  text-decoration-line: none;
+}
+/* Estilos para tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .product-card {
+    width: 45%;
+    margin: 0 10px;
+  }
+}
+/* Estilos para pantallas de escritorio */
+@media screen and (min-width: 769px) {
+  .product-card {
+    width: 100%;
+  }
+}

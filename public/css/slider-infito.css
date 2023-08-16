@@ -1,0 +1,88 @@
+/* estilos logos de marcas slider infinito */
+
+.logos {
+  overflow: hidden;
+  background-color: white;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.logos::before,
+.logos::after {
+  position: absolute;
+  height: 10vh;
+  content: "";
+  z-index: 2;
+}
+
+.logos-slide {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logos-slide img {
+  margin: 0 10px;
+  height: 4vh;
+}
+/*FIn estilos logos de marcas slider infinito */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .encabezado {
+    height: 120px;
+  }
+  .logo img {
+    max-width: 175px;
+  }
+  .carousel-container {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+  .latest-title-2 {
+    font-size: 35px;
+  }
+  .latest-title {
+    font-size: 35px;
+  }
+  .product-card {
+    width: 45%;
+    margin: 0 10px;
+  }
+  .logos-slide img {
+    height: 6vh;
+  }
+  .banner-text {
+    font-size: 22px;
+    max-width: 496px;
+  }
+  .join-button i {
+    font-size: 36px;
+  }
+
+  .join-button {
+    margin-left: 20px;
+    padding: 10px 10px;
+  }
+}
+/* Estilos para tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .logo img {
+    max-width: 175px;
+  }
+
+  .logos-slide img {
+    height: 6vh;
+  }
+}
+/* Estilos para pantallas de escritorio */
+@media screen and (min-width: 769px) {
+  .logos-slide img {
+    height: 7.4vh;
+  }
+}

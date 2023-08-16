@@ -69,9 +69,6 @@ body {
 .Ofertas {
   margin-bottom: 50px;
 }
-.product-card a {
-  text-decoration-line: none;
-}
 .see-more {
   margin: 8px 0 0 18px;
 }
@@ -149,6 +146,9 @@ body {
   position: absolute;
   top: -32px;
 }
+.product-card a {
+  text-decoration-line: none;
+}
 /* estilos logos de marcas slider infinito */
 
 .logos {
@@ -183,7 +183,7 @@ body {
   margin: 0 10px;
   height: 4vh;
 }
-/* estilos logos de marcas slider infinito */
+/*FIn estilos logos de marcas slider infinito */
 
 .banner-container {
   display: flex;
@@ -291,21 +291,7 @@ body {
   .latest-title:hover::after {
     opacity: 1; /* Al hacer hover, la línea se iluminará */
   }
-  .latest-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px; /* Posicionamos la línea debajo del título */
-    left: 0;
-    width: 420px;
-    height: 3px;
-    background-color: black; /* Color morado/violeta */
-    opacity: 0; /* Inicialmente la línea será transparente */
-    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
-  }
 
-  .latest-title:hover::after {
-    opacity: 1; /* Al hacer hover, la línea se iluminará */
-  }
   .latest-title-2::after {
     content: "";
     position: absolute;

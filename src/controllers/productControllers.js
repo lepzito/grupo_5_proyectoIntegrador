@@ -9,7 +9,7 @@ let products = function () {
 
 const productControllers = {
   all: function (req, res) {
-    res.render("listado de productos");
+    res.render("products", { products: products() });
   },
 
   smartphones: function (req, res) {

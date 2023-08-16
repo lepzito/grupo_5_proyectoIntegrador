@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.main {
+  background-color: #f5f5f5;
+}
+.category_list {
+  display: none;
+}
+.conteiner-products {
+  display: flex;
+  flex-direction: column;
+}
+.Banner-Product {
+  margin: 5px 0;
+  text-align: center;
+}
+.Banner-Product-2 img {
+  width: 89%;
+}
+.Banner-Product img {
+  width: 89%;
+}
+.latest-title {
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.Products {
+  margin-bottom: 50px;
+}
+.product-card {
+  margin: 15px auto;
+  width: 88vw;
+  max-width: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.boton-categorias {
+  text-align: center;
+}
+.add-to-cart {
+  margin: 10px;
+}
+.boton-categorias button {
+  width: 88vw;
+  margin-top: 7px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 7px 0;
+  color: white;
+  background: linear-gradient(to right, black 75%, gray);
+  border-radius: 2px;
+}
+.boton-categorias button i {
+  position: relative;
+  right: 3%;
+  font-size: 12px;
+}
+.container-descripcion-product {
+  padding: 10px;
+}
+.product-price {
+  top: -17px;
+  left: 0px;
+}
+/* Estilos para tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .latest-title {
+    font-size: 30px;
+  }
+}
+/* Estilos para pantallas de escritorio */
+@media screen and (min-width: 769px) {
+  .latest-title {
+    display: none;
+  }
+  .boton-categorias {
+    display: none;
+  }
+  .conteiner-category-products {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 28px;
+    width: 89vw;
+    margin: 18px auto;
+  }
+  .conteiner-products-list {
+    grid-column: 2; /* Ocupa la segunda columna */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para los productos */
+    grid-gap: 15px; /* Espacio entre los productos */
+  }
+  .category_list {
+    display: flex;
+    flex-direction: column;
+    width: 108%;
+  }
+
+  .category_list .category_item {
+    display: block;
+    width: 90%;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    background: black;
+    border: 1px solid salmon;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .category_list .ct_item-active {
+    background: #2d3e50;
+  }
+  .product-card {
+    margin: unset;
+    max-width: none;
+    width: 29vw;
+  }
+}
