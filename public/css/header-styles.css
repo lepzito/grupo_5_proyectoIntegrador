@@ -178,6 +178,10 @@ pc armadas y smartphones, desparecera el menu hamburguesa */
   .search_wrap.search_wrap_1 .search_box .input {
     padding-right: 80px;
   }
+  .btn_common button {
+    border: none;
+    background: transparent;
+  }
 }
 
 /*Fin Estilos del Header*/
