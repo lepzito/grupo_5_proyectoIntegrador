@@ -4,26 +4,28 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
-body {
-  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
-}
+
 /* content2 */
 .content-img img {
   width: 100%;
   margin: 2px auto;
   max-width: 470px;
 }
-.title-product {
+.title-product,
+.title-product-tablet {
   margin: 2px 5px;
   color: black;
 }
-.type-product {
+.type-product,
+.type-product-tablet {
   margin: 2px 10px;
   font-size: 20px;
   color: gray;
 }
-.price {
+.price,
+.price-tablet {
   text-align: center;
   margin: 30px auto;
   color: orangered;
@@ -34,16 +36,23 @@ body {
   padding: 10px;
   border-top: 1px solid;
 }
-.price p {
+.price p,
+.price-tablet p {
   font-size: 17px;
 }
-.price .cuotas {
+.price .cuotas,
+.price-tablet .cuotas {
   margin: 2px auto;
   border: 1px solid orange;
   display: flex;
   justify-content: center;
   width: 100px;
   padding: 0px 100px;
+}
+.title-product-tablet,
+.type-product-tablet,
+.price-tablet {
+  display: none;
 }
 
 .content-medios i {
@@ -109,81 +118,45 @@ hr {
 }
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .title-product,
+  .type-product,
+  .price {
+    display: none;
+  }
+  .title-product-tablet,
+  .type-product-tablet,
+  .price-tablet {
+    display: block;
+  }
+  .content-img {
+    display: flex;
+    flex-direction: column;
+  }
 }
 /* Estilos para pantallas de escritorio */
-@media screen and (min-width: 769px) and (max-width: 1279px) {
-  .content1 h1 {
-    font-size: 30px;
-    text-align: left;
-    margin-top: 60px;
-    margin-left: 450px;
+@media screen and (min-width: 769px) {
+  main {
+    margin: 0 auto;
+    max-width: 1100px;
   }
-  .content2 img {
-    margin-top: -50px;
-    width: 400px;
-  }
-  .content3 h2 {
-    text-align: left;
-    font-size: 50px;
-    margin-left: 450px;
-    margin-top: -320px;
-  }
-  .content3 h3 {
-    text-align: left;
-    margin-top: -80px;
-    margin-left: 650px;
-    font-size: 32px;
+  .content-product-general {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 25px;
   }
 
-  .content4 {
-    text-align: right;
-    margin-left: 450px;
-    margin-top: 0px;
-    text-align: left;
+  .title-product {
+    font-size: 15px;
   }
-
-  .content5 h4 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+  .content-des-esp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-}
-
-/* Estilos para pantallas más grandes */
-@media screen and (min-width: 1280px) {
-  .content1 h1 {
-    font-size: 30px;
-    text-align: left;
-    margin-top: 60px;
-    margin-left: 450px;
+  .hr2 {
+    display: none;
   }
-  .content2 img {
-    margin-top: -50px;
-    width: 400px;
-  }
-  .content3 h2 {
-    text-align: left;
-    font-size: 50px;
-    margin-left: 450px;
-    margin-top: -320px;
-  }
-  .content3 h3 {
-    text-align: left;
-    margin-top: -80px;
-    margin-left: 650px;
-    font-size: 32px;
-  }
-
-  .content4 {
-    text-align: right;
-    margin-left: 450px;
-    margin-top: 0px;
-    text-align: left;
-  }
-
-  .content5 h4 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+  .content-precio-metodos {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
   }
 }
