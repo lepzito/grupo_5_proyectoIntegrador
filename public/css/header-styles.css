@@ -97,9 +97,13 @@ pc armadas y smartphones, desparecera el menu hamburguesa */
     color: white;
     font-size: 23px;
     text-decoration: none;
+    transition: color 0.3s;
   }
   .main-navbar2 nav ul li {
     list-style: none;
+  }
+  .main-navbar2 ul li a:hover {
+    color: orange; /* Cambia el color al pasar el mouse sobre el enlace */
   }
   .icons {
     padding: 20px;

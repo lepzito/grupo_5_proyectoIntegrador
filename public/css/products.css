@@ -20,9 +20,13 @@
 }
 .Banner-Product-2 img {
   width: 89%;
+  border: 3px solid orange;
+  border-radius: 2px;
 }
 .Banner-Product img {
   width: 89%;
+  border-radius: 4px;
+  border: 2px solid orangered;
 }
 .latest-title {
   font-size: 17px;
@@ -110,6 +114,10 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
+    margin-bottom: 17px;
+    border-radius: 8px;
+    box-shadow: 3px 1px 5px gray;
+    background: linear-gradient(to left, black 95%, gray);
   }
 
   .category_list .ct_item-active {

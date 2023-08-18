@@ -205,8 +205,7 @@ body {
   margin: 0 7px;
   font-size: 20px;
   border: none;
-  background-color: #fad66e;
-  border-radius: 30px;
+  background: transparent;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
@@ -214,11 +213,14 @@ body {
 }
 
 .join-button:hover {
-  background-color: #ff6702; /* Al hacer hover, el botón se iluminará con un tono más claro de naranja */
+  color: #ff6702; /* Al hacer hover, el botón se iluminará con un tono más claro de naranja */
 }
 
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
   .encabezado {
     height: 120px;
   }
@@ -258,10 +260,17 @@ body {
 
 /* Estilos para pantallas de escritorio */
 @media screen and (min-width: 769px) {
+  body {
+    font-size: 18px;
+  }
   .latest-title,
   .latest-title-2 {
     font-size: 36px;
     margin: 40px 0 10px 6%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
   }
   .carousel-container {
     display: grid;
@@ -276,37 +285,25 @@ body {
     width: 100%;
   }
 
-  .latest-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px; /* Posicionamos la línea debajo del título */
-    left: 0;
-    width: 305px;
-    height: 3px;
-    background-color: black; /* Color morado/violeta */
-    opacity: 0; /* Inicialmente la línea será transparente */
-    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
-  }
-
-  .latest-title:hover::after {
-    opacity: 1; /* Al hacer hover, la línea se iluminará */
-  }
-
+  .latest-title::after,
   .latest-title-2::after {
     content: "";
-    position: absolute;
-    bottom: -2px; /* Posicionamos la línea debajo del título */
-    left: 0;
-    width: 160px;
+    display: block;
+    width: 100%;
     height: 3px;
-    background-color: black; /* Color morado/violeta */
-    opacity: 0; /* Inicialmente la línea será transparente */
-    transition: opacity 0.3s; /* Agregamos una transición para el efecto de iluminación */
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute; /* Posición absoluta para el subrayado */
+    bottom: -2px; /* Posicionamos el subrayado debajo del título */
+    left: 0;
   }
 
+  .latest-title:hover::after,
   .latest-title-2:hover::after {
     opacity: 1; /* Al hacer hover, la línea se iluminará */
   }
+
   .see-more {
     text-align: right;
     margin: 8px 5% 0 0;
@@ -319,7 +316,7 @@ body {
   }
   .join-button {
     font-size: 35px;
-    margin-left: 44px;
+    margin-left: 22px;
     padding: 10px 10px;
   }
 }
