@@ -5,214 +5,6 @@
   padding: 0;
 }
 
-/* Estilos del Header*/
-header {
-  background-color: #000;
-  color: #fff;
-  width: 100vw;
-  border-bottom: 4px solid orange;
-}
-
-.encabezado {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  justify-content: space-between;
-}
-
-.main-navbar i {
-  margin-left: 15px;
-  font-size: 20px;
-  color: white;
-}
-
-.logo img {
-  max-width: 144px;
-  padding: 5px;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-  grid-gap: 12px;
-}
-
-.icons .lupa {
-  border: none;
-  background-color: transparent;
-}
-
-.icons .lupa i {
-  font-size: 17px;
-  color: white;
-}
-
-.icons i {
-  font-size: 17px;
-  color: white;
-}
-
-.icons .corazon {
-  position: absolute;
-  top: -99999px;
-  display: none;
-}
-
-.main-navbar2 {
-  display: none;
-}
-
-.search-bar {
-  display: none;
-}
-
-.container-search-bar {
-  display: none;
-}
-
-/* Estilos para tablets, la pantalla mostrara el icono del corazon */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .icons .corazon {
-    display: block;
-    position: static;
-  }
-
-  .container-search-bar {
-    display: none;
-  }
-}
-
-/* Estilos para desktop y pantallas mas grandes, se mostrara la search bar y los menus productos,
-pc armadas y smartphones, desparecera el menu hamburguesa */
-
-@media screen and (min-width: 769px) {
-  .encabezado {
-    margin: 0 auto;
-  }
-
-  .logo img {
-    max-width: 300px;
-    width: 25vw;
-    padding: 0;
-    margin: 25px;
-  }
-
-  .main-navbar {
-    display: none;
-  }
-
-  .icons .corazon {
-    display: block;
-    position: static;
-  }
-
-  .main-navbar2 {
-    display: block;
-  }
-
-  .main-navbar2 nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-  }
-
-  .main-navbar2 nav ul li a {
-    color: white;
-    font-size: 23px;
-    text-decoration: none;
-  }
-
-  .main-navbar2 nav ul li {
-    list-style: none;
-  }
-
-  .icons {
-    padding: 20px;
-  }
-
-  .icons i {
-    font-size: 23px;
-  }
-
-  .icons .lupa i {
-    display: none;
-    position: absolute;
-    top: -999999px;
-  }
-
-  .search-bar {
-    display: flex;
-    align-items: center;
-    border: 2px solid orange;
-  }
-
-  .container-search-bar {
-    display: block;
-  }
-
-  .container-search-bar .input {
-    border: 0;
-    outline: none;
-    color: #8b7d77;
-  }
-
-  .search_wrap {
-    margin: 38px auto;
-  }
-
-  .search_wrap .search_box {
-    position: relative;
-    width: 45vw;
-    height: 33px;
-    max-width: 555px;
-  }
-
-  .search_wrap .search_box .input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 18px;
-  }
-
-  .search_wrap .search_box .btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 100%;
-    background: transparent;
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  .search_wrap .search_box .btn:hover {
-    background: orange;
-  }
-
-  .search_wrap .search_box .btn.btn_common .fas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 20px;
-  }
-
-  .search_wrap.search_wrap_1 .search_box .btn {
-    right: 0;
-  }
-
-  .search_wrap.search_wrap_1 .search_box .input {
-    padding-right: 80px;
-  }
-}
-
-/*Fin Estilos del Header*/
 .MContainer {
   padding: 10px;
 }
@@ -314,12 +106,9 @@ h1 {
 }
 
 @media (min-width: 1024px) and (max-width: 2560px) {
-
   .sectionContainer {
     width: 60%;
     margin: 30px auto 0px;
-    border-style: groove;
-
   }
 
   .product-image {
@@ -333,7 +122,6 @@ h1 {
     margin: 20px 0;
     padding: 10px 0px;
     border-bottom: #000 solid 1px;
-
   }
 
   h1 {
@@ -356,8 +144,8 @@ h1 {
     font-size: 25px;
   }
 
-  .container-totalcost>button {
+  .container-totalcost > button {
     height: 40px;
-    width: 30%
+    width: 30%;
   }
 }

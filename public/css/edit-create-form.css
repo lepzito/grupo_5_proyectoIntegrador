@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  width: 100%;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 20px;
+  background-color: #000;
+  padding: 30px 20px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.form-container__input {
+  display: flex;
+  margin: 10px;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+textarea {
+  width: 70%;
+  color: #fff;
+  background-color: transparent;
+  border: transparent;
+  border: #ff6507 solid 3px;
+}
+
+select {
+  width: 70%;
+  height: 30px;
+  color: #fff;
+  background-color: transparent;
+  border: transparent;
+  border-bottom: #ff6507 solid 3px;
+}
+
+input {
+  width: 70%;
+  height: 30px;
+  color: #fff;
+  background-color: transparent;
+  border: transparent;
+  border-bottom: #ff6507 solid 3px;
+}
+
+label {
+  width: 100%;
+  font-size: 16px;
+  margin: 10px 0px;
+  color: #fff;
+}
+
+.form-container__button {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.form-container__button button {
+  color: #fff;
+  font-weight: bold;
+  background-color: #ff6507;
+  height: 30px;
+  width: 75%;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container {
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 30px auto;
+    background-color: #000;
+    padding: 50px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-container__button button {
+    margin: 20px 0 0 0;
+    color: #fff;
+    font-weight: bold;
+    background-color: #ff6507;
+    height: 30px;
+    width: 75%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 40%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 30px auto;
+    background-color: #000;
+    padding: 50px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-container__button button {
+    margin: 20px 0 0 0;
+    color: #fff;
+    font-weight: bold;
+    background-color: #ff6507;
+    height: 30px;
+    width: 60%;
+  }
+}
