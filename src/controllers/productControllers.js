@@ -35,5 +35,14 @@ const productControllers = {
       productosResultantes: productosResultantes,
     });
   },
+  carrito: function (req, res) {
+    res.render("carrito", { products: products() });
+  },
+  edit: function (req, res) {
+    res.render("product-edit");
+  },
+  create: function (req, res) {
+    res.render("product-create");
+  },
 };
 module.exports = productControllers;
