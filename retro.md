@@ -7,11 +7,11 @@
 ## Aspectos a mejorar
 
 - La comunicacion entre los miembros del equipo, mejorar la responsabilidad.
-- 
+ 
 ## Start Doing
 "Listar aquí las nuevas ideas o prácticas innovadoras que queremos probar en el próximo Sprint."
 
--Reuniones diarias, estas reuniones breves van a permitirle a los miembros del equipo poder dar detalles de como va su progreso, hacer saber si hay dudas sobre alguna consigna. Esto ayudará a mantener el equipo mas activo e identificar problemas para asi tener soluciones de manera mas anticipada.
+- Reuniones diarias, estas reuniones breves van a permitirle a los miembros del equipo poder dar detalles de como va su progreso, hacer saber si hay dudas sobre alguna consigna. Esto ayudará a mantener el equipo mas activo e identificar problemas para asi tener soluciones de manera mas anticipada.
 
 ## More of
 "Listar aquí las prácticas que estamos utilizando y que queremos continuar mejorando en el próximo Sprint. Estas son las que han sido exitosas y queremos darles más enfoque o refinamiento."
