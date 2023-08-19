@@ -23,14 +23,18 @@ El uso de github para que entre todos podamos aportar al sprint.
 
 Utilizar whatsApp para tener opiniones y conversaciones mas fluidas.
 
+Hacer comentarios en los archivos para tener una guía sobre la sección de línea de código asi mejoramos la organización.
+
 Less of
 "Listar aquí aquellas prácticas que hemos intentado en el pasado pero que no nos han generado el valor esperado. Aunque pueden tener una segunda oportunidad, no serán una prioridad."
 
-Falta
+Lo que venimos implementando tiene un buen curso, solo debemos mejorar la coordinación para lograr un buen resultado.
+
 Stop Doing
 "Listar aquí las prácticas que hemos decidido eliminar o dejar de hacer, ya que no nos aportan valor o no se ajustan a nuestras necesidades."
 
-Falta
+Todavia no hemos decidido dejar de lado ninguna practica, ya que queremos darle segunda oportunidad y seguir intentando.
+
 Plan de acción
 "Describir aquí el plan de acción basado en las conclusiones de la retrospectiva. Detallar las acciones específicas que se tomarán para implementar las ideas de "Start Doing" y "More of", y para ajustar o eliminar las prácticas de "Less of" y "Stop Doing". Asignar responsables y fechas límite si es necesario."
 
