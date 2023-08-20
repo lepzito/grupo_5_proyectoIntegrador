@@ -30,7 +30,8 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 
 - Lucas ([lepzito](https://github.com/lepzito)): En constante aprendizaje en el mundo de la programación. Soy originario de Abra Pampa, provincia de Jujuy.
 - Mauro: Hola Soy estudiante de Digital House nacido en San Salvador De Jujuy.
-- Lujan: Descripcion.
+- Lujan: Estudio contador público en la UNJU FCE, estoy aprendiendo programación y sobre como diseñar.
+
 - Samuel: Descripcion
 - Brian: (Ema) estudiante de Digital House, pendiente a un proyecto.Soy de San Salvador De Jujuy. 
 - Miguel: Descripcion.
