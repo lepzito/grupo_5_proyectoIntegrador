@@ -71,6 +71,23 @@
   top: -17px;
   left: 0px;
 }
+.buttons {
+  margin: 15px auto;
+  max-width: 300px;
+}
+.agregar-carrito {
+  background: transparent;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 23px;
+}
+.agregar-carrito i {
+  color: green;
+}
+.agregar-carrito i:hover {
+  color: lightgreen;
+}
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .latest-title {

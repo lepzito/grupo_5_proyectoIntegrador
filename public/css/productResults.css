@@ -1,3 +1,34 @@
+.carousel-container {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 481px) {
+  .latest-title {
+    margin: 20px 0 10px 10px;
+  }
+  .product-card {
+    margin: 10px auto;
+  }
+  .carousel-container {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    display: grid;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .product-card {
+    width: 88%;
+    margin: 10px auto;
+  }
+  .latest-title {
+    margin: 20px 0 10px 10px;
+  }
+  .carousel-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    display: grid;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .latest-title::after {
     width: 650px;

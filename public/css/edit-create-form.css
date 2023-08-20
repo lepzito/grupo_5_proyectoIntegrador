@@ -46,7 +46,7 @@ select {
   border-bottom: #ff6507 solid 3px;
 }
 
-input {
+.container input {
   width: 70%;
   height: 30px;
   color: #fff;
