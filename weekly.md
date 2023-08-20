@@ -1,25 +1,13 @@
-## Daily 15/08/23.
+## Daily 20/08/23.
 
--**Samuel**: termino de armar el carrito en ejs.
+-**Lucas**: empeze a armar el crud en el form de creacion de productos para el sprint 4.
 
--Se encontro el impedimento de mergear las ramas.
+-Se encontro el impedimento en usar el formateo para los precios.
 
--Y hoy empezera a hacer el formulario de Creacion y edicion de productos.
+-Y hoy se termino de aramar el Crud pero solo para creacion.
 
--**Lucas**: empezo a armar el listado de productos en ejs.
+-**Brian**: esta terminando el mercado liebre.
 
--Se encontro el impedimento de mergear las ramas.
+- No encontro problemas.
 
--Y hoy se termino de hacerlo en responsive.
-
--**Brian**: sigue cargando los productos con sus propiedades en el products.json.
-
--No se encontro problemas.
-
--Y hoy seguira con esa actividad.
-
--**Lujan**: ayer hiso la retro.md y se encargo de organizar las tareas en el trello para el proximo sprint.
-
--No se encontro problemas.
-
--Y hoy esta haciendo del diseño de unos banners para la vista de listado de productos.
+-Y hoy se le dio la tarea de armar el user.json del sprint 4.
