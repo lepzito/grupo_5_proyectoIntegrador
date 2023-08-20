@@ -5,8 +5,9 @@ const route = path.join(__dirname, "../data/products.json");
 function products() {
   return (file = JSON.parse(fs.readFileSync(route, "utf-8")));
 }
-const formatPrice = (n) =>
-  n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+//const formatPrice = (n) =>
+//n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });//
+
 const productControllers = {
   all: function (req, res) {
     res.render("products", { products: products() });
