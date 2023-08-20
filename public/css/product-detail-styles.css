@@ -8,10 +8,12 @@
 }
 
 /* content2 */
+
 .content-img img {
   width: 100%;
   margin: 2px auto;
   max-width: 470px;
+  padding: 10%;
 }
 .title-product,
 .title-product-tablet {

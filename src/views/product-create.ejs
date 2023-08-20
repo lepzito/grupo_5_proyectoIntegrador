@@ -12,43 +12,129 @@
         <div class="row"></div>
         <div class="form-container">
           <div>
-            <h1>Estás creando un producto:</h1>
+            <h1>Estás creando un producto...</h1>
           </div>
-          <form action="" method="post">
+          <form action="/products" method="post" enctype="multipart/form-data">
             <div>
               <div class="form-container__input">
-                <label for="name">Nombre del producto:</label>
-                <input type="text" id="name" name="name" />
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="nombre" name="nombre" />
               </div>
               <div class="form-container__input">
-                <label for="price">Precio del producto:</label>
-                <input type="text" id="price" name="price" />
+                <label for="precio">Precio del producto:</label>
+                <input type="text" id="precio" name="precio" />
               </div>
               <div class="form-container__input">
-                <label for="discount">Descuento:</label>
-                <input type="text" id="discount" name="discount" />
+                <label for="descuento">Descuento:</label>
+                <input type="text" id="descuento" name="descuento" />
               </div>
               <div class="form-container__input">
-                <label for="category">Categoría:</label>
-                <select name="category" id="category">
+                <label for="tipo">Categoría:</label>
+                <select name="tipo" id="tipo">
                   <option value="">Tipo de producto</option>
-                  <option value="in-sale">En oferta</option>
-                  <option value="visited">Últimos agregados</option>
+                  <option value="Monitores">Monitores</option>
+                  <option value="Escritorio">Escritorio</option>
+                  <option value="Smartphones">Smartphones</option>
+                  <option value="Notebooks">Notebooks</option>
+                  <option value="Pc Armada">Pc Armada</option>
+                  <option value="Perifericos">Perifericos</option>
                 </select>
               </div>
               <div class="form-container__input">
-                <label for="description">Descripción:</label>
-                <textarea name="description" id="description"></textarea>
+                <label for="descripcion">Descripción:</label>
+                <textarea
+                  name="descripcion"
+                  id="descripcion"
+                  placeholder="250 max length"
+                  rows="7"
+                  cols="50"
+                ></textarea>
+              </div>
+              <div class="tabla-caracteristicas">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Características</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="caracteristicas[1]"
+                          placeholder="Ej:Tamaño de la pantalla"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          name="valores[1]"
+                          placeholder='32"'
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="caracteristicas[2]"
+                          placeholder="Ej:Tipo de resolución"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          name="valores[2]"
+                          placeholder="1200px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="caracteristicas[3]"
+                          placeholder="Ej: Es curvo"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" name="valores[3]" placeholder="Si" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="caracteristicas[4]"
+                          placeholder="Ej: Es reclinable"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" name="valores[4]" placeholder="No" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          name="caracteristicas[5]"
+                          placeholder="Ej:Con altavoces incorporados"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" name="valores[5]" placeholder="Si" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div class="form-container__input">
-                <label for="">Imágenes del producto</label>
-                <input
-                  type="file"
-                  name="productImages"
-                  accept=".png"
-                  multiple
-                />
+                <label for="img">Imágenes del producto</label>
+                <input type="file" name="productImage" />
               </div>
+
               <div class="form-container__button">
                 <button type="submit" class="buy-now-button">
                   Guardar cambios

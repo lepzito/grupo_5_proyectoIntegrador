@@ -1,12 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
-let products = function () {
-  const route = path.join(__dirname, "../database/products.json");
-  const file = fs.readFileSync(route, "utf-8");
-  return JSON.parse(file);
-};
-
+const route = path.join(__dirname, "../data/products.json");
+function products() {
+  return (file = JSON.parse(fs.readFileSync(route, "utf-8")));
+}
+const formatPrice = (n) =>
+  n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
 const productControllers = {
   all: function (req, res) {
     res.render("products", { products: products() });
@@ -41,8 +41,47 @@ const productControllers = {
   edit: function (req, res) {
     res.render("product-edit");
   },
+  //FORM PAGE
   create: function (req, res) {
-    res.render("product-create");
+    res.render("product-create", { products: products() });
+  },
+  store: function (req, res) {
+    const {
+      nombre,
+      precio,
+      descripcion,
+      descuento,
+      tipo,
+      caracteristicas,
+      valores,
+    } = req.body;
+    const newProductId = products()[products().length - 1].id + 1;
+
+    const caracteristicasObj = {};
+    for (const key in caracteristicas) {
+      caracteristicasObj[caracteristicas[key]] = valores[key];
+    }
+
+    const newProduct = {
+      id: newProductId,
+      nombre: nombre,
+      precio: parseFloat(precio),
+      img: "/images/images_products/" + req.file.filename,
+      descripcion: descripcion,
+      descuento: descuento,
+      tipo: tipo,
+      caracteristicas: caracteristicasObj,
+    };
+
+    let currentProducts = products();
+
+    // Agregar el nuevo producto a los datos existentes
+    currentProducts.push(newProduct);
+
+    // Escribir los datos actualizados nuevamente en el archivo
+    fs.writeFileSync(route, JSON.stringify(currentProducts, null, 2));
+
+    return res.redirect("/products");
   },
 };
 module.exports = productControllers;
