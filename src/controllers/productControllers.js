@@ -68,13 +68,9 @@ const productControllers = {
 
   //FORM PAGE
   create: function (req, res) {
-    const products = getProducts();
-
-    res.render("product-create", { products: products });
+    res.render("product-create", { products: products() });
   },
   store: function (req, res) {
-    const products = getProducts();
-
     const {
       nombre,
       precio,
@@ -84,7 +80,7 @@ const productControllers = {
       caracteristicas,
       valores,
     } = req.body;
-    const newProductId = products[products.length - 1].id + 1;
+    const newProductId = products()[products().length - 1].id + 1;
 
     const caracteristicasObj = {};
     for (const key in caracteristicas) {
@@ -102,7 +98,7 @@ const productControllers = {
       caracteristicas: caracteristicasObj,
     };
 
-    let currentProducts = products;
+    let currentProducts = products();
 
     // Agregar el nuevo producto a los datos existentes
     currentProducts.push(newProduct);
@@ -113,15 +109,13 @@ const productControllers = {
     return res.redirect("/products");
   },
   destroy: function (req, res) {
-    const products = getProducts();
-
     const id = req.params.id;
 
     // Filtrar los productos para eliminar el producto con el ID especificado
-    const updatedProducts = products.filter((prod) => prod.id != id);
+    const updatedProducts = products().filter((prod) => prod.id != id);
 
     fs.writeFileSync(route, JSON.stringify(updatedProducts, null, 2));
-    res.redirect("/products");
+    res.redirect("/products/admin");
   },
 };
 module.exports = productControllers;
