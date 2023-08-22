@@ -4,7 +4,7 @@
     "ofert": false,
     "productHome": true,
     "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
-    "precio": "$ 77.000",
+    "precio": 7700,
     "tipo": "Monitores",
     "img": "/images/images_products/monitor.png",
     "descripcion": "Una experiencia visual de calidad. Este monitor de 32\" te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 2560 x 1440 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Una de sus virtudes es que posee pantalla antirreflejo, de esta manera no verás reflejado lo que está detrás de vos y vas a evitar forzar tu vista para enfocar el contenido. Su tiempo de respuesta de un milisegundo lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos.",
@@ -22,7 +22,7 @@
     "productHome": true,
     "tipo": "Escritorio",
     "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
-    "precio": "$ 120.000",
+    "precio": 1200,
     "img": "/images/images_products/silla-gamer.png",
     "descripcion": "La selección de una silla adecuada es muy importante para prevenir futuras lesiones. Con esta silla sillon, vas a tener la comodidad y el bienestar que necesitás a lo largo de tu jornada. Además, podés ubicarla en cualquier parte de tu casa u oficina ya que su diseño se adapta a múltiples entornos. ¡Dale a tus espacios un toque más moderno!",
     "caracteristicas": {
@@ -39,7 +39,7 @@
     "ofert": false,
     "tipo": "Escritorio",
     "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
-    "precio": "$ 520.000",
+    "precio": 5200,
     "img": "/images/images_products/notebook-gamer.png",
     "descripcion": "La notebook Msi Cyborg 15.6 Intel I7 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
     "caracteristicas": {
@@ -56,7 +56,7 @@
     "ofert": false,
     "tipo": "Escritorio",
     "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
-    "precio": "$ 20.000",
+    "precio": 20000,
     "img": "/images/images_products/mouse-gamer.png",
     "descripcion": "Para trabajar desde casa con la computadora o aprovechar los momentos de ocio, necesitás comodidad y facilidad de movimiento. Con tu Mouse Gamer Usb Newvision  encontrá eso que buscás en un solo aparato con la mejor tecnología.",
     "caracteristicas": {
@@ -73,7 +73,7 @@
     "ofert": false,
     "tipo": "Partes de PC",
     "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
-    "precio": "$ 320.000",
+    "precio": 320000,
     "img": "/images/images_products/placa-video.png",
     "descripcion": "Mejora tu experiencia de juego con la PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte, una potente tarjeta gráfica de 8 GB GDDR6 que te permitirá disfrutar de tus juegos favoritos en alta resolución y con una fluidez increíble. Gracias a sus 2176 núcleos y velocidades de hasta 1650 MHz, podrás obtener un rendimiento excepcional en tus partidas. La compatibilidad con DirectX y OpenGL asegura una amplia gama de juegos y aplicaciones soportadas, mientras que su interfaz PCI-Express 3.0 garantiza una conexión rápida y estable con la placa madre. Conecta hasta 3 monitores simultáneamente y disfruta de una resolución máxima de 7680x4320, llevando tus juegos a un nivel superior. La placa de video Nvidia Palit Dual GeForce RTX 2060 SUPER es la elección perfecta para los gamers más exigentes que buscan una experiencia visual inigualable y un rendimiento sin igual en sus partidas. No esperes más y lleva tu PC al límite con esta increíble tarjeta gráfica.",
     "caracteristicas": {
@@ -90,7 +90,7 @@
     "ofert": false,
     "tipo": "Gamer",
     "nombre": "Joystick Inalámbrico Sony DualSense PS5 Blanco",
-    "precio": "$ 59.999",
+    "precio": 59999,
     "img": "/images/images_products/jostick.png",
     "descripcion": "Control preciso, este mando combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud en cada movimiento. Gracias a su ergonomía especialmente pensada para la posición de tu mano, podés pasar horas jugando con total confort.",
     "caracteristicas": {
@@ -107,7 +107,7 @@
     "ofert": false,
     "tipo": "PC Armada",
     "nombre": "Megaport Pc Gamer Amd fx-6100 Gaming",
-    "precio": "$ 267.452",
+    "precio": 267452,
     "img": "/images/images_products/pcgamer.png",
     "descripcion": "Hemos armado esta configuración de Megaport Pc Gamer Amd fx-6100 Gaming. Está armada con los componentes más potentes para que disfruten al máximo de sus videojuegos favoritos.",
     "caracteristicas": {
@@ -124,7 +124,7 @@
     "ofert": false,
     "tipo": "Auriculares",
     "nombre": "Auriculares Gamer Xbox 360  Inalámbricos",
-    "precio": "$ 69.975",
+    "precio": 69975,
     "img": "/images/images_products/auricularesrojos.png",
     "descripcion": "Auricular liviano y duradero con un diseño vincha, sobre las orejas para mayor comodidad en sesiones de juego prolongadas. Presenta sonido envolvente virtual 7.1 para una experiencia inmersiva. Además, tiene un micrófono plegable con cancelación de ruido incorporado, así como controles de volumen y silencio en el auricular para un fácil acceso. Con conexion inalámbrica, podrá jugar sin ataduras, por hasta 6 horas con una sola carga.",
     "caracteristicas": {
@@ -142,7 +142,7 @@
     "tipo": "Celular",
     "descuento": "11% OFF",
     "nombre": "APPLE IPHONE 8 PLUS 2/3 GB 256 GB detección facial hexa-core NFC IOS 16 4g LTE",
-    "precio": "$ 10.000",
+    "precio": 10000,
     "img": "/images/images_products/iphone.png",
     "descripcion": "Doble cámara y más detalles sus 2 cámaras traseras de 12 Mpx/12 Mpx te permitirán tomar imágenes con más detalles y lograr efectos únicos como el famoso modo retrato de poca profundidad de campo, además, el dispositivo cuenta con cámara frontal de 7 Mpx para que puedas sacarte divertidas selfies o hacer videollamadas.",
     "caracteristicas": {
@@ -160,7 +160,7 @@
     "tipo": "Celular",
     "descuento": "15% OFF",
     "nombre": "Samsung Galaxy S9 Plus Review",
-    "precio": "$ 60.000",
+    "precio": 60000,
     "img": "/images/images_products/galaxy-s9.png",
     "descripcion": "El Samsung Galaxy S9 es el nuevo flagship de la serie Galaxy S para el 2018, conservando mucho del diseño del Galaxy S8. El Galaxy S9 cuenta con una pantalla de 5.8 pulgadas a 1440 x 2960 pixels de resolución, procesador Snapdragon 845 o 4GB de RAM, 64GB de almacenamiento, cámara principal de 12 MP, cámara frontal de 8 MP, batería de 3000 mAh y Android 8.0 Oreo.",
     "caracteristicas": {
@@ -178,7 +178,7 @@
     "tipo": "Teclado",
     "descuento": "3% OFF",
     "nombre": "Teclado Gamer Razer Huntsman Mini Sw Analog",
-    "precio": "$ 6.000",
+    "precio": 6000,
     "img": "/images/images_products/teclado.png",
     "descripcion": "Hablar de Razer dentro del mundo gamer es palabra mayor. Esta compañía ofrece productos de muy alta calidad a sus usuarios. Su línea de teclados es reconocida por haber recibido distintos galardones y premios internacionales por su alto desempeño.",
     "caracteristicas": {
@@ -196,7 +196,7 @@
     "tipo": "Celular",
     "descuento": "10% OFF",
     "nombre": "Apple iPhone 7 32 GB - Oro Rosa (AT&T)",
-    "precio": "$100.000",
+    "precio": 1000,
     "img": "/images/images_products/iphone7rosado.png",
     "descripcion": "Diseño. Hace un chapoteo. Toma un chapuzón: IPhone 7 alcanza un nuevo nivel de innovación y precisión. El acabado negro azabache no se parece a nada que hayamos fabricado.3 La carcasa es resistente a salpicaduras y al agua.4 El botón de inicio está completamente rediseñado. Y con un nuevo diseño unibody que es perfecto al tacto, el iPhone 7 se siente tan increíble como parece.",
     "caracteristicas": {
@@ -208,31 +208,13 @@
     }
   },
   {
-    "id": 13,
-    "productHome": true,
-    "ofert": true,
-    "tipo": "Reloj",
-    "descuento": "6% OFF",
-    "nombre": "Xiaomi Amazfit Bip Smartwatch",
-    "precio": "$ 59.985",
-    "img": "/images/images_products/relojxiaomi.png",
-    "descripcion": "Los smartwatches de Amazfit pisan fuerte: diseño moderno y funcionalidad se combinan para una gran experiencia. La pantalla se destaca frente a otros relojes por su calidad y buena visualización, incluso a plena luz del día. Además, poseen modalidades deportivas muy útiles para todo tipo de entrenamientos.",
-    "caracteristicas": {
-      "Con pantalla táctil": "Si",
-      "Es resistente al agua": "Si",
-      "Con GPS": "Si",
-      "Con Bluetooth": "Si",
-      "Marca": "Xiaomi Amazfit"
-    }
-  },
-  {
     "id": 14,
     "productHome": true,
     "ofert": true,
     "tipo": "Escritorio",
     "descuento": "25% OFF",
     "nombre": "Laptop Gaming Computer Lenovo",
-    "precio": "$ 300.000",
+    "precio": 300.0,
     "img": "/images/images_products/lenovo.png",
     "descripcion": "Notebook de 15.6 FHD (1920x1080) IPS 250nits Anti-glare, 45% NTSC, 60Hz. Procesador AMD Ryzen 7 5800H (8C / 16T, 3.2 / 4.4GHz, 4MB L2 / 16MB L3). Almacenamiento de 512GB SSD M.2 2280 PCIe 3.0x4 NVMe. Memoria RAM de 2x 8GB SO-DIMM DDR4-3200. Placa de video: NVIDIA GeForce GTX 1650 4GB GDDR6. Conexiones: Wifi. Bluetooth 5.0. 2 USB 3.2 Gen 1. 1 USB-C 3.2 Gen 1. 1 HDMI 2.0. 1 Ethernet (RJ-45). Conector combinado de auriculares / microfono (3,5 mm). Sistema operativo windows 11 home. Camara HD 720p. Bateria 45 Wh.",
     "caracteristicas": {
@@ -245,37 +227,11 @@
   },
   {
     "id": 15,
-    "tipo": "Auriculares",
-    "descuento": "5% OFF",
-    "productHome": true,
-    "ofert": true,
-    "nombre": "Samsung Gear Iconx Airpods Auriculares Bluetooth",
-    "precio": "$ 10.000",
+    "tipo": "Escritorio",
+    "descuento": 52,
+    "nombre": "Auricsqqqqqq",
+    "precio": 155500,
     "img": "/images/images_products/auris.png",
-    "descripcion": "INCREIBLE SONIDO Y CALIDAD. RECOMENCION 100% BMSIMPORTS, RELACION PRECIO CALIDAD SONIDO, ES IMPRESIONANTE! Y SINO LE GUSTO... PUEDE DEVOLVERLO TOTALMENTE GRATIS! NO SE DEJE ESPERAR... SE VA IMPRESIONAR CON SU POTENCIA, NIVEL Y CALIDAD DE SONIDO. PD/ LOS AURICULARES SON GENERICOS. LEER SIEMPRE CARACTERISTICAS.",
-    "caracteristicas": {
-      "Es inalámbrico": "Si",
-      "Con luz LED": "No",
-      "Con micrófono": "Si",
-      "Con cancelación de ruido": "Si",
-      "Es resistente al agua": "Si"
-    }
-  },
-  {
-    "id": 16,
-    "productHome": true,
-    "ofert": true,
-    "tipo": "Tablet",
-    "descuento": "12% OFF",
-    "nombre": "Tablet Sony Xperia Z4",
-    "precio": "$ 70.000",
-    "img": "/images/images_products/tablet.png",
-    "descripcion": "Esta tablet es la combinación perfecta de rendimiento y versatilidad, ideal para acompañar cada una de tus actividades.",
-    "caracteristicas": {
-      "Memoria RAM": "4 GB",
-      "Tamaño de la pantalla": "10.3",
-      "Resolución de las cámaras traseras": "8 Mpx",
-      "Capacidad": "64 GB"
-    }
+    "descripcion": "El mejor auricular qqqqqqqqqqqqq"
   }
 ]

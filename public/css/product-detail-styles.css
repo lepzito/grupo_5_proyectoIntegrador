@@ -26,35 +26,64 @@
   font-size: 20px;
   color: gray;
 }
-.price,
-.price-tablet {
+.price {
   text-align: center;
-  margin: 30px auto;
-  color: orangered;
-  font-size: 30px;
-  border-bottom: 1px solid;
-  width: 87%;
-  max-width: 387px;
+  font-size: 24px;
+  width: 100%;
+  max-width: 400px;
   padding: 10px;
-  border-top: 1px solid;
+  display: grid;
+  grid-gap: 10px;
 }
-.price p,
-.price-tablet p {
+
+.price p {
   font-size: 17px;
+  text-align: left;
 }
-.price .cuotas,
-.price-tablet .cuotas {
-  margin: 2px auto;
-  border: 1px solid orange;
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  padding: 0px 100px;
+
+.price .cuotas {
+  text-align: left;
 }
+
 .title-product-tablet,
 .type-product-tablet,
 .price-tablet {
   display: none;
+}
+
+.price del {
+  color: lightgray;
+}
+
+.price span {
+  color: green;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.price h1 {
+  font-size: 28px;
+  color: black;
+  text-align: left;
+}
+.price a {
+  color: orangered;
+  font-size: 12px;
+}
+.buttons {
+  margin: 15px auto;
+  max-width: 300px;
+  display: grid;
+  grid-gap: 10px;
+}
+.comprar-ahora {
+  color: white;
+  background-color: orangered;
+  opacity: 0.8;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
 }
 
 .content-medios i {
@@ -76,14 +105,11 @@
   grid-gap: 10px;
   margin-bottom: 20px;
 }
-.buttons {
-  margin: 15px auto;
-  max-width: 300px;
-}
+
 .agregar-carrito {
-  color: white;
-  background-color: orangered;
-  opacity: 0.8;
+  color: orangered;
+  background-color: #ff9550;
+  opacity: 0.6;
   width: 100%;
   padding: 10px;
   border: none;
@@ -118,6 +144,7 @@ th {
 hr {
   max-width: 100%;
 }
+
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .title-product,
@@ -130,6 +157,14 @@ hr {
   .price-tablet {
     display: block;
   }
+  .title-product-tablet {
+    margin-top: 20px;
+  }
+  .price-tablet {
+    display: grid;
+    grid-gap: 10px;
+    margin: 10px 10px 20px 10px;
+  }
   .content-img {
     display: flex;
     flex-direction: column;
@@ -138,7 +173,23 @@ hr {
     max-width: none;
     margin: 20px 0 0 0;
   }
+  .cuotas {
+    display: grid;
+    grid-gap: 3px;
+  }
+  .cuotas a {
+    color: orangered;
+  }
+  .price.price-tablet h1 {
+    font-size: 24px;
+  }
+  .price-tablet span {
+    font-size: 20px;
+    color: green;
+    font-weight: normal;
+  }
 }
+
 /* Estilos para pantallas de escritorio */
 @media screen and (min-width: 769px) {
   main {
@@ -147,7 +198,7 @@ hr {
   }
   .content-product-general {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 60%;
     margin-top: 25px;
   }
 
@@ -171,6 +222,7 @@ hr {
     max-width: 478px;
     margin: 0 0 30px 0;
   }
+
   .especificaciones br {
     display: none;
   }
@@ -183,5 +235,12 @@ hr {
     display: flex;
     flex-direction: column;
     grid-gap: 20px;
+  }
+  .price {
+    font-size: 30px;
+  }
+
+  .price h1 {
+    font-size: 34px;
   }
 }
