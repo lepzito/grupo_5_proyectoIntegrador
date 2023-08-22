@@ -1,13 +1,13 @@
-## Daily 20/08/23.
+## Daily 22/08/23.
 
--**Lucas**: empeze a armar el crud en el form de creacion de productos para el sprint 4.
+-**Lucas**: termine la mayor de parte del Crud.
 
--Se encontro el impedimento en usar el formateo para los precios.
+- tuve el inconveniente en el metodo update pero lo resolvi.
 
--Y hoy se termino de aramar el Crud pero solo para creacion.
+-y hoy termine el sitio responsive de detalle de productos solo me falta de desktop.
 
--**Brian**: esta terminando el mercado liebre.
+-**Samuel**: recien esta poniendose al dia.
 
 - No encontro problemas.
 
--Y hoy se le dio la tarea de armar el user.json del sprint 4.
+-Y hoy se le dio la tarea de terminar el form edit la parte de carga de imagen y la tabla de especificaciones.
