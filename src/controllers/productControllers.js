@@ -45,6 +45,7 @@ const productControllers = {
     const productToEdit = products().find((product) => product.id == id);
     res.render("product-edit", { productToEdit: productToEdit });
   },
+  //SAMUEL
   update: (req, res) => {
     const { nombre, precio, descripcion, descuento, tipo } = req.body;
     const id = req.params.id;

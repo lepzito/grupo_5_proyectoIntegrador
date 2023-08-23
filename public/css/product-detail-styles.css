@@ -144,7 +144,16 @@ th {
 hr {
   max-width: 100%;
 }
-
+.buttons-2 {
+  display: none;
+}
+/*Aqui en mobiles se oculta la linea hr */
+@media screen and (max-width: 481px) {
+  .content-medios-precio-nombre hr,
+  .content-medios hr {
+    display: none;
+  }
+}
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .title-product,
@@ -188,6 +197,13 @@ hr {
     color: green;
     font-weight: normal;
   }
+  .buttons-2 {
+    display: none;
+  }
+  .content-medios-precio-nombre hr,
+  .content-medios hr {
+    display: none;
+  }
 }
 
 /* Estilos para pantallas de escritorio */
@@ -198,8 +214,9 @@ hr {
   }
   .content-product-general {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     margin-top: 25px;
+    max-height: 546px;
   }
 
   .title-product {
@@ -213,8 +230,9 @@ hr {
     display: none;
   }
   .content-precio-metodos {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
+    display: flex;
+    grid-gap: 10px;
+    flex-direction: column;
   }
   .especificaciones table {
     border-collapse: collapse;
@@ -242,5 +260,31 @@ hr {
 
   .price h1 {
     font-size: 34px;
+  }
+  .buttons {
+    display: none;
+  }
+  .buttons-2 {
+    text-align: left;
+    display: grid;
+    grid-gap: 10px;
+    width: 50%;
+    margin-top: 15px;
+  }
+  .cuotas {
+    display: grid;
+  }
+  .content-medios {
+    margin: 9px 10px;
+    display: grid;
+    grid-gap: 10px;
+  }
+  .content-medios-precio-nombre hr {
+    margin-left: 10px;
+    width: 95%;
+  }
+  .content-medios hr {
+    width: 100%;
+    margin-left: 0px;
   }
 }

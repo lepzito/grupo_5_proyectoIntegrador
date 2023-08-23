@@ -51,8 +51,9 @@
             <h1><%=product.nombre%></h1>
           </div>
           <div class="type-product">
-            <p>>> <%=product.tipo%></p>
+            <p>>> <%=product.tipo%> >><%=product.marca%></p>
           </div>
+          <hr />
           <div class="content-precio-metodos">
             <div class="price">
               <% if (product.descuento) { %>
@@ -80,20 +81,29 @@
                 <a href="">Ver medios de pago</a>
               </div>
             </div>
-
+            <hr />
             <div class="content-medios">
               <div class="medio">
                 <i class="fa-solid fa-truck"></i>
-                <p>Llega gratis hoy !!</p>
+                <p>Envios gratis a la provincia.</p>
               </div>
               <div class="medio">
                 <i class="fa-solid fa-delete-left"></i>
 
-                <p>Devolución gratis. Tenés 30 días desde que lo recibís.</p>
+                <p>Devolución gratis.</p>
               </div>
               <div class="medio">
                 <i class="fa-solid fa-user-shield"></i>
-                <p>Stock</p>
+                <p>Garantía - 12 meses.</p>
+              </div>
+              <hr />
+              <div class="buttons-2">
+                <button class="comprar-ahora" type="submit">
+                  Comprar Ahora
+                </button>
+                <button class="agregar-carrito" type="submit">
+                  Agregar al carrito
+                </button>
               </div>
             </div>
             <hr class="hr2" />
