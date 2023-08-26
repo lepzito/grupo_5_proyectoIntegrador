@@ -208,24 +208,6 @@
     }
   },
   {
-    "id": 14,
-    "productHome": true,
-    "ofert": true,
-    "tipo": "Escritorio",
-    "descuento": 25,
-    "nombre": "Laptop Gaming Computer Lenovo",
-    "precio": 300,
-    "img": "/images/images_products/lenovo.png",
-    "descripcion": "Notebook de 15.6 FHD (1920x1080) IPS 250nits Anti-glare, 45% NTSC, 60Hz. Procesador AMD Ryzen 7 5800H (8C / 16T, 3.2 / 4.4GHz, 4MB L2 / 16MB L3). Almacenamiento de 512GB SSD M.2 2280 PCIe 3.0x4 NVMe. Memoria RAM de 2x 8GB SO-DIMM DDR4-3200. Placa de video: NVIDIA GeForce GTX 1650 4GB GDDR6. Conexiones: Wifi. Bluetooth 5.0. 2 USB 3.2 Gen 1. 1 USB-C 3.2 Gen 1. 1 HDMI 2.0. 1 Ethernet (RJ-45). Conector combinado de auriculares / microfono (3,5 mm). Sistema operativo windows 11 home. Camara HD 720p. Bateria 45 Wh.",
-    "caracteristicas": {
-      "Color": "NEGRO",
-      "Altura": "2.42.",
-      "Bluetooth": "Si",
-      "HDMI": "Si",
-      "Ancho": "35.96."
-    }
-  },
-  {
     "id": 15,
     "tipo": "Escritorio",
     "descuento": "52",

@@ -18,7 +18,7 @@ router.get("/carrito", products.carrito);
 router.get("/admin", products.admin);
 //Ediccion//
 router.get("/:id/edit", products.edit);
-router.put("/:id", products.update);
+router.put("/:id", upload.single("productImage"), products.update);
 //Crear producto//
 router.get("/create", products.create);
 //Store//

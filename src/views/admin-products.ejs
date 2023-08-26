@@ -27,6 +27,12 @@
           <div class="product-card">
             <a href="/products/product/<%= products[i].id%>">
               <div class="container-product-image">
+                <div class="ofert-product">
+                  <% if (products[i].descuento) { %>
+                  <span> <%=products[i].descuento%>%OFF</span>
+                  <%} %>
+                </div>
+
                 <img
                   class="product-image"
                   src="<%=products[i].img %>"

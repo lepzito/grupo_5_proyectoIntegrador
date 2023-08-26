@@ -60,6 +60,7 @@ const productControllers = {
         prod.descripcion = descripcion !== "" ? descripcion : prod.descripcion;
         prod.descuento = descuento !== "" ? descuento : prod.descuento;
         prod.tipo = tipo !== "" ? tipo : prod.tipo;
+        prod.img = "/images/images_products/" + req.file.filename;
       }
     });
 
