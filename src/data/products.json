@@ -208,12 +208,20 @@
     }
   },
   {
-    "id": 15,
-    "tipo": "Escritorio",
-    "descuento": "52",
-    "nombre": "Auriculares",
-    "precio": 123222,
-    "img": "/images/images_products/auris.png",
-    "descripcion": "El mejor auricular qqqqqqqqqqqqq"
+    "id": 18,
+    "nombre": "Mouse Lg",
+    "marca": "lg",
+    "seccion": "ofertas",
+    "precio": 1200,
+    "img": "/images/images_products/productImage-1693105583966-680718109.png",
+    "descripcion": "asfasfasf",
+    "descuento": "10",
+    "tipo": "Perifericos",
+    "caracteristicas": {
+      "2": "si",
+      "w": "red blajc",
+      "a": "no",
+      "as": "1000"
+    }
   }
 ]

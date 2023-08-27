@@ -11,10 +11,9 @@
       <div class="container">
         <div class="row"></div>
         <div class="form-container">
-          <div>
-            <h1>Estás creando un producto...</h1>
-          </div>
           <form action="/products" method="post" enctype="multipart/form-data">
+            <h1>Estás creando un producto...</h1>
+
             <div>
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
@@ -41,6 +40,19 @@
                 </select>
               </div>
               <div class="form-container__input">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" />
+              </div>
+              <div class="form-container__input">
+                <label for="seccion">Mostrar en Inicio:</label>
+                <select name="seccion" id="seccion">
+                  <option value="">Secciones</option>
+                  <option value="novedades">Ultimas Novedades</option>
+                  <option value="ofertas">Ofertas</option>
+                  <option value="false">Ninguna</option>
+                </select>
+              </div>
+              <div class="form-container__input__description">
                 <label for="descripcion">Descripción:</label>
                 <textarea
                   name="descripcion"

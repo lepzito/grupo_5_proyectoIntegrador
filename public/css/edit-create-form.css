@@ -2,23 +2,29 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+   font-family: "Montserrat", sans-serif;
+
 }
+main{
+
+  background: #222
+  }
+
+
 
 h1 {
   font-size: 24px;
-  width: 100%;
+  width: 90%;
   color: #fff;
   margin: 10px;
 }
-
+form{
+  margin: 25px auto;
+}
 .form-container {
   display: flex;
   flex-wrap: nowrap;
-  margin: 20px;
-  background-color: #000;
-  padding: 30px 20px;
-  border-radius: 10px;
+  margin: 0 auto;
   flex-direction: column;
 }
 
@@ -28,38 +34,40 @@ h1 {
   flex-wrap: nowrap;
   flex-direction: column;
 }
-
+.form-container__input__description{
+  margin: 10px;
+  display: grid;
+}
 textarea {
-  width: 70%;
+  width: 90%;
   color: #fff;
   background-color: transparent;
-  border: transparent;
-  border: #ff6507 solid 3px;
+  border-image: linear-gradient(        to bottom,         red,         rgba(0, 0, 0, 0)      ) 1 90%;
+
 }
 
 select {
-  width: 70%;
+  width: 90%;
   height: 30px;
   color: #fff;
   background-color: transparent;
-  border: transparent;
-  border-bottom: #ff6507 solid 3px;
+  border-image: linear-gradient(        to right,         red,         rgba(0, 0, 0, 0)      ) 1 10%;
+
 }
 
 .container input {
-  width: 70%;
+  width: 90%;
   height: 30px;
   color: #fff;
   background-color: transparent;
-  border: transparent;
-  border-bottom: #ff6507 solid 3px;
+  border-image: linear-gradient(        to right,         red,         rgba(0, 0, 0, 0)      ) 1 10%;
 }
 .form-container__input option {
   color: #000;
 }
 
 label {
-  width: 100%;
+  width: 90%;
   font-size: 16px;
   margin: 10px 0px;
   color: #fff;
@@ -74,9 +82,10 @@ label {
 .form-container__button button {
   color: #fff;
   font-weight: bold;
-  background-color: #ff6507;
+  background: linear-gradient(to top, red, purple);
+  padding: 3px;
   height: 30px;
-  width: 75%;
+  width: 50%;
 }
 table th {
   color: white;
@@ -90,18 +99,12 @@ table th {
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
-  .container {
-    justify-content: center;
-  }
+ 
 
   .form-container {
-    width: 70%;
     display: flex;
     flex-wrap: nowrap;
-    margin: 30px auto;
-    background-color: #000;
-    padding: 50px;
-    border-radius: 10px;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
   }
@@ -112,7 +115,7 @@ table th {
     font-weight: bold;
     background-color: #ff6507;
     height: 30px;
-    width: 75%;
+    width: 50%;
   }
 }
 
@@ -122,12 +125,10 @@ table th {
   }
 
   .form-container {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-wrap: nowrap;
-    margin: 30px auto;
-    background-color: #000;
-    padding: 50px;
+    margin: 0 auto;
     border-radius: 10px;
     flex-direction: column;
     justify-content: center;
@@ -137,8 +138,29 @@ table th {
     margin: 20px 0 0 0;
     color: #fff;
     font-weight: bold;
-    background-color: #ff6507;
     height: 30px;
-    width: 60%;
+    border-image: 
+      linear-gradient(
+        to right, 
+        red, 
+        rgba(0, 0, 0, 0)
+      ) 1 90%;
+  }
+  .form-container__input__description{
+    
+      margin: 10px;
+      display: grid;
+  
+  }
+  .form-container__input__description textarea {
+    color: white;
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+      linear-gradient(
+        to right, 
+        red, 
+        rgba(0, 0, 0, 0)
+      ) 1 90%;
   }
 }

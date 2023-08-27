@@ -79,6 +79,8 @@ const productControllers = {
       descripcion,
       descuento,
       tipo,
+      marca,
+      seccion,
       caracteristicas,
       valores,
     } = req.body;
@@ -92,6 +94,8 @@ const productControllers = {
     const newProduct = {
       id: newProductId,
       nombre: nombre,
+      marca: marca,
+      seccion:seccion,
       precio: parseFloat(precio),
       img: "/images/images_products/" + req.file.filename,
       descripcion: descripcion,
