@@ -1,0 +1,27 @@
+[{
+ "identificador": "id",
+ "Nombre": "firstName",
+ "Apellido": "lastName",
+ "Email": "email",
+ "Contraseña": "password",
+ "Categoria": "category",
+ "Imagen": "image"   
+},
+{
+    "identificador": "id",
+ "Nombre": "firstName",
+ "Apellido": "lastName",
+ "Email": "email",
+ "Contraseña": "password",
+ "Categoria": "category",
+ "Imagen": "image"   
+},
+{
+    "identificador": "id",
+ "Nombre": "firstName",
+ "Apellido": "lastName",
+ "Email": "email",
+ "Contraseña": "password",
+ "Categoria": "category",
+ "Imagen": "image"   
+}]
