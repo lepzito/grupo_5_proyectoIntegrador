@@ -178,7 +178,7 @@
     "tipo": "Teclado",
     "descuento": 3,
     "nombre": "Teclado Gamer Razer Huntsman Mini Sw Analog",
-    "precio": 6000,
+    "precio": 5000,
     "img": "/images/images_products/teclado.png",
     "descripcion": "Hablar de Razer dentro del mundo gamer es palabra mayor. Esta compañía ofrece productos de muy alta calidad a sus usuarios. Su línea de teclados es reconocida por haber recibido distintos galardones y premios internacionales por su alto desempeño.",
     "caracteristicas": {
@@ -194,66 +194,19 @@
     "productHome": true,
     "ofert": true,
     "tipo": "Celular",
-    "descuento": 10,
+    "descuento": 12,
     "nombre": "Apple iPhone 7 32 GB - Oro Rosa (AT&T)",
-    "precio": 1000,
-    "img": "/images/images_products/iphone7rosado.png",
-    "descripcion": "Diseño. Hace un chapoteo. Toma un chapuzón: IPhone 7 alcanza un nuevo nivel de innovación y precisión. El acabado negro azabache no se parece a nada que hayamos fabricado.3 La carcasa es resistente a salpicaduras y al agua.4 El botón de inicio está completamente rediseñado. Y con un nuevo diseño unibody que es perfecto al tacto, el iPhone 7 se siente tan increíble como parece.",
+    "precio": 100011,
+    "img": "/images/images_products/productImage-1693292438800-954986381.png",
+    "descripcion": "    Diseño. Hace un chapoteo. Toma un chapuzón: IPhone 7 alcanza un nuevo nivel de innovación y precisión. El acabado negro azabache no se parece a nada que hayamos fabricado.3 La carcasa es resistente a salpicaduras y al agua.4 El botón de inicio está completamente rediseñado. Y con un nuevo diseño unibody que es perfecto al tacto, el iPhone 7 se siente tan increíble como parece.\r\n\r\n",
     "caracteristicas": {
-      "Color": "Rosa",
+      "Color": "Negro",
       "Almacenamiento": "32 GB",
       "RAM": "2 GB",
       "Sistema Operativo": "iOS",
       "Baterías": "1000-2000 mAh"
-    }
-  },
-  {
-    "id": 18,
-    "nombre": "Mouse Lg",
-    "marca": "lg",
-    "seccion": "ofertas",
-    "precio": 1200,
-    "img": "/images/images_products/productImage-1693105583966-680718109.png",
-    "descripcion": "asfasfasf",
-    "descuento": "10",
-    "tipo": "Perifericos",
-    "caracteristicas": {
-      "2": "si",
-      "w": "red blajc",
-      "a": "no",
-      "as": "1000"
-    }
-  },
-  {
-    "id": 19,
-    "nombre": "asdasd",
-    "precio": 10000,
-    "img": "/images/images_products/productImage-1693272721426-967694319.png",
-    "descripcion": "asdsaf",
-    "descuento": "19",
-    "tipo": "Smartphones",
-    "caracteristicas": {
-      "1": "2",
-      "aa": "a",
-      "fasaf": "4q"
-    }
-  },
-  {
-    "id": 20,
-    "nombre": "sadsad",
-    "marca": "sm",
-    "seccion": "",
-    "precio": 1111,
-    "img": "/images/images_products/productImage-1693274040033-371702067.png",
-    "descripcion": "asdsad",
-    "descuento": 2,
-    "tipo": "Notebooks",
-    "caracteristicas": {
-      "1": "12",
-      "2": "34",
-      "3": "5",
-      "11": "65",
-      "e2": "11"
-    }
+    },
+    "marca": "Apple",
+    "seccion": ""
   }
 ]

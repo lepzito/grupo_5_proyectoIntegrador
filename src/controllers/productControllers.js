@@ -47,8 +47,23 @@ const productControllers = {
   },
   //SAMUEL
   update: (req, res) => {
-    const { nombre, precio, descripcion, descuento, tipo } = req.body;
+    const {
+      nombre,
+      precio,
+      descripcion,
+      descuento,
+      tipo,
+      marca,
+      seccion,
+      caracteristicas,
+      valores,
+    } = req.body;
     const id = req.params.id;
+
+    const caracteristicasObj = {};
+    for (const key in caracteristicas) {
+      caracteristicasObj[caracteristicas[key]] = valores[key];
+    }
 
     let currentProducts = products();
 
@@ -58,9 +73,15 @@ const productControllers = {
         prod.precio =
           parseFloat(precio) !== "" ? parseFloat(precio) : prod.precio;
         prod.descripcion = descripcion !== "" ? descripcion : prod.descripcion;
-        prod.descuento = descuento !== "" ? descuento : prod.descuento;
+        prod.descuento =
+          parseFloat(descuento) !== "" ? parseFloat(descuento) : prod.descuento;
         prod.tipo = tipo !== "" ? tipo : prod.tipo;
-        prod.img = "/images/images_products/" + req.file.filename;
+        prod.img = req.file
+          ? "/images/images_products/" + req.file.filename
+          : prod.img;
+        prod.marca = marca !== "" ? marca : prod.marca;
+        prod.seccion = seccion;
+        prod.caracteristicas = caracteristicasObj;
       }
     });
 
@@ -84,7 +105,10 @@ const productControllers = {
       caracteristicas,
       valores,
     } = req.body;
+
+    //Generamos un id
     const newProductId = products()[products().length - 1].id + 1;
+    //Aqui en caracteristicasObj armamos el objeto con sus caracteristicas:valores
 
     const caracteristicasObj = {};
     for (const key in caracteristicas) {
