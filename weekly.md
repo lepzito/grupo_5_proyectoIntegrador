@@ -1,13 +1,13 @@
-## Daily 22/08/23.
+## Daily 29/08/23.
 
--**Lucas**: termine la mayor de parte del Crud.
+-**Lucas**: ayer termine de armar la vista de los form edit y create.
 
-- tuve el inconveniente en el metodo update pero lo resolvi.
+- tuve el inconveniente en las etiquetas ejs pero lo resolvi, y tambien con la tabla de especificaciones.
 
--y hoy termine el sitio responsive de detalle de productos solo me falta de desktop.
+-y hoy termine el crud de productos.
 
--**Samuel**: recien esta poniendose al dia.
+-**brian**: estuvo haciendo el user.json lo pudo mergear a develop.
 
 - No encontro problemas.
 
--Y hoy se le dio la tarea de terminar el form edit la parte de carga de imagen y la tabla de especificaciones.
+-Y hoy mergeo desde branch-brian a develop.

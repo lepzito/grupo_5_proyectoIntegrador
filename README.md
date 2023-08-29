@@ -33,7 +33,7 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 - Lujan: Estudio contador público en la UNJU FCE, estoy aprendiendo programación y sobre como diseñar.
 
 - Samuel: Descripcion
-- Brian: (Ema) estudiante de Digital House, pendiente a un proyecto.Soy de San Salvador De Jujuy. 
+- Brian: (Ema) estudiante de Digital House, pendiente a un proyecto.Soy de San Salvador De Jujuy.
 - Miguel: Descripcion.
 - Daniel: Descripcion.
 
@@ -41,13 +41,17 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 
 1. [ArmyTech](https://ArmyTech.com.ar/) - De aqui tomamos ideas para el login y register.
 2. [Venex](https://www.venex.com.ar/)-De aqui para el carrito de compras.
-4. [ADIDAS](https://www.adidas.com/) - De la pagina de Adidas nos gusto la parte de **foorter_newsletter**, creemos que es una formas atractiva de hacer que los clientes se registren en nuestro sitio web y obtengan un 10%de descuento en la primer compra, ademas tambien la parte del **header** ya que lo consideramos visualmente estetico. 
-5. [Fullh4rd](https://www.fullh4rd.com.ar)
-6. [Compra Gamer](https://www.compragamer.com/) - de CompraGamer nos parecio una buena idea copiar su parte del main la extructura en si es simple y atractiva, tambien la parte del footer.
-7. [Mercado_Libre](https://www.mercadolibre.com/) -  de MercadoLibre nos gusto la parte de la descripcion del producto, describe al detalle el producto y esta bien extructurado para que sea comodo para el usuario.
+3. [ADIDAS](https://www.adidas.com/) - De la pagina de Adidas nos gusto la parte de **foorter_newsletter**, creemos que es una formas atractiva de hacer que los clientes se registren en nuestro sitio web y obtengan un 10%de descuento en la primer compra, ademas tambien la parte del **header** ya que lo consideramos visualmente estetico.
+4. [Fullh4rd](https://www.fullh4rd.com.ar)
+5. [Compra Gamer](https://www.compragamer.com/) - de CompraGamer nos parecio una buena idea copiar su parte del main la extructura en si es simple y atractiva, tambien la parte del footer.
+6. [Mercado_Libre](https://www.mercadolibre.com/) - de MercadoLibre nos gusto la parte de la descripcion del producto, describe al detalle el producto y esta bien extructurado para que sea comodo para el usuario.
 
 ¡Gracias por visitar TECNO - JUY!
 
 ## Link de Tablero de TRELLO
 
 https://trello.com/b/QPep3s7h/sprint-1
+
+## Solo admins
+
+/products/admin
