@@ -223,5 +223,37 @@
       "a": "no",
       "as": "1000"
     }
+  },
+  {
+    "id": 19,
+    "nombre": "asdasd",
+    "precio": 10000,
+    "img": "/images/images_products/productImage-1693272721426-967694319.png",
+    "descripcion": "asdsaf",
+    "descuento": "19",
+    "tipo": "Smartphones",
+    "caracteristicas": {
+      "1": "2",
+      "aa": "a",
+      "fasaf": "4q"
+    }
+  },
+  {
+    "id": 20,
+    "nombre": "sadsad",
+    "marca": "sm",
+    "seccion": "",
+    "precio": 1111,
+    "img": "/images/images_products/productImage-1693274040033-371702067.png",
+    "descripcion": "asdsad",
+    "descuento": 2,
+    "tipo": "Notebooks",
+    "caracteristicas": {
+      "1": "12",
+      "2": "34",
+      "3": "5",
+      "11": "65",
+      "e2": "11"
+    }
   }
 ]

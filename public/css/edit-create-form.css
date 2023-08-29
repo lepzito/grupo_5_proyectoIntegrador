@@ -2,15 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-   font-family: "Montserrat", sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
-main{
-
-  background: #222
-  }
-
-
+main {
+  background: #222;
+}
 
 h1 {
   font-size: 24px;
@@ -18,7 +14,7 @@ h1 {
   color: #fff;
   margin: 10px;
 }
-form{
+form {
   margin: 25px auto;
 }
 .form-container {
@@ -34,7 +30,7 @@ form{
   flex-wrap: nowrap;
   flex-direction: column;
 }
-.form-container__input__description{
+.form-container__input__description {
   margin: 10px;
   display: grid;
 }
@@ -42,8 +38,7 @@ textarea {
   width: 90%;
   color: #fff;
   background-color: transparent;
-  border-image: linear-gradient(        to bottom,         red,         rgba(0, 0, 0, 0)      ) 1 90%;
-
+  border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 90%;
 }
 
 select {
@@ -51,8 +46,7 @@ select {
   height: 30px;
   color: #fff;
   background-color: transparent;
-  border-image: linear-gradient(        to right,         red,         rgba(0, 0, 0, 0)      ) 1 10%;
-
+  border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 10%;
 }
 
 .container input {
@@ -60,7 +54,7 @@ select {
   height: 30px;
   color: #fff;
   background-color: transparent;
-  border-image: linear-gradient(        to right,         red,         rgba(0, 0, 0, 0)      ) 1 10%;
+  border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 10%;
 }
 .form-container__input option {
   color: #000;
@@ -75,8 +69,8 @@ label {
 
 .form-container__button {
   width: 100%;
-  text-align: center;
-  margin: 20px 0;
+  text-align: left;
+  margin: 20px 0 20px 10px;
 }
 
 .form-container__button button {
@@ -99,8 +93,6 @@ table th {
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
- 
-
   .form-container {
     display: flex;
     flex-wrap: nowrap;
@@ -139,28 +131,16 @@ table th {
     color: #fff;
     font-weight: bold;
     height: 30px;
-    border-image: 
-      linear-gradient(
-        to right, 
-        red, 
-        rgba(0, 0, 0, 0)
-      ) 1 90%;
+    border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 90%;
   }
-  .form-container__input__description{
-    
-      margin: 10px;
-      display: grid;
-  
+  .form-container__input__description {
+    margin: 10px;
+    display: grid;
   }
   .form-container__input__description textarea {
     color: white;
     border-width: 3px;
     border-style: solid;
-    border-image: 
-      linear-gradient(
-        to right, 
-        red, 
-        rgba(0, 0, 0, 0)
-      ) 1 90%;
+    border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 90%;
   }
 }

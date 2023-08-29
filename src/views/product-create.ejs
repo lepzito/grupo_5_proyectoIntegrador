@@ -12,8 +12,9 @@
         <div class="row"></div>
         <div class="form-container">
           <form action="/products" method="post" enctype="multipart/form-data">
-            <h1>Estás creando un producto...</h1>
-
+            <div>
+              <h1>Estás creando un producto...</h1>
+            </div>
             <div>
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
@@ -28,31 +29,33 @@
                 <input type="text" id="descuento" name="descuento" />
               </div>
               <div class="form-container__input">
-                <label for="tipo">Categoría:</label>
-                <select name="tipo" id="tipo">
-                  <option value="">Tipo de producto</option>
-                  <option value="Monitores">Monitores</option>
-                  <option value="Escritorio">Escritorio</option>
-                  <option value="Smartphones">Smartphones</option>
-                  <option value="Notebooks">Notebooks</option>
-                  <option value="Pc Armada">Pc Armada</option>
-                  <option value="Perifericos">Perifericos</option>
-                </select>
-              </div>
-              <div class="form-container__input">
                 <label for="marca">Marca:</label>
                 <input type="text" id="marca" name="marca" />
               </div>
+              <% let tipos=["Monitores", "Escritorio", "Smartphones",
+              "Notebooks", "Pc Armadas", "Perifericos"] %>
               <div class="form-container__input">
-                <label for="seccion">Mostrar en Inicio:</label>
-                <select name="seccion" id="seccion">
-                  <option value="">Secciones</option>
-                  <option value="novedades">Ultimas Novedades</option>
-                  <option value="ofertas">Ofertas</option>
-                  <option value="false">Ninguna</option>
+                <label for="tipo">Categoría:</label>
+                <select name="tipo" id="tipo">
+                  <option value="">Tipo de Producto</option>
+                  <% for (const unTipo of tipos) {%>
+                  <option value="<%=unTipo%>"><%=unTipo%></option>
+                  <%}%>
                 </select>
               </div>
-              <div class="form-container__input__description">
+
+              <% let tiposSeccion=["ofertas", "novedades"] %>
+              <div class="form-container__input">
+                <label for="seccion">Seccion:</label>
+                <select name="seccion" id="seccion">
+                  <option value="">Ninguna</option>
+                  <% for (const tipo of tiposSeccion) {%>
+                  <option value="<%=tipo%>"><%=tipo%></option>
+                  <%}%>
+                </select>
+              </div>
+
+              <div class="form-container__input">
                 <label for="descripcion">Descripción:</label>
                 <textarea
                   name="descripcion"

@@ -95,11 +95,11 @@ const productControllers = {
       id: newProductId,
       nombre: nombre,
       marca: marca,
-      seccion:seccion,
+      seccion: seccion,
       precio: parseFloat(precio),
       img: "/images/images_products/" + req.file.filename,
       descripcion: descripcion,
-      descuento: descuento,
+      descuento: parseFloat(descuento),
       tipo: tipo,
       caracteristicas: caracteristicasObj,
     };
@@ -112,7 +112,7 @@ const productControllers = {
     // Escribir los datos actualizados nuevamente en el archivo
     fs.writeFileSync(route, JSON.stringify(currentProducts, null, 2));
 
-    return res.redirect("/products");
+    return res.redirect("/products/admin");
   },
   destroy: function (req, res) {
     const id = req.params.id;
