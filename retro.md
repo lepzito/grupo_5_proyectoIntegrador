@@ -1,12 +1,12 @@
-## Retrospectiva del Sprint 2 - Estrella de Mar
+## Retrospectiva del Sprint 3 - Estrella de Mar
 
 ## Logros y aspectos positivos
 
-- Se cumplieron los objetivos.
+- Se cumplieron los objetivos esperados.
   
 ## Aspectos a mejorar
 
-- La comunicacion entre los miembros del equipo, mejorar la responsabilidad.
+- La comunicacion entre los miembros del equipo, es algo que todavia no hemos logrado concretar.
  
 ## Start Doing
 "Listar aquí las nuevas ideas o prácticas innovadoras que queremos probar en el próximo Sprint."
@@ -35,6 +35,8 @@
 "Listar aquí aquellas prácticas que hemos intentado en el pasado pero que no nos han generado el valor esperado. Aunque pueden tener una segunda oportunidad, no serán una prioridad."
 
 - Lo que venimos implementando tiene un buen curso, solo debemos mejorar la coordinación para lograr un buen resultado.
+
+- Preguntar a los compañeros como van con la tarea asignada y si tienen alguna duda.
 
 ## Stop Doing
 "Listar aquí las prácticas que hemos decidido eliminar o dejar de hacer, ya que no nos aportan valor o no se ajustan a nuestras necesidades."
