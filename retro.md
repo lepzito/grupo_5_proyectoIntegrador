@@ -7,6 +7,8 @@
 ## Aspectos a mejorar
 
 - La comunicacion entre los miembros del equipo, es algo que todavia no hemos logrado concretar.
+- Tambien el hecho de poder ponernos al dia con el playground, si bien todos tenemos nuestras responsabilidades ajenas al
+  curso, no olvidar que si nos atrasamos luego retomar las clases y practicas es mas dificil.
  
 ## Start Doing
 "Listar aquí las nuevas ideas o prácticas innovadoras que queremos probar en el próximo Sprint."
