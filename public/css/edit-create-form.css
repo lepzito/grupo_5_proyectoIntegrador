@@ -107,7 +107,7 @@ table th {
     font-weight: bold;
     background-color: #ff6507;
     height: 30px;
-    width: 30%;
+    width: 40%;
   }
 }
 
@@ -132,6 +132,7 @@ table th {
     font-weight: bold;
     height: 30px;
     border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 90%;
+    width: 40%;
   }
   .form-container__input__description {
     margin: 10px;
