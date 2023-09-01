@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="\css\product-card.css" />
+    <link rel="stylesheet" href="\css\styles-index.css" />
+    <link rel="stylesheet" href="\css\admin-products.css" />
+    <title>Resultados</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("./partials/header") %>
+    <!-- Page content -->
+    <main>
+      <!-- Ultimas novedades productos -->
+      <section class="Results">
+        <div class="latest-title">
+          <h3>Todos lo Productos...</h3>
+          <a href="/products/create" class="boton-enlace"
+            ><i class="fa-solid fa-plus" style="color: #ffffff"></i
+          ></a>
+        </div>
+
+        <div class="carousel-container">
+          <% for (let i = products.length - 1; i >= 0; i--) { %>
+
+          <div class="product-card">
+            <a href="/products/product/<%= products[i].id%>">
+              <div class="container-product-image">
+                <div class="ofert-product">
+                  <% if (products[i].descuento) { %>
+                  <span> <%=products[i].descuento%>%OFF</span>
+                  <%} %>
+                </div>
+
+                <img
+                  class="product-image"
+                  src="<%=products[i].img %>"
+                  alt="productosNovedad"
+                />
+              </div>
+              <div class="container-descripcion-product">
+                <div class="product-name">
+                  <p><%= products[i].nombre %></p>
+                </div>
+                <div class="product-price">
+                  <span>$<%= products[i].precio.toLocaleString() %></span>
+                </div>
+              </div>
+            </a>
+            <div class="buttons-container">
+              <a
+                href="/products/<%= products[i].id %>/edit"
+                class="editar-link"
+              >
+                <i class="fa-solid fa-pen-to-square"></i>
+              </a>
+              <form
+                action="/products/<%= products[i].id %>?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" class="eliminar-link">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <%};%>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <%- include("./partials/footer") %>
+  </body>
+</html>

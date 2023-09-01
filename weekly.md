@@ -1,25 +1,13 @@
-## Daily 15/08/23.
+## Daily 29/08/23.
 
--**Samuel**: termino de armar el carrito en ejs.
+-**Lucas**: ayer termine de armar la vista de los form edit y create.
 
--Se encontro el impedimento de mergear las ramas.
+- tuve el inconveniente en las etiquetas ejs pero lo resolvi, y tambien con la tabla de especificaciones.
 
--Y hoy empezera a hacer el formulario de Creacion y edicion de productos.
+-y hoy termine el crud de productos.
 
--**Lucas**: empezo a armar el listado de productos en ejs.
+-**brian**: estuvo haciendo el user.json lo pudo mergear a develop.
 
--Se encontro el impedimento de mergear las ramas.
+- No encontro problemas.
 
--Y hoy se termino de hacerlo en responsive.
-
--**Brian**: sigue cargando los productos con sus propiedades en el products.json.
-
--No se encontro problemas.
-
--Y hoy seguira con esa actividad.
-
--**Lujan**: ayer hiso la retro.md y se encargo de organizar las tareas en el trello para el proximo sprint.
-
--No se encontro problemas.
-
--Y hoy esta haciendo del diseño de unos banners para la vista de listado de productos.
+-Y hoy mergeo desde branch-brian a develop.

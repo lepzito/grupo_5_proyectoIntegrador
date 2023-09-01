@@ -20,9 +20,30 @@
           </div>
           <img src="<%=product.img%>" alt="imagenproduct" />
           <div class="price-tablet">
-            <p>¡Precio de contado!</p>
-            <h2><%=product.precio%></h2>
-            <div class="cuotas"><h4>CUOTAS</h4></div>
+            <% if (product.descuento) { %>
+            <p>
+              <del
+                ><span style="color: gray"
+                  >$<%= product.precio.toLocaleString() %></span
+                ></del
+              >
+            </p>
+            <% let precioDescuento = product.precio - (product.precio *
+            product.descuento / 100); %>
+            <h1>
+              $<%= precioDescuento.toLocaleString() %>
+              <span><%= product.descuento %> %OFF</span>
+            </h1>
+
+            <% } else { %>
+            <h1>$<%= product.precio.toLocaleString() %></h1>
+            <% } %>
+            <div class="cuotas">
+              <p>
+                en x12 de <%= (product.precio * 1.05 / 12).toLocaleString() %> $
+              </p>
+              <a href="">Ver medios de pago</a>
+            </div>
           </div>
         </div>
         <div class="content-medios-precio-nombre">
@@ -30,37 +51,66 @@
             <h1><%=product.nombre%></h1>
           </div>
           <div class="type-product">
-            <p>>> <%=product.tipo%></p>
+            <p>>> <%=product.tipo%> >><%=product.marca%></p>
           </div>
+          <hr />
           <div class="content-precio-metodos">
             <div class="price">
-              <p>¡Precio de contado!</p>
+              <% if (product.descuento) { %>
+              <p>
+                <del
+                  ><span style="color: gray"
+                    >$<%= product.precio.toLocaleString() %></span
+                  ></del
+                >
+              </p>
+              <% let precioDescuento = product.precio - (product.precio *
+              product.descuento / 100); %>
+              <h1>
+                $<%= precioDescuento.toLocaleString() %>
+                <span><%= product.descuento %> %OFF</span>
+              </h1>
 
-              <h1><%=product.precio%></h1>
-              <div class="cuotas"><h4>CUOTAS</h4></div>
+              <% } else { %>
+              <h1>$<%= product.precio.toLocaleString() %></h1>
+              <% } %>
+              <div class="cuotas">
+                <p>
+                  en x12 de <%= (product.precio * 1.05 / 12).toLocaleString()
+                  %>$
+                </p>
+                <a href="">Ver medios de pago</a>
+              </div>
             </div>
-
+            <hr />
             <div class="content-medios">
               <div class="medio">
                 <i class="fa-solid fa-truck"></i>
-                <p>Envío gratis a todo el país</p>
+                <p>Envios gratis a la provincia.</p>
               </div>
               <div class="medio">
                 <i class="fa-solid fa-delete-left"></i>
 
-                <p>Devolución gratis. Tenés 30 días desde que lo recibís.</p>
+                <p>Devolución gratis.</p>
               </div>
               <div class="medio">
                 <i class="fa-solid fa-user-shield"></i>
-                <p>
-                  Compra Protegida. recibí el producto que esperabas o te
-                  devolvemos tú dinero.
-                </p>
+                <p>Garantía - 12 meses.</p>
+              </div>
+              <hr />
+              <div class="buttons-2">
+                <button class="comprar-ahora" type="submit">
+                  Comprar Ahora
+                </button>
+                <button class="agregar-carrito" type="submit">
+                  Agregar al carrito
+                </button>
               </div>
             </div>
             <hr class="hr2" />
           </div>
           <div class="buttons">
+            <button class="comprar-ahora" type="submit">Comprar Ahora</button>
             <button class="agregar-carrito" type="submit">
               Agregar al carrito
             </button>

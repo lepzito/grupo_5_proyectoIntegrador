@@ -11,10 +11,10 @@
       <div class="container">
         <div class="row"></div>
         <div class="form-container">
-          <div>
-            <h1>Estás creando un producto...</h1>
-          </div>
           <form action="/products" method="post" enctype="multipart/form-data">
+            <div>
+              <h1>Estás creando un producto...</h1>
+            </div>
             <div>
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
@@ -29,17 +29,32 @@
                 <input type="text" id="descuento" name="descuento" />
               </div>
               <div class="form-container__input">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" />
+              </div>
+              <% let tipos=["Monitores", "Escritorio", "Smartphones",
+              "Notebooks", "Pc Armadas", "Perifericos"] %>
+              <div class="form-container__input">
                 <label for="tipo">Categoría:</label>
                 <select name="tipo" id="tipo">
-                  <option value="">Tipo de producto</option>
-                  <option value="Monitores">Monitores</option>
-                  <option value="Escritorio">Escritorio</option>
-                  <option value="Smartphones">Smartphones</option>
-                  <option value="Notebooks">Notebooks</option>
-                  <option value="Pc Armada">Pc Armada</option>
-                  <option value="Perifericos">Perifericos</option>
+                  <option value="">Tipo de Producto</option>
+                  <% for (const unTipo of tipos) {%>
+                  <option value="<%=unTipo%>"><%=unTipo%></option>
+                  <%}%>
                 </select>
               </div>
+
+              <% let tiposSeccion=["ofertas", "novedades"] %>
+              <div class="form-container__input">
+                <label for="seccion">Seccion:</label>
+                <select name="seccion" id="seccion">
+                  <option value="">Ninguna</option>
+                  <% for (const tipo of tiposSeccion) {%>
+                  <option value="<%=tipo%>"><%=tipo%></option>
+                  <%}%>
+                </select>
+              </div>
+
               <div class="form-container__input">
                 <label for="descripcion">Descripción:</label>
                 <textarea
@@ -59,74 +74,24 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <% for (let i = 1; i <= 5; i++) { %>
                     <tr>
                       <td>
                         <input
                           type="text"
-                          name="caracteristicas[1]"
+                          name="caracteristicas[<%= i %>]"
                           placeholder="Ej:Tamaño de la pantalla"
                         />
                       </td>
                       <td>
                         <input
                           type="text"
-                          name="valores[1]"
+                          name="valores[<%= i %>]"
                           placeholder='32"'
                         />
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          name="caracteristicas[2]"
-                          placeholder="Ej:Tipo de resolución"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          name="valores[2]"
-                          placeholder="1200px"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          name="caracteristicas[3]"
-                          placeholder="Ej: Es curvo"
-                        />
-                      </td>
-                      <td>
-                        <input type="text" name="valores[3]" placeholder="Si" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          name="caracteristicas[4]"
-                          placeholder="Ej: Es reclinable"
-                        />
-                      </td>
-                      <td>
-                        <input type="text" name="valores[4]" placeholder="No" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          name="caracteristicas[5]"
-                          placeholder="Ej:Con altavoces incorporados"
-                        />
-                      </td>
-                      <td>
-                        <input type="text" name="valores[5]" placeholder="Si" />
-                      </td>
-                    </tr>
+                    <% } %>
                   </tbody>
                 </table>
               </div>

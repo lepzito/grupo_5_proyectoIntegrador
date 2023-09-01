@@ -53,7 +53,7 @@
                   <p><%= product.nombre %></p>
                 </div>
                 <div class="product-price">
-                  <span><%= product.precio %></span>
+                  <span>$<%= product.precio.toLocaleString() %></span>
                 </div>
               </div>
             </a>
@@ -74,7 +74,7 @@
             <a href="/products/product/<%= product.id%>">
               <div class="container-product-image">
                 <div class="ofert-product">
-                  <span> <%=product.descuento%></span>
+                  <span> <%=product.descuento%>%OFF</span>
                 </div>
                 <img
                   class="product-image"
@@ -85,7 +85,7 @@
               <div class="container-descripcion-product">
                 <div class="product-name"><p><%=product.nombre%></p></div>
                 <div class="product-price">
-                  <span> <%=product.precio %></span>
+                  <span> $<%=product.precio.toLocaleString() %></span>
                 </div>
               </div>
             </a>

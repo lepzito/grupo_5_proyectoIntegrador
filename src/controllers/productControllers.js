@@ -5,8 +5,7 @@ const route = path.join(__dirname, "../data/products.json");
 function products() {
   return (file = JSON.parse(fs.readFileSync(route, "utf-8")));
 }
-const formatPrice = (n) =>
-  n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+
 const productControllers = {
   all: function (req, res) {
     res.render("products", { products: products() });
@@ -20,7 +19,7 @@ const productControllers = {
   },
   detalle: function (req, res) {
     let idProduct = req.params.id;
-    let product = products().find((product) => product.id == idProduct);
+    const product = products().find((product) => product.id == idProduct);
     res.render("productDetail", { product: product });
   },
   search: function (req, res) {
@@ -38,9 +37,58 @@ const productControllers = {
   carrito: function (req, res) {
     res.render("carrito", { products: products() });
   },
-  edit: function (req, res) {
-    res.render("product-edit");
+  admin: function (req, res) {
+    res.render("admin-products.ejs", { products: products() });
   },
+  edit: function (req, res) {
+    const id = req.params.id;
+    const productToEdit = products().find((product) => product.id == id);
+    res.render("product-edit", { productToEdit: productToEdit });
+  },
+  //SAMUEL
+  update: (req, res) => {
+    const {
+      nombre,
+      precio,
+      descripcion,
+      descuento,
+      tipo,
+      marca,
+      seccion,
+      caracteristicas,
+      valores,
+    } = req.body;
+    const id = req.params.id;
+
+    const caracteristicasObj = {};
+    for (const key in caracteristicas) {
+      caracteristicasObj[caracteristicas[key]] = valores[key];
+    }
+
+    let currentProducts = products();
+
+    currentProducts.forEach((prod) => {
+      if (prod.id == id) {
+        prod.nombre = nombre !== "" ? nombre : prod.nombre;
+        prod.precio =
+          parseFloat(precio) !== "" ? parseFloat(precio) : prod.precio;
+        prod.descripcion = descripcion !== "" ? descripcion : prod.descripcion;
+        prod.descuento =
+          parseFloat(descuento) !== "" ? parseFloat(descuento) : prod.descuento;
+        prod.tipo = tipo !== "" ? tipo : prod.tipo;
+        prod.img = req.file
+          ? "/images/images_products/" + req.file.filename
+          : prod.img;
+        prod.marca = marca !== "" ? marca : prod.marca;
+        prod.seccion = seccion;
+        prod.caracteristicas = caracteristicasObj;
+      }
+    });
+
+    fs.writeFileSync(route, JSON.stringify(currentProducts, null, 2));
+    res.redirect(`/products/admin`);
+  },
+
   //FORM PAGE
   create: function (req, res) {
     res.render("product-create", { products: products() });
@@ -52,10 +100,15 @@ const productControllers = {
       descripcion,
       descuento,
       tipo,
+      marca,
+      seccion,
       caracteristicas,
       valores,
     } = req.body;
+
+    //Generamos un id
     const newProductId = products()[products().length - 1].id + 1;
+    //Aqui en caracteristicasObj armamos el objeto con sus caracteristicas:valores
 
     const caracteristicasObj = {};
     for (const key in caracteristicas) {
@@ -65,10 +118,12 @@ const productControllers = {
     const newProduct = {
       id: newProductId,
       nombre: nombre,
+      marca: marca,
+      seccion: seccion,
       precio: parseFloat(precio),
       img: "/images/images_products/" + req.file.filename,
       descripcion: descripcion,
-      descuento: descuento,
+      descuento: parseFloat(descuento),
       tipo: tipo,
       caracteristicas: caracteristicasObj,
     };
@@ -81,7 +136,16 @@ const productControllers = {
     // Escribir los datos actualizados nuevamente en el archivo
     fs.writeFileSync(route, JSON.stringify(currentProducts, null, 2));
 
-    return res.redirect("/products");
+    return res.redirect("/products/admin");
+  },
+  destroy: function (req, res) {
+    const id = req.params.id;
+
+    // Filtrar los productos para eliminar el producto con el ID especificado
+    const updatedProducts = products().filter((prod) => prod.id != id);
+
+    fs.writeFileSync(route, JSON.stringify(updatedProducts, null, 2));
+    res.redirect("/products/admin");
   },
 };
 module.exports = productControllers;
