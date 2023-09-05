@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="\css\style-login-register.css" />
+        <title>Register</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+        <!-- Page content -->
+        <main>
+            <div class="conteiner">
+                <div class="form-box">
+                    <div class="login-register">Crea tu cuenta</div>
+
+                    <!-- Register -->
+
+                    <form action="/users/register" method="POST" id="register" class="input-group"
+                        enctype="multipart/form-data">
+                        <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
+                            placeholder="Nombre" required />
+                        <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
+                            placeholder="Apellido" required />
+                        <input type="email" class="input-field" id="email" name="email" placeholder="Email" required />
+                        <input type="password" class="input-field" id="password" name="password"
+                            placeholder="Contraseña" required />
+                        <input type="text" class="input-field" id="categoria" name="categoria" placeholder="Categoria"
+                            required />
+                        <div class="send-image">
+                            <label for="imagen">Foto de Perfil</label>
+                            <input type="file" name="userImage">
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+            </div>
+
+
+        </main>
+        <!-- Footer -->
+        <%- include("../partials/footer") %>
+</body>
+
+</html>

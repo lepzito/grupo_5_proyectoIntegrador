@@ -1,29 +1,20 @@
 [
   {
-    "identificador": "1",
-    "Nombre": "lucas",
-    "Apellido": "timte",
-    "Email": "lucas@dh.com",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
+    "id": 1,
+    "nombreUsuario": "lucas",
+    "apellidoUsuario": "tinte2",
+    "email": "lucasrtinte19@gmail.com",
+    "password": "$2a$08$A4ilRGMnKB.UPOOP33OPoeScLHpNQC2m/USd.y0fWAIy7cy.yfOAq",
+    "categoria": "admin",
+    "imgUser": "/images/users/userImage-1693819710252-626649829.jpg"
   },
   {
-    "identificador": "2",
-    "Nombre": "brian",
-    "Apellido": "cruz",
-    "Email": "birna@dh.com ",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
-  },
-  {
-    "identificador": "3",
-    "Nombre": "lujan",
-    "Apellido": "fer",
-    "Email": "lujan@dh.com",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
+    "id": 2,
+    "nombreUsuario": "lucas",
+    "apellidoUsuario": "tinte",
+    "email": "xidiwn5@gmail.com",
+    "password": "$2a$08$tDZLbfthxGPZB3sILdo1yOB9S6nHgFdt8XuLxA41EqPPDVHOD8vkO",
+    "categoria": "admin",
+    "imgUser": "userImage-1693874768739-471062700.jpg"
   }
 ]

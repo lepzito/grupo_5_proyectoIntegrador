@@ -1,13 +1,13 @@
-## Daily 29/08/23.
+## Daily 04/09/23.
 
--**Lucas**: ayer termine de armar la vista de los form edit y create.
+-**Lucas**: ayer vi el proceso de login completo para el sprint 5.
 
-- tuve el inconveniente en las etiquetas ejs pero lo resolvi, y tambien con la tabla de especificaciones.
+- No tuve un inconveniente .
 
--y hoy termine el crud de productos.
+-y hoy hice algunos puntos del sprint 5.
 
--**brian**: estuvo haciendo el user.json lo pudo mergear a develop.
+-**brian**: ayer termine de ponerme al dia con los entregables del curso.
 
 - No encontro problemas.
 
--Y hoy mergeo desde branch-brian a develop.
+-Y hoy me pongo al dia con el sprint 5.

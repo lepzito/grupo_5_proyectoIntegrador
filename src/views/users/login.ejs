@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head") %>
+    <link rel="stylesheet" href="\css\style-login-register.css" />
+    <title>Login</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <%- include("../partials/header") %>
+    <!-- Page content -->
+    <main>
+      <div class="conteiner">
+        <div class="form-box">
+          <% if (locals.errors&&errors.email) {%>
+            <div class="text-danger">
+              <p>
+                <%= errors.email.msg %>
+              </p>
+            </div>
+
+            <%} %>
+              <div class="login-register">Iniciar Sesion</div>
+              <!-- Login -->
+
+              <form action="/users/login" method="POST" id="login" class="input-group">
+                <input type="text" name="email" class="input-field" placeholder="Email" />
+
+                <input type="password" name="password" class="input-field" placeholder="Contraseña" />
+                <input type="checkbox" class="check-box" />
+                <span>Recordar Usuario</span>
+                <button type="submit" class="submit-btn">Acceder</button>
+                <p class="registrarse">
+                  ¿Nuevo en la pagina? <a href="/users/register">Crea tu cuenta :D</a>
+                </p>
+              </form>
+
+        </div>
+      </div>
+
+
+    </main>
+    <!-- Footer -->
+    <%- include("../partials/footer") %>
+</body>
+
+</html>

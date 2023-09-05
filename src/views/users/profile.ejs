@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="\css\style-login-register.css" />
+        <title>Login</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+        <!-- Page content -->
+        <main>
+            <div class="conteiner">
+                <div class="form-box">
+
+                    <div class="login-register">hola <%= user.nombreUsuario %>
+                    </div>
+                    <img src="/images/users/<%= user.imgUser %>" alt="avatar">
+                    <p>
+                        <%= user.email %>
+                    </p>
+                    <p class="registrarse">
+                        <a href="/users/logout">SALIR</a>
+                    </p>
+                </div>
+            </div>
+
+
+        </main>
+        <!-- Footer -->
+        <%- include("../partials/footer") %>
+</body>
+
+</html>
