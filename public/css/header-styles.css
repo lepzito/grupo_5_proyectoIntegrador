@@ -40,11 +40,7 @@ header {
   font-size: 17px;
   color: white;
 }
-.icons .corazon {
-  position: absolute;
-  top: -99999px;
-  display: none;
-}
+
 .main-navbar2 {
   display: none;
 }

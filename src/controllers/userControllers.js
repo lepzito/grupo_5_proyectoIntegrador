@@ -16,6 +16,9 @@ const userControllers = {
       if (passwordCorrect) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
+        if (req.body.remember_user) {
+          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 30 });
+        }
         return res.redirect("./profile");
       }
     }
@@ -31,7 +34,6 @@ const userControllers = {
     res.render("./users/register");
   },
   create: function (req, res) {
-    //aqui iria primero los errores de validaciones
     //antes de crear quiero saber si ya existe un usuario con el mismo mail en la bd
     //ver express validator
     //  let userInDb = user.findByField("email", req.body.email);
@@ -66,7 +68,9 @@ const userControllers = {
     res.render("./users/profile", { user: req.session.userLogged });
   },
   logout: function (req, res) {
+    res.clearCookie("userEmail");
     req.session.destroy();
+
     return res.redirect("/");
   },
 };

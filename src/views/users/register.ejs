@@ -37,7 +37,7 @@
                                     </div>
 
                                     <%} %>
-                                        <input type="email" class="input-field" id="email" name="email"
+                                        <input type="text" class="input-field" id="email" name="email"
                                             placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
                                         <% if (locals.errors && errors.email) {%>
                                             <div class="text-danger">
@@ -57,7 +57,13 @@
                                                             <label for="imagen">Foto de Perfil</label>
                                                             <input type="file" name="userImage">
                                                         </div>
-                                                        <button type="submit" class="submit-btn">Enviar</button>
+                                                        <% if (locals.errors && errors.userImage) {%>
+                                                            <div class="text-danger">
+                                                                <%= errors.userImage.msg %>
+                                                            </div>
+
+                                                            <%} %>
+                                                                <button type="submit" class="submit-btn">Enviar</button>
                     </form>
                 </div>
 
