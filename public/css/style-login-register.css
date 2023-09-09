@@ -41,8 +41,9 @@ main {
 }
 .text-danger {
   color: red;
-  text-align: center;
+  text-align: left;
   font-size: 15px;
+  margin-bottom: 8px;
 }
 .input-field {
   width: 100%;
@@ -65,7 +66,7 @@ main {
   padding: 8px;
   cursor: pointer;
   display: block;
-  margin: auto;
+  margin: 10px auto;
   background: black;
   border: 0px;
   outline: none;
@@ -86,10 +87,23 @@ span {
   margin: 20px auto;
   font-size: 15px;
 }
-.send-image {
-  display: grid;
-  grid-gap: 10px;
-  margin: 20px auto;
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #efefef;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 8px;
+}
+
+.custom-file-upload:hover {
+  background-color: orange;
+}
+
+.file-input {
+  display: none;
 }
 
 /* Moviles */

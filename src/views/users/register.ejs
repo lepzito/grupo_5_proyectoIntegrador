@@ -53,9 +53,12 @@
                                                     </div>
 
                                                     <%} %>
-                                                        <div class="send-image">
-                                                            <label for="imagen">Foto de Perfil</label>
-                                                            <input type="file" name="userImage">
+                                                        <div class="upload-button">
+                                                            <label for="profile-image" class="custom-file-upload">
+                                                                Foto de Perfil
+                                                            </label>
+                                                            <input type="file" id="profile-image" name="userImage"
+                                                                class="file-input">
                                                         </div>
                                                         <% if (locals.errors && errors.userImage) {%>
                                                             <div class="text-danger">
