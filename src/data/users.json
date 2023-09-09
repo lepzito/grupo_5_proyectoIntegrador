@@ -2,19 +2,9 @@
   {
     "id": 1,
     "nombreUsuario": "lucas",
-    "apellidoUsuario": "tinte2",
-    "email": "lucasrtinte19@gmail.com",
-    "password": "$2a$08$A4ilRGMnKB.UPOOP33OPoeScLHpNQC2m/USd.y0fWAIy7cy.yfOAq",
-    "categoria": "admin",
-    "imgUser": "/images/users/userImage-1693819710252-626649829.jpg"
-  },
-  {
-    "id": 2,
-    "nombreUsuario": "lucas",
     "apellidoUsuario": "tinte",
-    "email": "xidiwn5@gmail.com",
-    "password": "$2a$08$tDZLbfthxGPZB3sILdo1yOB9S6nHgFdt8XuLxA41EqPPDVHOD8vkO",
-    "categoria": "admin",
-    "imgUser": "userImage-1693874768739-471062700.jpg"
+    "email": "lucasrtinte19@gmail.com",
+    "password": "$2a$08$fHgdgP1IxW0NU0cOC/PwFeUADZC50G5CASgkvkMENt4XltVX7esri",
+    "imgUser": "userImage-1694025413517-146030248.jpg"
   }
 ]

@@ -1,6 +1,7 @@
 const user = require("../models/user.js");
 const path = require("path");
 const bcrypt = require("bcryptjs");
+const { validationResult } = require("express-validator");
 const userControllers = {
   login: function (req, res) {
     res.render("./users/login");
@@ -45,13 +46,21 @@ const userControllers = {
     // }
     // );
     //}
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("./users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
     let userToCreate = {
       ...req.body,
       password: bcrypt.hashSync(req.body.password, 8),
       imgUser: req.file.filename,
     };
     user.create(userToCreate);
-    return res.redirect("/login");
+    return res.redirect("./login");
   },
   profile: function (req, res) {
     res.render("./users/profile", { user: req.session.userLogged });

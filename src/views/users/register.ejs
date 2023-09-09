@@ -21,19 +21,43 @@
                     <form action="/users/register" method="POST" id="register" class="input-group"
                         enctype="multipart/form-data">
                         <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
-                            placeholder="Nombre" required />
-                        <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
-                            placeholder="Apellido" required />
-                        <input type="email" class="input-field" id="email" name="email" placeholder="Email" required />
-                        <input type="password" class="input-field" id="password" name="password"
-                            placeholder="Contraseña" required />
-                        <input type="text" class="input-field" id="categoria" name="categoria" placeholder="Categoria"
-                            required />
-                        <div class="send-image">
-                            <label for="imagen">Foto de Perfil</label>
-                            <input type="file" name="userImage">
-                        </div>
-                        <button type="submit" class="submit-btn">Enviar</button>
+                            placeholder="Nombre" value="<%= locals.oldData?oldData.nombreUsuario:null %>" />
+                        <% if (locals.errors && errors.nombreUsuario) {%>
+                            <div class="text-danger">
+                                <%= errors.nombreUsuario.msg %>
+                            </div>
+
+                            <%} %>
+
+                                <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
+                                    placeholder="Apellido" value="<%= locals.oldData?oldData.apellidoUsuario:null %>" />
+                                <% if (locals.errors && errors.apellidoUsuario) {%>
+                                    <div class="text-danger">
+                                        <%= errors.apellidoUsuario.msg %>
+                                    </div>
+
+                                    <%} %>
+                                        <input type="email" class="input-field" id="email" name="email"
+                                            placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
+                                        <% if (locals.errors && errors.email) {%>
+                                            <div class="text-danger">
+                                                <%= errors.email.msg %>
+                                            </div>
+
+                                            <%} %>
+                                                <input type="password" class="input-field" id="password" name="password"
+                                                    placeholder="Contraseña" />
+                                                <% if (locals.errors && errors.password) {%>
+                                                    <div class="text-danger">
+                                                        <%= errors.password.msg %>
+                                                    </div>
+
+                                                    <%} %>
+                                                        <div class="send-image">
+                                                            <label for="imagen">Foto de Perfil</label>
+                                                            <input type="file" name="userImage">
+                                                        </div>
+                                                        <button type="submit" class="submit-btn">Enviar</button>
                     </form>
                 </div>
 

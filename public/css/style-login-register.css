@@ -39,7 +39,11 @@ main {
 .input-group {
   margin: 0 auto;
 }
-
+.text-danger {
+  color: red;
+  text-align: center;
+  font-size: 15px;
+}
 .input-field {
   width: 100%;
   padding: 10px 0px;
@@ -80,6 +84,7 @@ span {
 
 .registrarse {
   margin: 20px auto;
+  font-size: 15px;
 }
 .send-image {
   display: grid;
@@ -108,5 +113,8 @@ span {
 
   .submit-btn {
     font-size: 13px;
+  }
+  .registrarse {
+    font-size: 12px;
   }
 }

@@ -111,6 +111,9 @@ pc armadas y smartphones, desparecera el menu hamburguesa */
   .icons i {
     font-size: 23px;
   }
+  .icons p {
+    font-size: 19px;
+  }
   .icons .lupa i {
     display: none;
     position: absolute;
