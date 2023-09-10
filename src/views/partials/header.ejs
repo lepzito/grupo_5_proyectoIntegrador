@@ -1,8 +1,6 @@
 <header>
   <div class="encabezado">
-    <div class="main-navbar">
-      <a href="#"> <i class="fas fa-bars"></i></a>
-    </div>
+
     <div class="logo">
       <a href="/"> <img src="\images\logo.png" alt="Logo de TECNO-JUY" /></a>
     </div>
@@ -22,39 +20,50 @@
     </div>
 
     <div class="icons">
-      <!---Aqui tener en cuenta el tipo de boton que va a hacer la lupa y poner un place holder --->
 
-      <button class="lupa" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
 
       <% if (locals.isLogged) { %>
-        <p>
-          <%= locals.userLogged.nombreUsuario %>
-        </p><a href="/users/login">
-          <i class="fa-solid fa-user"></i>
-        </a>
+        <div class="login-box">
+          <a href="/users/login">
+            <i class="fa-solid fa-user">
+            </i>
+
+            <p>
+              <%= locals.userLogged.nombreUsuario %>
+            </p>
+          </a>
+        </div>
         <a href="/favoritos"><i class="fa-solid fa-heart"></i></a>
         <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
         <% }else{%>
-          <p class="login">Iniciar Sesion</p>
+          <div class="login-box">
 
-          <a href="/users/login">
-            <i class="fa-solid fa-user"></i>
-          </a>
+            <a href="/users/login">
+              <i class="fa-solid fa-user" style="color: black;"></i>
+
+              <p>Iniciar Sesion</p>
+
+            </a>
+          </div>
+
           <% } %>
 
 
 
     </div>
+
   </div>
-  <div class="main-navbar2">
-    <nav>
-      <ul>
+  <nav>
+    <label for="toggler">
+      <i class="fa fa-bars"></i>
+    </label>
+    <input type="checkbox" id="toggler" name="">
+    <div class="menu">
+      <ul class="list">
         <li><a href="/products">Pc Armadas</a></li>
         <li><a href="/products">Smartphones</a></li>
         <li><a href="/products">Productos</a></li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
