@@ -3,8 +3,8 @@
 
 <head>
     <%- include("../partials/head") %>
-        <link rel="stylesheet" href="\css\style-login-register.css" />
         <title>Login</title>
+        <link rel="stylesheet" href="\css\profile.css" />
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
                     <div class="login-register">hola <%= user.nombreUsuario %>
                     </div>
-                    <img src="/images/users/<%= user.imgUser %>" alt="avatar">
+                    <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">
                     <p>
                         <%= user.email %>
                     </p>
