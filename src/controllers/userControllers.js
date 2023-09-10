@@ -34,20 +34,6 @@ const userControllers = {
     res.render("./users/register");
   },
   create: function (req, res) {
-    //antes de crear quiero saber si ya existe un usuario con el mismo mail en la bd
-    //ver express validator
-    //  let userInDb = user.findByField("email", req.body.email);
-    //if (userInDb) {
-    //return (
-    //res.render("./users/register"),
-    //{
-    //email: {
-    //msg: "este usuario ya se registro",
-    //},
-    //oldData: req.body,
-    // }
-    // );
-    //}
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
@@ -56,6 +42,20 @@ const userControllers = {
         oldData: req.body,
       });
     }
+
+    let userInDB = user.findByField("email", req.body.email);
+
+    if (userInDB) {
+      return res.render("./users/register", {
+        errors: {
+          email: {
+            msg: "Este email ya está registrado",
+          },
+        },
+        oldData: req.body,
+      });
+    }
+
     let userToCreate = {
       ...req.body,
       password: bcrypt.hashSync(req.body.password, 8),

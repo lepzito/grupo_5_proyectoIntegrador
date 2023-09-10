@@ -272,7 +272,7 @@ label i {
   }
   .login-box a {
     display: flex;
-    grid-gap: 1px;
+    grid-gap: 3px;
     text-decoration: none;
     padding: 9px;
     text-align: center;
@@ -280,7 +280,7 @@ label i {
     color: white;
     background-color: black;
   }
-  .login-box i {
+  .login-box a .fa-solid {
     color: white;
   }
 }
