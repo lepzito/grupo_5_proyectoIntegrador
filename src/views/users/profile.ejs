@@ -12,18 +12,19 @@
     <%- include("../partials/header") %>
         <!-- Page content -->
         <main>
-            <div class="conteiner">
-                <div class="form-box">
-
-                    <div class="login-register">hola <%= user.nombreUsuario %>
-                    </div>
-                    <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">
-                    <p>
-                        <%= user.email %>
-                    </p>
-                    <p class="registrarse">
-                        <a href="/users/logout">SALIR</a>
-                    </p>
+            <div>
+                <div>
+                    hola <%= user.nombreUsuario %>
+                        apellido
+                        <div>
+                        </div>
+                        <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">
+                        <p>
+                            <%= user.email %>
+                        </p>
+                        <p>
+                            <a href="/users/logout">SALIR</a>
+                        </p>
                 </div>
             </div>
 
