@@ -1,13 +1,13 @@
-## Daily 10/09/23.
+## Daily 16/09/23.
 
--**Lucas**: ayer termine con el crud de usuarios y el sprint 5.
+-**Lucas**: chekie la vista profile que hiso brian.
 
 - No tuve un inconveniente .
 
--Hoy termine de arreglar el header que tenia problemas con la vista del iniciar sesion.
+-Hoy se termino de mergear a develop el trabajo de brian.
 
--**samuel**: ayer se puso al dia con el playground.
+-**Brian**: termine de hacer la vista profile.
 
 - No encontro problemas.
 
--Hoy hare la vista de productos y el filtrado de productos.
+-hoy termine de mergear a la rama develop.
