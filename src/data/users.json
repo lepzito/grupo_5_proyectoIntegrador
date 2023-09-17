@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "nombreUsuario": "Lucas",
-    "apellidoUsuario": "Tinte",
-    "email": "lucasrtinte19@gmail.com",
-    "password": "$2a$08$fHgdgP1IxW0NU0cOC/PwFeUADZC50G5CASgkvkMENt4XltVX7esri",
-    "imgUser": "userImage-1694025413517-146030248.jpg"
+    "nombreUsuario": "brian",
+    "apellidoUsuario": "cruz",
+    "email": "brian@dh.com",
+    "password": "$2a$08$7LiiJHeQvB2Mnglv8DR5Guwm501whL109Rlw1Mi1CKxMlWUjdsTB6",
+    "imgUser": "userImage-1694954385138-67320554.png"
   }
 ]
