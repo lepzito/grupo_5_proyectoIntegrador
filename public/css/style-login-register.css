@@ -21,74 +21,38 @@ main {
 
 .form-box {
   width: 315px;
-  height: 555px;
-  position: relative;
   margin: 6% auto;
   background: #fff;
   padding: 5px;
   border-radius: 10px;
-  overflow: hidden;
 }
 
-.button-box {
-  display: flex;
-  width: 240px;
-  margin: 30px 40px;
-  position: relative;
-  box-shadow: 0 0 20px 9px #e0e0e0;
-  border-radius: 30px;
-}
-
-.presionar-boton {
-  padding: 10px 22px;
-  cursor: pointer;
-  background: transparent;
-  border: 0px;
-  outline: none;
-  position: relative;
-}
-
-#elegir {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 120px;
-  height: 100%;
+.login-register {
+  text-align: center;
+  width: 60%;
   background: orange;
   border-radius: 30px;
-  transition: 0.8s;
-}
-
-.redes-sociales {
-  margin: 30px auto;
-  text-align: center;
-}
-
-.redes-sociales img {
-  width: 35px;
-  margin: 0 12px;
-  box-shadow: 0 0 20px 9px #e0e0e0;
-  cursor: pointer;
-  border-radius: 50%;
+  padding: 8px;
+  margin: 10px auto;
 }
 
 .input-group {
-  top: 180px;
-  position: absolute;
-  width: 280px;
-  transition: 0.8s;
-  margin: 0 25px;
+  margin: 0 auto;
 }
-
+.text-danger {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
 .input-field {
   width: 100%;
   padding: 10px 0px;
-  margin: 5px 0px;
+  margin: 20px 0px;
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-bottom: 2px solid rgb(32, 29, 29);
-  outline: none;
   background: transparent;
 }
 
@@ -98,11 +62,11 @@ main {
 }
 
 .submit-btn {
-  width: 85%;
-  padding: 10px 30px;
+  width: 60%;
+  padding: 8px;
   cursor: pointer;
   display: block;
-  margin: auto;
+  margin: 10px auto;
   background: black;
   border: 0px;
   outline: none;
@@ -111,11 +75,7 @@ main {
 }
 
 .check-box {
-  margin: 30px 10px 30px 0;
-}
-.terms-condi {
-  display: flex;
-  align-items: center;
+  margin: 30px 0;
 }
 
 span {
@@ -123,61 +83,52 @@ span {
   font-size: 13px;
 }
 
-.terminos-condiciones {
-  color: #757475;
-  font-size: 12px;
-  bottom: 66px;
-  position: absolute;
-  margin-left: -5px;
+.registrarse {
+  margin: 20px auto;
+  font-size: 15px;
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #efefef;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 8px;
 }
 
-.terminos-condiciones a {
-  margin-left: 4px;
-  font-size: 13px;
+.custom-file-upload:hover {
+  background-color: orange;
 }
 
-.olvidar-contraseña {
-  position: relative;
-  top: 45px;
+.file-input {
+  display: none;
 }
 
-#login {
-  left: 0%;
-}
-
-#register {
-  left: 450px;
-}
-
+/* Moviles */
 @media screen and (min-width: 250px) and (max-width: 480px) {
   main {
     width: 100%;
   }
 
   .form-box {
-    height: 600px;
-    max-width: 100%;
+    width: unset;
+    font-size: 13px;
+    margin: 6% 20px;
   }
   .input-field {
-    font-size: 20px;
-  }
-  .presionar-boton {
-    font-size: 18px;
+    font-size: 13px;
   }
   span {
-    font-size: 15px;
-    position: absolute;
+    font-size: 13px;
     bottom: 113px;
   }
-  .terminos-condiciones {
-    font-size: 15px;
-    position: absolute;
-    bottom: 70px;
-  }
+
   .submit-btn {
-    font-size: 20px;
+    font-size: 13px;
   }
-  .olvidar-contraseña {
-    font-size: 18px;
+  .registrarse {
+    font-size: 12px;
   }
 }

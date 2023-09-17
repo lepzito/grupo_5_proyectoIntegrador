@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="\css\style-login-register.css" />
+        <title>Register</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+        <!-- Page content -->
+        <main>
+            <div class="conteiner">
+                <div class="form-box">
+                    <div class="login-register">Crea tu cuenta</div>
+
+                    <!-- Register -->
+
+                    <form action="/users/register" method="POST" id="register" class="input-group"
+                        enctype="multipart/form-data">
+                        <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
+                            placeholder="Nombre" value="<%= locals.oldData?oldData.nombreUsuario:null %>" />
+                        <% if (locals.errors && errors.nombreUsuario) {%>
+                            <div class="text-danger">
+                                <%= errors.nombreUsuario.msg %>
+                            </div>
+
+                            <%} %>
+
+                                <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
+                                    placeholder="Apellido" value="<%= locals.oldData?oldData.apellidoUsuario:null %>" />
+                                <% if (locals.errors && errors.apellidoUsuario) {%>
+                                    <div class="text-danger">
+                                        <%= errors.apellidoUsuario.msg %>
+                                    </div>
+
+                                    <%} %>
+                                        <input type="text" class="input-field" id="email" name="email"
+                                            placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
+                                        <% if (locals.errors && errors.email) {%>
+                                            <div class="text-danger">
+                                                <%= errors.email.msg %>
+                                            </div>
+
+                                            <%} %>
+                                                <input type="password" class="input-field" id="password" name="password"
+                                                    placeholder="Contraseña" />
+                                                <% if (locals.errors && errors.password) {%>
+                                                    <div class="text-danger">
+                                                        <%= errors.password.msg %>
+                                                    </div>
+
+                                                    <%} %>
+                                                        <div class="upload-button">
+                                                            <label for="profile-image" class="custom-file-upload">
+                                                                Foto de Perfil
+                                                            </label>
+                                                            <input type="file" id="profile-image" name="userImage"
+                                                                class="file-input">
+                                                        </div>
+                                                        <% if (locals.errors && errors.userImage) {%>
+                                                            <div class="text-danger">
+                                                                <%= errors.userImage.msg %>
+                                                            </div>
+
+                                                            <%} %>
+                                                                <button type="submit" class="submit-btn">Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+            </div>
+
+
+        </main>
+        <!-- Footer -->
+        <%- include("../partials/footer") %>
+</body>
+
+</html>

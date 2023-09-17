@@ -1,29 +1,10 @@
 [
   {
-    "identificador": "1",
-    "Nombre": "lucas",
-    "Apellido": "timte",
-    "Email": "lucas@dh.com",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
-  },
-  {
-    "identificador": "2",
-    "Nombre": "brian",
-    "Apellido": "cruz",
-    "Email": "birna@dh.com ",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
-  },
-  {
-    "identificador": "3",
-    "Nombre": "lujan",
-    "Apellido": "fer",
-    "Email": "lujan@dh.com",
-    "Contraseña": "password",
-    "Categoria": "admin",
-    "Imagen": "image"
+    "id": 1,
+    "nombreUsuario": "brian",
+    "apellidoUsuario": "cruz",
+    "email": "brian@dh.com",
+    "password": "$2a$08$7LiiJHeQvB2Mnglv8DR5Guwm501whL109Rlw1Mi1CKxMlWUjdsTB6",
+    "imgUser": "userImage-1694954385138-67320554.png"
   }
 ]

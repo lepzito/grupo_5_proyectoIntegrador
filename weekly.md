@@ -1,13 +1,13 @@
-## Daily 29/08/23.
+## Daily 16/09/23.
 
--**Lucas**: ayer termine de armar la vista de los form edit y create.
+-**Lucas**: chekie la vista profile que hiso brian.
 
-- tuve el inconveniente en las etiquetas ejs pero lo resolvi, y tambien con la tabla de especificaciones.
+- No tuve un inconveniente .
 
--y hoy termine el crud de productos.
+-Hoy se termino de mergear a develop el trabajo de brian.
 
--**brian**: estuvo haciendo el user.json lo pudo mergear a develop.
+-**Brian**: termine de hacer la vista profile.
 
 - No encontro problemas.
 
--Y hoy mergeo desde branch-brian a develop.
+-hoy termine de mergear a la rama develop.

@@ -8,113 +8,193 @@ header {
   display: flex;
   align-items: center;
   max-width: 1200px;
-  justify-content: space-between;
-}
-.main-navbar i {
-  margin-left: 15px;
-  font-size: 20px;
-  color: white;
+  flex-direction: column;
+  grid-gap: 10px;
 }
 
 .logo img {
-  max-width: 144px;
-  padding: 5px;
+  max-width: 190px;
+  padding: 11px;
 }
 
 .icons {
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  margin-bottom: 15px;
   grid-gap: 12px;
 }
-.icons .lupa {
-  border: none;
-  background-color: transparent;
-}
 
-.icons .lupa i {
-  font-size: 17px;
-  color: white;
-}
 .icons i {
   font-size: 17px;
   color: white;
 }
-.icons .corazon {
-  position: absolute;
-  top: -99999px;
-  display: none;
-}
-.main-navbar2 {
-  display: none;
-}
+
 .search-bar {
   display: none;
 }
 .container-search-bar {
   display: none;
 }
+.login-box a {
+  display: flex;
+  grid-gap: 11px;
+  text-decoration: none;
+  padding: 9px;
+  text-align: center;
+  border-radius: 6px;
+  color: black;
+  background: white;
+}
+.container-search-bar {
+  display: none;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid orange;
+}
+.container-search-bar {
+  display: block;
+}
+.container-search-bar .input {
+  border: 0;
+  outline: none;
+  color: #8b7d77;
+}
+
+.search_wrap .search_box {
+  position: relative;
+  height: 33px;
+  width: 55vw;
+  max-width: 55vw;
+}
+
+.search_wrap .search_box .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.search_wrap .search_box .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover {
+  background: orange;
+}
+
+.search_wrap .search_box .btn.btn_common .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 20px;
+}
+
+.search_wrap.search_wrap_1 .search_box .btn {
+  right: 0;
+}
+.search_wrap.search_wrap_1 .search_box .input {
+  padding-right: 80px;
+}
+.btn_common button {
+  border: none;
+  background: transparent;
+}
+/* menu hamburguesa desplegable */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+  padding: 15px;
+  background: black;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+.list {
+  display: flex;
+  list-style: none;
+  gap: 100px;
+}
+
+#toggler,
+label {
+  display: none;
+}
+label i {
+  color: white;
+}
+.login-box i {
+  color: black;
+}
+@media screen and (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    font-size: 18px;
+  }
+  .list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+  }
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  label {
+    display: inline-flex;
+    font-size: 25px;
+  }
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+  .list {
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+  }
+}
+/* fin menu hamburguesa desplegable */
+
 /* Estilos para tablets, la pantalla mostrara el icono del corazon */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .encabezado {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    justify-content: space-between;
+    flex-direction: row;
+    grid-gap: unset;
+  }
+  .icons {
+    margin-right: 15px;
+    margin-bottom: 0px;
+  }
   .icons .corazon {
     display: block;
     position: static;
   }
   .container-search-bar {
     display: none;
-  }
-}
-/* Estilos para desktop y pantallas mas grandes, se mostrara la search bar y los menus productos,
-pc armadas y smartphones, desparecera el menu hamburguesa */
-
-@media screen and (min-width: 769px) {
-  .encabezado {
-    margin: 0 auto;
-  }
-  .logo img {
-    max-width: 300px;
-    width: 25vw;
-    padding: 0;
-    margin: 25px;
-  }
-  .main-navbar {
-    display: none;
-  }
-  .icons .corazon {
-    display: block;
-    position: static;
-  }
-  .main-navbar2 {
-    display: block;
-    margin-bottom: 20px;
-  }
-  .main-navbar2 nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-  }
-  .main-navbar2 nav ul li a {
-    color: white;
-    font-size: 23px;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .main-navbar2 nav ul li {
-    list-style: none;
-  }
-  .main-navbar2 ul li a:hover {
-    color: orange; /* Cambia el color al pasar el mouse sobre el enlace */
-  }
-  .icons {
-    padding: 20px;
-  }
-  .icons i {
-    font-size: 23px;
-  }
-  .icons .lupa i {
-    display: none;
-    position: absolute;
-    top: -999999px;
   }
   .search-bar {
     display: flex;
@@ -136,9 +216,132 @@ pc armadas y smartphones, desparecera el menu hamburguesa */
 
   .search_wrap .search_box {
     position: relative;
-    width: 45vw;
+    width: 40vw;
     height: 33px;
-    max-width: 555px;
+    max-width: 45vw;
+  }
+
+  .search_wrap .search_box .input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 18px;
+  }
+
+  .search_wrap .search_box .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .search_wrap .search_box .btn:hover {
+    background: orange;
+  }
+
+  .search_wrap .search_box .btn.btn_common .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 20px;
+  }
+
+  .search_wrap.search_wrap_1 .search_box .btn {
+    right: 0;
+  }
+  .search_wrap.search_wrap_1 .search_box .input {
+    padding-right: 80px;
+  }
+  .btn_common button {
+    border: none;
+    background: transparent;
+  }
+  .login-box a {
+    max-width: 100px;
+    flex-direction: column;
+  }
+  .login-box a {
+    display: flex;
+    grid-gap: 3px;
+    text-decoration: none;
+    padding: 9px;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    background-color: black;
+  }
+  .login-box a .fa-solid {
+    color: white;
+  }
+}
+/* Estilos para desktop y pantallas mas grandes, se mostrara la search bar y los menus productos,
+pc armadas y smartphones, desparecera el menu hamburguesa */
+
+@media screen and (min-width: 769px) {
+  .encabezado {
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo img {
+    max-width: 300px;
+    width: 25vw;
+    padding: 0;
+    margin: 25px 25px 0 25px;
+  }
+
+  .icons {
+    margin-right: 15px;
+    margin-bottom: 0px;
+  }
+  .icons .corazon {
+    display: block;
+    position: static;
+  }
+
+  .icons {
+    padding: 20px;
+  }
+  .icons i {
+    font-size: 18px;
+  }
+  .icons p {
+    font-size: 15px;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid orange;
+  }
+  .container-search-bar {
+    display: block;
+  }
+  .container-search-bar .input {
+    border: 0;
+    outline: none;
+    color: #8b7d77;
+  }
+
+  .search_wrap {
+    margin: 38px auto;
+  }
+
+  .search_wrap .search_box {
+    position: relative;
+    width: 40vw;
+    height: 33px;
+    max-width: 45vw;
   }
 
   .search_wrap .search_box .input {
