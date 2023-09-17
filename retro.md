@@ -1,14 +1,14 @@
-## Retrospectiva del Sprint 3 - Estrella de Mar
+## Retrospectiva del Sprint 4 - Estrella de Mar
 
 ## Logros y aspectos positivos
 
-- Se cumplieron los objetivos esperados.
+- Se cumplieron los objetivos esperados mas antes de lo estimado.
   
 ## Aspectos a mejorar
 
-- La comunicacion entre los miembros del equipo, es algo que todavia no hemos logrado concretar.
-- Tambien el hecho de poder ponernos al dia con el playground, si bien todos tenemos nuestras responsabilidades ajenas al
-  curso, no olvidar que si nos atrasamos luego retomar las clases y practicas es mas dificil.
+- La comunicacion entre los miembros del equipo, es algo que todavia no hemos logrado solucionar.
+- Tambien el hecho de poder ponernos al dia con el playground, si bien todos tenemos nuestras responsabilidades ajenas al curso, no olvidar que si nos atrasamos luego retomar las clases y practicas es mas complicado seguir el
+  el ritmo de la cursada.
  
 ## Start Doing
 "Listar aquí las nuevas ideas o prácticas innovadoras que queremos probar en el próximo Sprint."
@@ -21,6 +21,8 @@
 - El uso de github y subir archivos al repositorio.
 
 - Reunirnos en discord los domingos para despejar las ultimas dudas y ultimar detalles.
+
+- Reunirnos despues de clases para planificar tareas del sprint.
 
 ## Keep Doing
 "Listar aquí las prácticas que hemos estado realizando y que nos han brindado valor. Son las que seguiremos haciendo sin necesidad de modificarlas."
@@ -36,14 +38,14 @@
 ## Less of
 "Listar aquí aquellas prácticas que hemos intentado en el pasado pero que no nos han generado el valor esperado. Aunque pueden tener una segunda oportunidad, no serán una prioridad."
 
-- Lo que venimos implementando tiene un buen curso, solo debemos mejorar la coordinación para lograr un buen resultado.
+- Lo que venimos implementando tiene un buen curso, solo debemos mejorar la comunicacion entre integrantes para lograr un buen resultado.
 
 - Preguntar a los compañeros como van con la tarea asignada y si tienen alguna duda.
 
 ## Stop Doing
 "Listar aquí las prácticas que hemos decidido eliminar o dejar de hacer, ya que no nos aportan valor o no se ajustan a nuestras necesidades."
 
-- Todavia no hemos decidido dejar de lado ninguna practica, ya que queremos darle segunda oportunidad y seguir intentando.
+- Todavia no hemos decidido dejar de lado ninguna practica.
 
 ## Plan de acción
 "Describir aquí el plan de acción basado en las conclusiones de la retrospectiva. Detallar las acciones específicas que se tomarán para implementar las ideas de "Start Doing" y "More of", y para ajustar o eliminar las prácticas de "Less of" y "Stop Doing". Asignar responsables y fechas límite si es necesario."
