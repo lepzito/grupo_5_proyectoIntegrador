@@ -1,4 +1,13 @@
 <header>
+  <div class="top-header">
+    <a href="#">Contacto</a>
+    <% if (locals.isLogged) { %>
+      <% }else{%>
+        <a href="/users/register">Registrate</a>
+        <% } %>
+
+          <a href="#">Ayuda</a>
+  </div>
   <div class="encabezado">
 
     <div class="logo">

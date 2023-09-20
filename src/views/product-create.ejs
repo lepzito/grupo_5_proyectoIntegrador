@@ -1,116 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head") %>
+<%- include("./partials/head") %>
   <link rel="stylesheet" href="\css\edit-create-form.css" />
   <title>Estas Creando ...</title>
 
   <body>
     <%- include("./partials/header") %>
 
-    <main>
-      <div class="container">
-        <div class="row"></div>
-        <div class="form-container">
-          <form action="/products" method="post" enctype="multipart/form-data">
-            <div>
-              <h1>Estás creando un producto...</h1>
-            </div>
-            <div>
-              <div class="form-container__input">
-                <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre" />
+      <main>
+        <div class="container">
+          <div class="row"></div>
+          <div class="form-container">
+            <form action="/products" method="post" enctype="multipart/form-data">
+              <div>
+                <h1>Estás creando un producto...</h1>
               </div>
-              <div class="form-container__input">
-                <label for="precio">Precio del producto:</label>
-                <input type="text" id="precio" name="precio" />
-              </div>
-              <div class="form-container__input">
-                <label for="descuento">Descuento:</label>
-                <input type="text" id="descuento" name="descuento" />
-              </div>
-              <div class="form-container__input">
-                <label for="marca">Marca:</label>
-                <input type="text" id="marca" name="marca" />
-              </div>
-              <% let tipos=["Monitores", "Escritorio", "Smartphones",
-              "Notebooks", "Pc Armadas", "Perifericos"] %>
-              <div class="form-container__input">
-                <label for="tipo">Categoría:</label>
-                <select name="tipo" id="tipo">
-                  <option value="">Tipo de Producto</option>
-                  <% for (const unTipo of tipos) {%>
-                  <option value="<%=unTipo%>"><%=unTipo%></option>
-                  <%}%>
-                </select>
-              </div>
+              <div>
+                <div class="form-container__input">
+                  <label for="nombre">Nombre del producto:</label>
+                  <input type="text" id="nombre" name="nombre" />
+                </div>
+                <div class="form-container__input">
+                  <label for="precio">Precio del producto:</label>
+                  <input type="text" id="precio" name="precio" />
+                </div>
+                <div class="form-container__input">
+                  <label for="descuento">Descuento:</label>
+                  <input type="text" id="descuento" name="descuento" />
+                </div>
+                <div class="form-container__input">
+                  <label for="marca">Marca:</label>
+                  <input type="text" id="marca" name="marca" />
+                </div>
+                <% let tipos=["Monitores", "Escritorio" , "Smartphones" , "Notebooks" , "Pc Armadas" , "Perifericos" ]
+                  %>
+                  <div class="form-container__input">
+                    <label for="tipo">Categoría:</label>
+                    <select name="tipo" id="tipo">
+                      <option value="">Tipo de Producto</option>
+                      <% for (const unTipo of tipos) {%>
+                        <option value="<%=unTipo%>">
+                          <%=unTipo%>
+                        </option>
+                        <%}%>
+                    </select>
+                  </div>
 
-              <% let tiposSeccion=["ofertas", "novedades"] %>
-              <div class="form-container__input">
-                <label for="seccion">Seccion:</label>
-                <select name="seccion" id="seccion">
-                  <option value="">Ninguna</option>
-                  <% for (const tipo of tiposSeccion) {%>
-                  <option value="<%=tipo%>"><%=tipo%></option>
-                  <%}%>
-                </select>
-              </div>
+                  <% let tiposSeccion=["ofertas", "masVisto" ] %>
+                    <div class="form-container__input">
+                      <label for="seccion">Seccion:</label>
+                      <select name="seccion" id="seccion">
+                        <option value="">Ninguna</option>
+                        <% for (const tipo of tiposSeccion) {%>
+                          <option value="<%=tipo%>">
+                            <%=tipo%>
+                          </option>
+                          <%}%>
+                      </select>
+                    </div>
 
-              <div class="form-container__input">
-                <label for="descripcion">Descripción:</label>
-                <textarea
-                  name="descripcion"
-                  id="descripcion"
-                  placeholder="250 max length"
-                  rows="7"
-                  cols="50"
-                ></textarea>
-              </div>
-              <div class="tabla-caracteristicas">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Características</th>
-                      <th>Valor</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% for (let i = 1; i <= 5; i++) { %>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          name="caracteristicas[<%= i %>]"
-                          placeholder="Ej:Tamaño de la pantalla"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          name="valores[<%= i %>]"
-                          placeholder='32"'
-                        />
-                      </td>
-                    </tr>
-                    <% } %>
-                  </tbody>
-                </table>
-              </div>
-              <div class="form-container__input">
-                <label for="img">Imágenes del producto</label>
-                <input type="file" name="productImage" />
-              </div>
+                    <div class="form-container__input">
+                      <label for="descripcion">Descripción:</label>
+                      <textarea name="descripcion" id="descripcion" placeholder="250 max length" rows="7"
+                        cols="50"></textarea>
+                    </div>
+                    <div class="tabla-caracteristicas">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Características</th>
+                            <th>Valor</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% for (let i=1; i <=5; i++) { %>
+                            <tr>
+                              <td>
+                                <input type="text" name="caracteristicas[<%= i %>]"
+                                  placeholder="Ej:Tamaño de la pantalla" />
+                              </td>
+                              <td>
+                                <input type="text" name="valores[<%= i %>]" placeholder='32"' />
+                              </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="form-container__input">
+                      <label for="img">Imágenes del producto</label>
+                      <input type="file" name="productImage" />
+                    </div>
 
-              <div class="form-container__button">
-                <button type="submit" class="buy-now-button">
-                  Guardar cambios
-                </button>
+                    <div class="form-container__button">
+                      <button type="submit" class="buy-now-button">
+                        Guardar cambios
+                      </button>
+                    </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <%- include("./partials/footer") %>
+      <%- include("./partials/footer") %>
   </body>
+
 </html>

@@ -216,7 +216,37 @@ body {
 .join-button:hover {
   color: #ff6702; /* Al hacer hover, el botón se iluminará con un tono más claro de naranja */
 }
+.caja-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 6%;
+}
+.caja {
+  width: 30%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  transition: border-color 0.3s; /* Agrega una transición suave para el cambio de color del borde */
+  border: 2px solid #ccc; /* Establece un borde inicial de un gris claro muy claro */
+}
 
+.caja img {
+  width: 100px;
+}
+
+.caja p {
+  color: #000000;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.caja:hover {
+  border-color: orange;
+}
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   body {
@@ -256,6 +286,38 @@ body {
   .join-button {
     margin-left: 20px;
     padding: 10px 10px;
+  }
+  .caja-container {
+    display: none;
+    flex-direction: row;
+
+    justify-content: center;
+    margin: 0 6%;
+  }
+  .caja {
+    width: 30%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    transition: border-color 0.3s; /* Agrega una transición suave para el cambio de color del borde */
+    border: 2px solid #ccc; /* Establece un borde inicial de un gris claro muy claro */
+  }
+
+  .caja img {
+    width: 100px;
+  }
+
+  .caja p {
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .caja:hover {
+    border-color: orange;
   }
 }
 
@@ -319,5 +381,36 @@ body {
     font-size: 35px;
     margin-left: 22px;
     padding: 10px 10px;
+  }
+  .caja-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 6%;
+    flex-direction: row;
+  }
+  .caja {
+    width: 30%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    transition: border-color 0.3s; /* Agrega una transición suave para el cambio de color del borde */
+    border: 2px solid #ccc; /* Establece un borde inicial de un gris claro muy claro */
+  }
+
+  .caja img {
+    width: 100px;
+  }
+
+  .caja p {
+    color: #000000;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .caja:hover {
+    border-color: orange;
   }
 }

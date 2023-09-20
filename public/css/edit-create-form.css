@@ -109,6 +109,10 @@ table th {
     height: 30px;
     width: 40%;
   }
+  .form-container label {
+    display: inline-flex;
+    font-size: 25px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -143,5 +147,9 @@ table th {
     border-width: 3px;
     border-style: solid;
     border-image: linear-gradient(to right, red, rgba(0, 0, 0, 0)) 1 90%;
+  }
+  .form-container label {
+    display: inline-flex;
+    font-size: 25px;
   }
 }

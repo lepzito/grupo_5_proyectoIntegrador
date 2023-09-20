@@ -1,8 +1,6 @@
 [
   {
     "id": 1,
-    "ofert": false,
-    "productHome": true,
     "nombre": "Monitor gamer ViewSonic XG3220 LCD TFT 32\" negro 100V/240V",
     "precio": 7700,
     "tipo": "Monitores",
@@ -16,12 +14,10 @@
       "Con altavoces incorporados": "Si"
     },
     "descuento": null,
-    "seccion": ""
+    "seccion": "masVisto"
   },
   {
     "id": 2,
-    "ofert": false,
-    "productHome": true,
     "tipo": "Escritorio",
     "nombre": "Silla Sillon Gamer Pc Escritorio The Game House Ergonomica",
     "precio": 1200,
@@ -32,13 +28,12 @@
       "Altura": "1,30 m",
       "color": "Verde,Negro",
       "Es giratoria": "Si",
-      "Con altura ajustable": "SI"
+      "Con altura ajustable": "SI",
+      "seccion": "masVisto"
     }
   },
   {
     "id": 3,
-    "productHome": true,
-    "ofert": false,
     "tipo": "Escritorio",
     "nombre": "Msi Cyborg 15.6 Intel I7 Geforce Rtx4060 Ram 8gb Ssd 512gb",
     "precio": 5200,
@@ -50,12 +45,11 @@
       "Tipo de Disco": "SSD",
       "Sistema Operativo": "Windows 11",
       "Procesador": "Intel Core i7"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 4,
-    "productHome": true,
-    "ofert": false,
     "tipo": "Escritorio",
     "nombre": "Mouse Gamer Usb Newvision 3200 Dpi Rgb Juegos Pc",
     "precio": 20000,
@@ -67,12 +61,11 @@
       "Resolución del sensor": " 3200 dpi",
       "Tipo de sensor": "Óptico",
       "Color": "Rojo,Negro"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 5,
-    "productHome": true,
-    "ofert": false,
     "tipo": "Partes de PC",
     "nombre": "PLACA DE VIDEO RTX 2080 Super 8Gb Gigabyte",
     "precio": 320000,
@@ -84,12 +77,11 @@
       "Tipo de memoria gráfica": "GDDR6",
       "Interfaz con la placa madre": "PCI-Express 3.0",
       "Fabricante": "RTX"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 6,
-    "productHome": true,
-    "ofert": false,
     "tipo": "Gamer",
     "nombre": "Joystick Inalámbrico Sony DualSense PS5 Blanco",
     "precio": 59999,
@@ -101,12 +93,11 @@
       "Es inalámbrico": "Si",
       "Con Bluetooth": "Si",
       "Con touchpad": "Si"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 7,
-    "productHome": true,
-    "ofert": false,
     "tipo": "PC Armada",
     "nombre": "Megaport Pc Gamer Amd fx-6100 Gaming",
     "precio": 267452,
@@ -118,12 +109,11 @@
       "Sistema Operativo": "FREE",
       "Disco Duro": "960 GB",
       "Procesador": "AMD Ryzen"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 8,
-    "productHome": true,
-    "ofert": false,
     "tipo": "Auriculares",
     "nombre": "Auriculares Gamer Xbox 360  Inalámbricos",
     "precio": 69975,
@@ -135,12 +125,11 @@
       "Con luz LED:": "No",
       "Duración de la batería": "6h",
       "Con micrófono": "Si"
-    }
+    },
+    "seccion": "masVisto"
   },
   {
     "id": 9,
-    "productHome": true,
-    "ofert": true,
     "tipo": "Celular",
     "descuento": 11,
     "nombre": "APPLE IPHONE 8 PLUS 2/3 GB 256 GB detección facial hexa-core NFC IOS 16 4g LTE",
@@ -153,12 +142,12 @@
       "Desbloqueo": "Huella Dactilar",
       "Camara trasera principal": "12 Mpx",
       "Camara frontal principal": "7 Mpx"
-    }
+    },
+    "seccion": "ofertas"
   },
   {
     "id": 10,
-    "productHome": true,
-    "ofert": true,
+    "seccion": "ofertas",
     "tipo": "Celular",
     "descuento": 15,
     "nombre": "Samsung Galaxy S9 Plus Review",
@@ -175,8 +164,7 @@
   },
   {
     "id": 11,
-    "productHome": true,
-    "ofert": true,
+    "seccion": "ofertas",
     "tipo": "Teclado",
     "descuento": 3,
     "nombre": "Teclado Gamer Razer Huntsman Mini Sw Analog",
@@ -193,8 +181,7 @@
   },
   {
     "id": 12,
-    "productHome": true,
-    "ofert": true,
+    "seccion": "ofertas",
     "tipo": "Celular",
     "descuento": 12,
     "nombre": "Apple iPhone 7 32 GB - Oro Rosa (AT&T)",
@@ -208,14 +195,13 @@
       "Sistema Operativo": "iOS",
       "Baterías": "1000-2000 mAh"
     },
-    "marca": "Apple",
-    "seccion": ""
+    "marca": "Apple"
   },
   {
     "id": 13,
     "nombre": "asdasd",
     "marca": "Adidas",
-    "seccion": "",
+    "seccion": "ofertas",
     "precio": 10000,
     "img": "/images/images_products/productImage-1693868736888-37674503.jpg",
     "descripcion": "      asfasfasfasf\r\n\r\n\r\n",
@@ -227,6 +213,24 @@
       "5": "6",
       "7": "8",
       "9": "10"
+    }
+  },
+  {
+    "id": 14,
+    "nombre": "J2 PRIME",
+    "marca": "SAMSUNG",
+    "seccion": "masVisto",
+    "precio": 22000,
+    "img": "/images/images_products/productImage-1695236624922-683115740.png",
+    "descripcion": "  EL MEJOR CELULAR DE SAMSUNG\r\n",
+    "descuento": null,
+    "tipo": "Smartphones",
+    "caracteristicas": {
+      "Memoria": "15gb",
+      "Peso": "300gr",
+      "Sim": "Nano",
+      "Red": "4g lte",
+      "Pantalla": "10 cm x 15cm"
     }
   }
 ]
