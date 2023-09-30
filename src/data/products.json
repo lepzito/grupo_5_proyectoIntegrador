@@ -198,24 +198,6 @@
     "marca": "Apple"
   },
   {
-    "id": 13,
-    "nombre": "asdasd",
-    "marca": "Adidas",
-    "seccion": "ofertas",
-    "precio": 10000,
-    "img": "/images/images_products/productImage-1693868736888-37674503.jpg",
-    "descripcion": "      asfasfasfasf\r\n\r\n\r\n",
-    "descuento": 12,
-    "tipo": "Escritorio",
-    "caracteristicas": {
-      "1": "4",
-      "3": "2",
-      "5": "6",
-      "7": "8",
-      "9": "10"
-    }
-  },
-  {
     "id": 14,
     "nombre": "J2 PRIME",
     "marca": "SAMSUNG",

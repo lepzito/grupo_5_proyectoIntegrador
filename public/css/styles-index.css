@@ -229,7 +229,7 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 20px;
-  margin: 10px;
+  margin: 10px 0;
   transition: border-color 0.3s; /* Agrega una transición suave para el cambio de color del borde */
   border: 2px solid #ccc; /* Establece un borde inicial de un gris claro muy claro */
 }
@@ -247,6 +247,41 @@ body {
 .caja:hover {
   border-color: orange;
 }
+.mobile-buttons-container {
+  width: 100%;
+  max-width: 250px;
+  margin: 10px auto; /* Centra horizontalmente el contenedor */
+}
+
+.mobile-buttons-container .caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  transition: transform 0.3s;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  height: 80px;
+}
+
+.mobile-buttons-container .caja:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-buttons-container .caja img {
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+.mobile-buttons-container .caja p {
+  color: black;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   body {
@@ -288,7 +323,7 @@ body {
     padding: 10px 10px;
   }
   .caja-container {
-    display: none;
+    display: flex;
     flex-direction: row;
 
     justify-content: center;
@@ -318,6 +353,9 @@ body {
 
   .caja:hover {
     border-color: orange;
+  }
+  .mobile-buttons-container {
+    display: none;
   }
 }
 
@@ -412,5 +450,8 @@ body {
 
   .caja:hover {
     border-color: orange;
+  }
+  .mobile-buttons-container {
+    display: none;
   }
 }

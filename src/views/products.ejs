@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <head>
-    <%- include("./partials/head") %>
+<!-- Head -->
+
+<head>
+  <%- include("./partials/head") %>
     <link rel="stylesheet" href="\css\slider-infito.css" />
     <link rel="stylesheet" href="/css/product-card.css" />
     <link rel="stylesheet" href="/css/products.css" />
     <title>Productos-TecnoJUY</title>
-  </head>
-  <body>
-    <!-- Header -->
-    <%- include("./partials/header") %>
+</head>
+
+<body>
+  <!-- Header -->
+  <%- include("./partials/header") %>
     <!-- Page content -->
     <main>
       <div class="conteiner-products">
@@ -19,7 +21,9 @@
         </div>
         <!-- Ultimas novedades productos -->
         <section class="Products">
-          <div class="latest-title"><h3>TODOS LOS PRODUCTOS</h3></div>
+          <div class="latest-title">
+            <h3>TODOS LOS PRODUCTOS</h3>
+          </div>
           <div class="boton-categorias">
             <button>
               <i class="fa-solid fa-ellipsis-vertical"></i>CATEGORIAS
@@ -28,54 +32,49 @@
           <div class="conteiner-category-products">
             <div class="category_list">
               <a href="#" class="category_item" category="all">Todo</a>
-              <a href="#" class="category_item" category="ordenadores"
-                >Ordenadores</a
-              >
+              <a href="#" class="category_item" category="ordenadores">Ordenadores</a>
               <a href="#" class="category_item" category="laptops">Laptops</a>
-              <a href="#" class="category_item" category="smartphones"
-                >Smartphones</a
-              >
-              <a href="#" class="category_item" category="monitores"
-                >Monitores</a
-              >
-              <a href="#" class="category_item" category="audifonos"
-                >Audifonos</a
-              >
+              <a href="#" class="category_item" category="smartphones">Smartphones</a>
+              <a href="#" class="category_item" category="monitores">Monitores</a>
+              <a href="#" class="category_item" category="audifonos">Audifonos</a>
               <div class="Banner-Product-2">
                 <img src="\images\banner-products-2.jpg" alt="BannerProduct" />
               </div>
             </div>
 
             <div class="conteiner-products-list">
-              <% products.forEach((product)=>{%> <%if(product.id <= 6) {%>
-              <div class="product-card">
-                <a href="/products/product/<%= product.id%>">
-                  <div class="container-product-image">
-                    <div class="ofert-product">
-                      <span> <%=product.descuento%></span>
-                    </div>
-                    <img
-                      class="product-image"
-                      src="<%=product.img %>"
-                      alt="productosOferta"
-                    />
+              <% products.forEach((product)=>{%> <%if(product.id <=6) {%>
+                  <div class="product-card">
+                    <a href="/products/product/<%= product.id%>">
+                      <div class="container-product-image">
+                        <div class="ofert-product">
+                          <span>
+                            <%=product.descuento%>
+                          </span>
+                        </div>
+                        <img class="product-image" src="<%=product.img %>" alt="productosOferta" />
+                      </div>
+                      <div class="container-descripcion-product">
+                        <div class="product-name">
+                          <p>
+                            <%=product.nombre%>
+                          </p>
+                        </div>
+                        <div class="product-price">
+                          <span>
+                            <%=product.precio.toLocaleString() %>
+                          </span>
+                        </div>
+                        <div class="buttons">
+                          <button class="agregar-carrito" type="submit">
+                            <a href="">
+                              <i class="fa-solid fa-cart-shopping"></i></a>
+                          </button>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                  <div class="container-descripcion-product">
-                    <div class="product-name"><p><%=product.nombre%></p></div>
-                    <div class="product-price">
-                      <span> <%=product.precio %></span>
-                    </div>
-                    <div class="buttons">
-                      <button class="agregar-carrito" type="submit">
-                        <a href="">
-                          <i class="fa-solid fa-cart-shopping"></i
-                        ></a>
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <%}});%>
+                  <%}});%>
             </div>
           </div>
         </section>
@@ -84,5 +83,6 @@
     </main>
     <!-- Footer -->
     <%- include("./partials/footer") %>
-  </body>
+</body>
+
 </html>
