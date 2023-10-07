@@ -11,6 +11,10 @@ const validations = [
     .isEmail()
     .withMessage("Ingresa un formato de email valido"),
   body("password").notEmpty().withMessage("Agrega una contraseña"),
+  body("provincia").notEmpty().withMessage("Selecciona una provincia"),
+  body("genero").notEmpty().withMessage("Agrega un genero"),
+  body("localidad").notEmpty().withMessage("Agrega una localidad"),
+
   body("userImage").custom((value, { req }) => {
     let file = req.file;
 

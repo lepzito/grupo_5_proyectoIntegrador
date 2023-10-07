@@ -48,7 +48,7 @@ main {
 .input-field {
   width: 100%;
   padding: 10px 0px;
-  margin: 20px 0px;
+  margin: 0 0 20px 0;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -105,7 +105,13 @@ span {
 .file-input {
   display: none;
 }
-
+select {
+  margin-bottom: 20px;
+  width: 100%;
+}
+p {
+  color: gray;
+}
 /* Moviles */
 @media screen and (min-width: 250px) and (max-width: 480px) {
   main {

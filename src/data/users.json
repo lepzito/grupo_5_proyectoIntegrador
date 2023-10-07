@@ -6,5 +6,21 @@
     "email": "brian@dh.com",
     "password": "$2a$08$7LiiJHeQvB2Mnglv8DR5Guwm501whL109Rlw1Mi1CKxMlWUjdsTB6",
     "imgUser": "userImage-1694954385138-67320554.png"
+  },
+  {
+    "id": 2,
+    "nombreUsuario": "lucas",
+    "apellidoUsuario": "tinte",
+    "email": "luca@h.com",
+    "password": "$2a$08$bmmRV34CrzCdZyEw2KuC8ODpW5n3TWZSJMtm8uQRiXv/UPmstuzuW",
+    "genero": "masculino",
+    "provincia": "jujuy",
+    "localidad": "ABRA ",
+    "barrio": "23 DE AGOSTO",
+    "calle": "LAVALLE",
+    "numero": "55",
+    "codigo-postal": "4505",
+    "telefono": "3882595254",
+    "imgUser": "userImage-1696697975342-393197245.png"
   }
 ]

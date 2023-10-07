@@ -26,16 +26,13 @@
                             <div class="text-danger">
                                 <%= errors.nombreUsuario.msg %>
                             </div>
-
                             <%} %>
-
                                 <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
                                     placeholder="Apellido" value="<%= locals.oldData?oldData.apellidoUsuario:null %>" />
                                 <% if (locals.errors && errors.apellidoUsuario) {%>
                                     <div class="text-danger">
                                         <%= errors.apellidoUsuario.msg %>
                                     </div>
-
                                     <%} %>
                                         <input type="text" class="input-field" id="email" name="email"
                                             placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
@@ -43,7 +40,6 @@
                                             <div class="text-danger">
                                                 <%= errors.email.msg %>
                                             </div>
-
                                             <%} %>
                                                 <input type="password" class="input-field" id="password" name="password"
                                                     placeholder="Contraseña" />
@@ -51,29 +47,104 @@
                                                     <div class="text-danger">
                                                         <%= errors.password.msg %>
                                                     </div>
-
                                                     <%} %>
-                                                        <div class="upload-button">
-                                                            <label for="profile-image" class="custom-file-upload">
-                                                                Foto de Perfil
-                                                            </label>
-                                                            <input type="file" id="profile-image" name="userImage"
-                                                                class="file-input">
-                                                        </div>
-                                                        <% if (locals.errors && errors.userImage) {%>
+                                                        <p>Genero</p>
+                                                        <select id="genero" name="genero">
+                                                            <option value="masculino">Masculino</option>
+                                                            <option value="femenino">Femenino</option>
+                                                            <option value="no-declarado">Prefiero no decirlo</option>
+                                                        </select>
+                                                        <p>Provincia</p>
+                                                        <select id="provincia" name="provincia">
+                                                            <option value="buenos-aires">Buenos Aires
+                                                            </option>
+                                                            <option value="catamarca">Catamarca</option>
+                                                            <option value="chaco">Chaco</option>
+                                                            <option value="chubut">Chubut</option>
+                                                            <option value="cordoba">Córdoba</option>
+                                                            <option value="corrientes">Corrientes</option>
+                                                            <option value="entre-rios">Entre Ríos</option>
+                                                            <option value="formosa">Formosa</option>
+                                                            <option value="jujuy">Jujuy</option>
+                                                            <option value="la-pampa">La Pampa</option>
+                                                            <option value="la-rioja">La Rioja</option>
+                                                            <option value="mendoza">Mendoza</option>
+                                                            <option value="misiones">Misiones</option>
+                                                            <option value="neuquen">Neuquén</option>
+                                                            <option value="rio-negro">Río Negro</option>
+                                                            <option value="salta">Salta</option>
+                                                            <option value="san-juan">San Juan</option>
+                                                            <option value="san-luis">San Luis</option>
+                                                            <option value="santa-cruz">Santa Cruz</option>
+                                                            <option value="santa-fe">Santa Fe</option>
+                                                            <option value="santiago-del-estero">Santiago del
+                                                                Estero
+                                                            </option>
+                                                            <option value="tierra-del-fuego">Tierra del
+                                                                Fuego
+                                                            </option>
+                                                            <option value="tucuman">Tucumán</option>
+                                                        </select>
+                                                        <input type="text" class="input-field" id="localidad"
+                                                            name="localidad" placeholder="Localidad"
+                                                            value="<%= locals.oldData?oldData.localidad:null %>" />
+                                                        <% if (locals.errors && errors.localidad) {%>
                                                             <div class="text-danger">
-                                                                <%= errors.userImage.msg %>
+                                                                <%= errors.localidad.msg %>
                                                             </div>
-
                                                             <%} %>
-                                                                <button type="submit" class="submit-btn">Enviar</button>
+                                                                <input type="text" class="input-field" id="barrio"
+                                                                    name="barrio" placeholder="Barrio"
+                                                                    value="<%= locals.oldData?oldData.barrio:null %>" />
+                                                                <% if (locals.errors && errors.barrio) {%>
+                                                                    <div class="text-danger">
+                                                                        <%= errors.barrio.msg %>
+                                                                    </div>
+                                                                    <%} %>
+                                                                        <input type="text" class="input-field"
+                                                                            id="calle" name="calle" placeholder="Calle"
+                                                                            value="<%= locals.oldData?oldData.calle:null %>" />
+                                                                        <% if (locals.errors && errors.calle) {%>
+                                                                            <div class="text-danger">
+                                                                                <%= errors.calle.msg %>
+                                                                            </div>
+                                                                            <%} %>
+                                                                                <input type="number" class="input-field"
+                                                                                    id="numero" name="numero"
+                                                                                    placeholder="Numero"
+                                                                                    value="<%= locals.oldData?oldData.numero:null %>" />
+                                                                                <input type="number" class="input-field"
+                                                                                    id="codigo-postal"
+                                                                                    name="codigo-postal"
+                                                                                    placeholder="Codigo Postal"
+                                                                                    value="<%= locals.oldData?oldData.codigo-postal:null %>" />
+                                                                                <input type="number" class="input-field"
+                                                                                    id="telefono" name="telefono"
+                                                                                    placeholder="Número de teléfono"
+                                                                                    value="<%= locals.oldData?oldData.telefono:null %>" />
+
+                                                                                <div class="upload-button">
+                                                                                    <label for="profile-image"
+                                                                                        class="custom-file-upload">
+                                                                                        Foto de Perfil
+                                                                                    </label>
+                                                                                    <input type="file"
+                                                                                        id="profile-image"
+                                                                                        name="userImage"
+                                                                                        class="file-input">
+                                                                                </div>
+                                                                                <% if (locals.errors &&
+                                                                                    errors.userImage) {%>
+                                                                                    <div class="text-danger">
+                                                                                        <%= errors.userImage.msg %>
+                                                                                    </div>
+                                                                                    <%} %>
+                                                                                        <button type="submit"
+                                                                                            class="submit-btn">Enviar</button>
                     </form>
                 </div>
-
             </div>
             </div>
-
-
         </main>
         <!-- Footer -->
         <%- include("../partials/footer") %>
