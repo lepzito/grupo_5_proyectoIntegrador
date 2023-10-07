@@ -1,13 +1,17 @@
-## Daily 16/09/23.
+## Daily 07/10/23.
 
--**Lucas**: chekie la vista profile que hiso brian.
+-**Lucas**: vimos sprint 6.
 
 - No tuve un inconveniente .
 
--Hoy se termino de mergear a develop el trabajo de brian.
-
--**Brian**: termine de hacer la vista profile.
+-hare el modelado de productos. -**SAMUEL**: vimos sprint 6.
 
 - No encontro problemas.
 
--hoy termine de mergear a la rama develop.
+-hara el modelado de usuarios.
+
+-**Brian**: vimos sprint 6.
+
+- No encontro problemas.
+
+-hara la vista de usuario con los datos nuevos
