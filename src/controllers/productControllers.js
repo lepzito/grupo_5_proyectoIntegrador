@@ -1,27 +1,38 @@
-const fs = require("fs");
-const path = require("path");
-
-const route = path.join(__dirname, "../data/products.json");
-function products() {
-  return (file = JSON.parse(fs.readFileSync(route, "utf-8")));
-}
+const db = require("../database/models");
+const {
+  Producto,
+  Tipo,
+  Seccion,
+  CaracteristicaProducto,
+} = require("../database/models");
 
 const productControllers = {
   all: function (req, res) {
-    res.render("products", { products: products() });
+    Producto.findAll()
+      .then(function (productos) {
+        res.render("products", { products: productos });
+      })
+      .catch(function (error) {
+        console.error(error);
+        res.status(500).send("Error interno del servidor");
+      });
   },
 
-  smartphones: function (req, res) {
-    res.render("listado de productos filtrando solo los smartphones");
-  },
-  pcArmadas: function (req, res) {
-    res.render("Pc armadas entre ellas las notenbok");
-  },
   detalle: function (req, res) {
     let idProduct = req.params.id;
-    const product = products().find((product) => product.id == idProduct);
-    res.render("productDetail", { product: product });
+
+    Producto.findByPk(idProduct, {
+      include: [{ association: "tipo" }, { association: "caracteristicas" }],
+    })
+      .then(function (producto) {
+        res.render("productDetail", { product: producto });
+      })
+      .catch(function (error) {
+        console.error(error);
+        res.status(500).send("Error interno del servidor");
+      });
   },
+
   search: function (req, res) {
     let loQueBuscoElUsario = req.query.search;
     let productosResultantes = [];
@@ -91,61 +102,65 @@ const productControllers = {
 
   //FORM PAGE
   create: function (req, res) {
-    res.render("product-create", { products: products() });
+    Tipo.findAll()
+      .then(function (tipos) {
+        Seccion.findAll()
+          .then(function (secciones) {
+            res.render("product-create", {
+              tipos: tipos,
+              secciones: secciones,
+            });
+          })
+          .catch(function (error) {
+            console.error(error);
+            res.status(500).send("Error interno del servidor");
+          });
+      })
+      .catch(function (error) {
+        console.error(error);
+        res.status(500).send("Error interno del servidor");
+      });
   },
   store: function (req, res) {
-    const {
-      nombre,
-      precio,
-      descripcion,
-      descuento,
-      tipo,
-      marca,
-      seccion,
-      caracteristicas,
-      valores,
-    } = req.body;
+    console.log(req.body);
+    const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
+      req.body;
 
-    //Generamos un id
-    const newProductId = products()[products().length - 1].id + 1;
-    //Aqui en caracteristicasObj armamos el objeto con sus caracteristicas:valores
+    let tipoId;
+    let seccionId;
 
-    const caracteristicasObj = {};
-    for (const key in caracteristicas) {
-      caracteristicasObj[caracteristicas[key]] = valores[key];
-    }
-
-    const newProduct = {
-      id: newProductId,
-      nombre: nombre,
-      marca: marca,
-      seccion: seccion,
-      precio: parseFloat(precio),
-      img: "/images/images_products/" + req.file.filename,
-      descripcion: descripcion,
-      descuento: parseFloat(descuento),
-      tipo: tipo,
-      caracteristicas: caracteristicasObj,
-    };
-
-    let currentProducts = products();
-
-    // Agregar el nuevo producto a los datos existentes
-    currentProducts.push(newProduct);
-
-    // Escribir los datos actualizados nuevamente en el archivo
-    fs.writeFileSync(route, JSON.stringify(currentProducts, null, 2));
-
-    return res.redirect("/products/admin");
-  },
-  destroy: function (req, res) {
-    const id = req.params.id;
-
-    // Filtrar los productos para eliminar el producto con el ID especificado
-    const updatedProducts = products().filter((prod) => prod.id != id);
-
-    fs.writeFileSync(route, JSON.stringify(updatedProducts, null, 2));
-    res.redirect("/products/admin");
+    // Buscar el ID del tipo por su nombre
+    Tipo.findOne({ where: { nombre: tipo } })
+      .then((tipoResultado) => {
+        if (tipoResultado) {
+          tipoId = tipoResultado.id;
+        }
+        // Buscar el ID de la sección por su nombre
+        return Seccion.findOne({ where: { nombre: seccion } });
+      })
+      .then((seccionResultado) => {
+        if (seccionResultado) {
+          seccionId = seccionResultado.id;
+        }
+        // Crear el producto con los IDs de tipo y sección
+        return Producto.create({
+          nombre,
+          precio: parseFloat(precio),
+          descripcion,
+          descuento: parseFloat(descuento),
+          marca,
+          tipo_id: tipoId,
+          seccion_id: seccionId,
+          img: "/images/images_products/" + req.file.filename,
+        });
+      })
+      .then((producto) => {
+        res.redirect("/products/");
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Error interno del servidor");
+      });
   },
 };
 module.exports = productControllers;
