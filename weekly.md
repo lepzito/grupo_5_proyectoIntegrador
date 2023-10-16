@@ -1,17 +1,13 @@
-## Daily 07/10/23.
+## Daily 16/10/23.
 
--**Lucas**: vimos sprint 6.
+-**Lucas**: termine crud de productos.
 
 - No tuve un inconveniente .
 
--hare el modelado de productos. -**SAMUEL**: vimos sprint 6.
+-vere el crud de usurios.
+
+-**SAMUEL**: empezo el crud usurio.
 
 - No encontro problemas.
 
--hara el modelado de usuarios.
-
--**Brian**: vimos sprint 6.
-
-- No encontro problemas.
-
--hara la vista de usuario con los datos nuevos
+-Hara el crud de usuario.
