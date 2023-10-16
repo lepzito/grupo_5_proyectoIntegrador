@@ -23,92 +23,70 @@
             <div>
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre" value="<%=productToEdit.nombre%>" />
+                <input type="text" id="nombre" name="nombre" value="<%= productToEdit.nombre %>" />
               </div>
               <div class="form-container__input">
                 <label for="precio">Precio del producto:</label>
-                <input type="text" id="precio" name="precio" value="<%=productToEdit.precio%>" pattern="[0-9]+"
-                  title="Ingresa solo números" />
+                <input type="text" id="precio" name="precio" value="<%= productToEdit.precio %>" />
               </div>
+              <!-- Resto de los campos de edición -->
               <div class="form-container__input">
                 <label for="descuento">Descuento:</label>
-                <input type="text" id="descuento" name="descuento" value="<%=productToEdit.descuento%>" pattern="[0-9]+"
-                  title="Ingresa solo números" />
+                <input type="text" id="descuento" name="descuento" value="<%= productToEdit.descuento %>"
+                  pattern="[0-9]+" title="Ingresa solo números" />
+              </div>
+
+              <!-- Campos para editar "tipo" y "sección" -->
+              <div class="form-container__input">
+                <label for="tipo">Categoría:</label>
+                <select name="tipo" id="tipo">
+                  <option value="">Tipo de Producto</option>
+                  <% tipos.forEach(function(tipo) { %>
+                    <option value="<%= tipo.id %>" <% if (tipo.id===productToEdit.tipoId) { %> selected <% } %>>
+                        <%= tipo.nombre %>
+                    </option>
+                    <% }); %>
+                </select>
+              </div>
+              <div class="form-container__input">
+                <label for="seccion">Sección:</label>
+                <select name="seccion" id="seccion">
+                  <option value="">Ninguna</option>
+                  <% secciones.forEach(function(seccion) { %>
+                    <option value="<%= seccion.id %>" <% if (seccion.id===productToEdit.seccionId) { %> selected <% } %>
+                        >
+                        <%= seccion.nombre %>
+                    </option>
+                    <% }); %>
+                </select>
               </div>
               <div class="form-container__input">
                 <label for="marca">Marca:</label>
-                <input type="text" id="marca" name="marca" value="<%=productToEdit.marca%>" />
-              </div>
-              <% let tipos=["Monitores", "Escritorio" , "Smartphones" , "Notebooks" , "Pc Armadas" , "Perifericos" ] %>
-                <div class="form-container__input">
-                  <label for="tipo">Categoría:</label>
-                  <select name="tipo" id="tipo">
-                    <option value="">
-                      <%=productToEdit.tipo%>
+                <select name="marca" id="marca">
+                  <option value="">Selecciona una marca</option>
+                  <% marcas.forEach(function(marca) { %>
+                    <option value="<%= marca.id %>" <% if (marca.id===productToEdit.marcaId) { %> selected <% } %>>
+                        <%= marca.nombre %>
                     </option>
-                    <% for (const unTipo of tipos) {%>
-                      <option value="<%=unTipo%>">
-                        <%=unTipo%>
-                      </option>
-                      <%}%>
-                  </select>
-                </div>
+                    <% }); %>
+                </select>
+              </div>
 
-                <% let tiposSeccion=["ofertas", "masVisto" ] %>
-                  <div class="form-container__input">
-                    <label for="seccion">Seccion:</label>
-                    <select name="seccion" id="seccion">
-                      <option value="">
-                        Ninguna
-                      </option>
-                      <% for (const tipo of tiposSeccion) {%>
-                        <option value="<%=tipo%>">
-                          <%=tipo%>
-                        </option>
-                        <%}%>
-                    </select>
-                  </div>
-                  <div class="form-container__input">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea name="descripcion" id="descripcion">
-  <%= productToEdit.descripcion %>
-</textarea>
-                  </div>
-
-                  <div class="tabla-caracteristicas">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Características</th>
-                          <th>Valor</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% for (const propiedad in productToEdit.caracteristicas) { %>
-                          <tr>
-                            <td>
-                              <input type="text" name="caracteristicas[<%= propiedad %>]" value="<%= propiedad %>" />
-                            </td>
-                            <td>
-                              <input type="text" name="valores[<%= propiedad %>]"
-                                value="<%= productToEdit.caracteristicas[propiedad] %>" />
-                            </td>
-                          </tr>
-                          <% } %>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div class="form-container__input">
-                    <label for="img">Imágenes del producto</label>
-                    <input type="file" name="productImage" />
-                  </div>
-                  <div class="form-container__button">
-                    <button type="submit" class="buy-now-button">
-                      Guardar cambios
-                    </button>
-                  </div>
+              <div class="form-container__input">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion"><%= productToEdit.descripcion %></textarea>
+              </div>
+              <div class="form-container__input">
+                <label for="img">Imágenes del producto</label>
+                <input type="file" name="productImage" />
+              </div>
+              <div class="form-container__button">
+                <button type="submit" class="buy-now-button">
+                  Guardar cambios
+                </button>
+              </div>
             </div>
+
           </form>
         </div>
       </div>

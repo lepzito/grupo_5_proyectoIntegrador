@@ -22,7 +22,7 @@
             </h1>
           </div>
           <div class="type-product-tablet">
-            <p>>> <%=product.tipo.nombre%>
+            <p>>> <%=product.tipo.nombre%> >><%=product.marca.nombre%>
             </p>
           </div>
           <img src="<%=product.img%>" alt="imagenproduct" />
@@ -58,7 +58,7 @@
             </h1>
           </div>
           <div class="type-product">
-            <p>>> <%=product.tipo.nombre%> >><%=product.marca%>
+            <p>>> <%=product.tipo.nombre%> >> <%=product.marca.nombre%>
             </p>
           </div>
           <hr />
@@ -140,16 +140,16 @@
               <th>Característica</th>
               <th>Valor</th>
             </tr>
-            <% for (const caracteristica of product.caracteristicas) { %>
+            <% product.especificaciones.forEach(function(especificacion) { %>
               <tr>
                 <td>
-                  <%= caracteristica.nombre_caracteristica %>
+                  <%= especificacion.nombre %>
                 </td>
                 <td>
-                  <%= caracteristica.valor_caracteristica %>
+                  <%= especificacion.valor %>
                 </td>
               </tr>
-              <% } %>
+              <% }); %>
           </table>
         </div>
       </div>

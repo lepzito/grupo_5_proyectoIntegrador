@@ -13,12 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       precio: {
         type: DataTypes.DECIMAL(10, 2),
       },
-      tipo_id: {
-        type: DataTypes.BIGINT(10),
-      },
-      seccion_id: {
-        type: DataTypes.INTEGER,
-      },
       img: {
         type: DataTypes.STRING,
       },
@@ -28,9 +22,18 @@ module.exports = (sequelize, DataTypes) => {
       descuento: {
         type: DataTypes.INTEGER,
       },
+      tipoId: {
+        type: DataTypes.INTEGER,
+      },
+      seccionId: {
+        type: DataTypes.INTEGER,
+      },
+      marcaId: {
+        type: DataTypes.INTEGER,
+      },
     },
     {
-      tableName: "Productos", // Nombre de la tabla en la base de datos
+      tableName: "Producto", // Nombre de la tabla en la base de datos
       timestamps: false, // No se utilizarán marcas de tiempo
     }
   );
@@ -39,15 +42,23 @@ module.exports = (sequelize, DataTypes) => {
     // Asociación con el modelo Tipo (Un producto pertenece a un tipo)
     Producto.belongsTo(models.Tipo, {
       as: "tipo",
-      foreignKey: "tipo_id",
+      foreignKey: "tipoId",
     });
+
+    // Asociación con el modelo Seccion (Un producto pertenece a una sección)
     Producto.belongsTo(models.Seccion, {
       as: "seccion",
-      foreignKey: "seccion_id",
+      foreignKey: "seccionId",
     });
-    Producto.hasMany(models.CaracteristicaProducto, {
-      as: "caracteristicas",
-      foreignKey: "producto_id",
+
+    // Asociación con el modelo Marca (Un producto pertenece a una marca)
+    Producto.belongsTo(models.Marca, {
+      as: "marca",
+      foreignKey: "marcaId",
+    });
+    Producto.hasMany(models.Especificacion, {
+      as: "especificaciones",
+      foreignKey: "productoId",
     });
   };
 

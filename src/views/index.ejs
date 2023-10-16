@@ -40,7 +40,7 @@
           <h3>#Lo mas visto</h3>
         </div>
         <div class="carousel-container">
-          <% const masVistosProducts=productsIndex .filter((product)=> product.seccion === "masVisto")
+          <% const masVistosProducts=productsIndex .filter((product)=> product.seccionId === 1)
             .slice(-8); // Tomar los últimos 8 productos
             %>
 
@@ -97,10 +97,8 @@
           <h3>#Ofertas</h3>
         </div>
         <div class="carousel-container">
-          <% const ofertasProducts=productsIndex .filter((product)=> product.seccion === "ofertas")
-            .slice(-8).reverse()%>
-
-            <% ofertasProducts.forEach((product)=> { %>
+          <% const ofertasProducts=productsIndex.filter(product=> product.seccionId === 3).slice(-8).reverse() %>
+            <% ofertasProducts.forEach(product=> { %>
               <div class="product-card">
                 <a href="/products/product/<%= product.id %>">
                   <div class="container-product-image">
@@ -124,6 +122,7 @@
                 </a>
               </div>
               <% }); %>
+
         </div>
 
         <div class="see-more">

@@ -1,15 +1,16 @@
-const fs = require("fs");
-const path = require("path");
-
-let products = function () {
-  const route = path.join(__dirname, "../data/products.json");
-  const file = fs.readFileSync(route, "utf-8");
-  return JSON.parse(file);
-};
+const db = require("../database/models");
+const { Producto } = require("../database/models");
 
 const mainControllers = {
   index: function (req, res) {
-    res.render("index", { productsIndex: products() });
+    Producto.findAll()
+      .then(function (productos) {
+        res.render("index", { productsIndex: productos });
+      })
+      .catch(function (error) {
+        console.error(error);
+        res.status(500).send("Error interno del servidor");
+      });
   },
 
   contacto: function (req, res) {

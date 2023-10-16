@@ -60,7 +60,8 @@ select {
   color: #000;
 }
 
-label {
+.form-container__input label {
+  display: inline-block;
   width: 90%;
   font-size: 16px;
   margin: 10px 0px;

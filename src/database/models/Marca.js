@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const Tipo = sequelize.define(
-    "Tipo",
+  const Marca = sequelize.define(
+    "Marca",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -12,18 +12,18 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "Tipo", // Nombre de la tabla en la base de datos
+      tableName: "Marca", // Nombre de la tabla en la base de datos
       timestamps: false, // No se utilizarán marcas de tiempo
     }
   );
 
-  Tipo.associate = (models) => {
-    // Asociación con el modelo Producto (Un tipo tiene muchos productos)
-    Tipo.hasMany(models.Producto, {
+  Marca.associate = (models) => {
+    // Asociación con el modelo Producto (Una marca tiene muchos productos)
+    Marca.hasMany(models.Producto, {
       as: "productos",
-      foreignKey: "tipoId",
+      foreignKey: "marcaId",
     });
   };
 
-  return Tipo;
+  return Marca;
 };

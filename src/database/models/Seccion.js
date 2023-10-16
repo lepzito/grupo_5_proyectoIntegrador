@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       nombre: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
     },
     {
@@ -17,11 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false, // No se utilizarán marcas de tiempo
     }
   );
+
   Seccion.associate = (models) => {
-    // Definir la relación con los productos
+    // Asociación con el modelo Producto (una sección tiene muchos productos)
     Seccion.hasMany(models.Producto, {
-      as: "productos", // Alias para la relación
-      foreignKey: "seccion_id", // La clave foránea en la tabla Productos
+      foreignKey: "seccionId", // Nombre de la columna de clave externa en la tabla Producto
+      as: "productos", // Alias para acceder a los productos desde una sección
     });
   };
 
