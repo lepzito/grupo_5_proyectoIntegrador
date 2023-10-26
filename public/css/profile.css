@@ -12,7 +12,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 500px;
 }
 
 .user-image {
@@ -42,9 +42,39 @@ main {
   margin-top: 10px;
   text-align: center;
 }
+.genero{
+  margin-top: 10px;
+  text-align: center;
+}
+.provincia{
+  margin-top: 10px;
+  text-align: center;
+}
+.localidad{
+  margin-top: 10px;
+  text-align: center;
+}
+.Barrio{
+  margin-top: 10px;
+  text-align: center;
+}
+.calle{
+  margin-top: 10px;
+  text-align: center;
+}
+.numero{
+  margin-top: 10px;
+  text-align: center;
+}
+.editar{
+margin-top: 20px;
+margin-left: 50px;
+background-color: orangered;
+color: antiquewhite;
+}
 .salir{
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 50px;
   background-color: orangered;
   color: antiquewhite;
   

@@ -6,5 +6,13 @@
     "email": "brian@dh.com",
     "password": "$2a$08$7LiiJHeQvB2Mnglv8DR5Guwm501whL109Rlw1Mi1CKxMlWUjdsTB6",
     "imgUser": "userImage-1694954385138-67320554.png"
+  },
+  {
+    "id": 2,
+    "nombreUsuario": "emanuel",
+    "apellidoUsuario": "cruz",
+    "email": "briancruz@gmail.com",
+    "password": "$2a$08$bXDMTfS5d1cDZ4jqfB/MSOjNOrThRdCh7Tq4eLTEl6yZg/YTYPtwq",
+    "imgUser": "userImage-1697914406544-135716859.jpg"
   }
 ]
