@@ -10,9 +10,24 @@ const {
 
 const productControllers = {
   all: function (req, res) {
-    Producto.findAll()
-      .then(function (productos) {
-        res.render("products", { products: productos });
+    const productsPerPage = 6; // Número de productos p or página
+
+    const page = req.query.page || 1; // Página actual
+
+    Producto.findAndCountAll({
+      limit: productsPerPage,
+      offset: (page - 1) * productsPerPage,
+    })
+      .then(function (result) {
+        const products = result.rows;
+        const totalProducts = result.count;
+        const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+        res.render("products", {
+          products,
+          currentPage: page,
+          totalPages,
+        });
       })
       .catch(function (error) {
         console.error(error);

@@ -87,41 +87,56 @@
             </div>
 
             <div class="conteiner-products-list">
-              <% products.forEach((product)=>{%> <%if(product.id <=6) {%>
-                  <div class="product-card">
-                    <a href="/products/product/<%= product.id%>">
-                      <div class="container-product-image">
+              <% products.forEach((product)=> { %>
+                <div class="product-card">
+                  <a href="/products/product/<%= product.id %>">
+                    <div class="container-product-image">
+                      <% if (product.descuento) { %>
                         <div class="ofert-product">
                           <span>
-                            <%=product.descuento%>
+                            <%= product.descuento %>% OFF
                           </span>
                         </div>
-                        <img class="product-image" src="<%=product.img %>" alt="productosOferta" />
+                        <% } %>
+                          <img class="product-image" src="<%= product.img %>" alt="productosOferta" />
+                    </div>
+                    <div class="container-descripcion-product">
+                      <div class="product-name">
+                        <p>
+                          <%= product.nombre %>
+                        </p>
                       </div>
-                      <div class="container-descripcion-product">
-                        <div class="product-name">
-                          <p>
-                            <%=product.nombre%>
-                          </p>
-                        </div>
-                        <div class="product-price">
-                          <span>
-                            <%=product.precio.toLocaleString() %>
-                          </span>
-                        </div>
-                        <div class="buttons">
-                          <button class="agregar-carrito" type="submit">
-                            <a href="">
-                              <i class="fa-solid fa-cart-shopping"></i></a>
-                          </button>
-                        </div>
+                      <div class="product-price">
+                        <span>$
+                          <%= product.precio.toLocaleString() %>
+                        </span>
                       </div>
-                    </a>
-                  </div>
-                  <%}});%>
+                      <div class="buttons">
+                        <button class="agregar-carrito" type="submit">
+                          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        </button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <% }); %>
             </div>
+
           </div>
         </section>
+        <div class="pagination">
+          <% if (currentPage> 1) { %>
+            <a href="/products?page=<%= currentPage - 1 %>" class="pagination-button">Anterior</a>
+            <% } %>
+
+              <span class="pagination-info">Página <%= currentPage %> de <%= totalPages %></span>
+
+              <% if (currentPage < totalPages) { %>
+                <a href="/products?page=<%= currentPage + 1 %>" class="pagination-button">Siguiente</a>
+                <% } %>
+        </div>
+
+
       </div>
       <%- include("./partials/slider-marcas") %>
     </main>

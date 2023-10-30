@@ -3,7 +3,7 @@
 
 <head>
     <%- include("../partials/head") %>
-        <title>Login</title>
+        <title>Profile</title>
         <link rel="stylesheet" href="\css\profile.css" />
 </head>
 
@@ -14,21 +14,21 @@
         <main>
             <div class="conteiner">
                 <div class="form-box">
-                 <button class="login-register">¡Bienvenido <%= user.nombreUsuario %>!</button>
+                    <button class="login-register">¡Bienvenido <%= user.nombreUsuario %>!</button>
                 </div>
-                <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">                
-                 <p class="nombre"> 
+                <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">
+                <p class="nombre">
                     Nombre: <%= user.nombreUsuario %>
-                 </p>
-                 <p class="apellido">
-                    Apellido: <%= user.apellidoUsuario %>
-                 </p>
-                <p class="correo">
-                   Correo: <%= user.email %>
                 </p>
-                
-            
-                <button class="salir"><a href="/users/logout">SALIR</a</button>
+                <p class="apellido">
+                    Apellido: <%= user.apellidoUsuario %>
+                </p>
+                <p class="correo">
+                    Correo: <%= user.email %>
+                </p>
+
+
+                <button class="salir"><a href="/users/logout">SALIR</a< /button>
 
             </div>
 

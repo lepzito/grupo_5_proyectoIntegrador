@@ -142,6 +142,31 @@
 .agregar-carrito i:hover {
   color: lightgreen;
 }
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.pagination-button:hover {
+  background-color: orange;
+}
+
+.pagination-info {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .latest-title {
