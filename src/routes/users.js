@@ -14,6 +14,8 @@ const validations = require("../middlewares/validationMiddleware.js");
 router.get("/login", guestMiddleware, userControllers.login);
 router.get("/profile", authMiddleware, userControllers.profile);
 router.get("/register", guestMiddleware, userControllers.register);
+router.get("/edit", authMiddleware, userControllers.edit);
+
 //Registro o creo al usuario
 router.post(
   "/register",
@@ -21,6 +23,13 @@ router.post(
   validations,
   userControllers.create
 );
+router.post(
+  "/edit",
+  uploadUser.single("userImage"),
+  validations,
+  userControllers.update
+);
+
 //Login envio
 router.post("/login", userControllers.loginProcess);
 //Logout

@@ -24,6 +24,8 @@ app.use(cookies());
 
 app.use(userLoggedMiddleware);
 app.use(express.static(path.join(__dirname, "../public")));
+app.set("views", path.resolve(__dirname, "./views"));
+
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE

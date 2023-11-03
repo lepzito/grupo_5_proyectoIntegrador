@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/style-login-register.css" />
+        <title>Editar Perfil</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+        <!-- Page content -->
+        <main>
+            <div class="conteiner">
+                <div class="form-box">
+                    <div class="login-register">Editar tu perfil</div>
+                    <form action="/users/edit" method="POST" id="edit-profile" class="input-group"
+                        enctype="multipart/form-data">
+                        <p>Nombre</p>
+
+                        <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
+                            placeholder="Nombre" value="<%= user.nombreUsuario %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.nombreUsuario) { %>
+                                <%= errors.nombreUsuario.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Apellido</p>
+
+                        <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
+                            placeholder="Apellido" value="<%= user.apellidoUsuario %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.apellidoUsuario) { %>
+                                <%= errors.apellidoUsuario.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Email</p>
+                        <input type="text" class="input-field" id="email" name="email" placeholder="Email"
+                            value="<%= user.email %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.email) { %>
+                                <%= errors.email.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Contraseña actual</p>
+                        <input type="password" class="input-field" id="currentPassword" name="currentPassword"
+                            placeholder="Contraseña actual" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.currentPassword) { %>
+                                <%= errors.currentPassword.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Nueva contraseña</p>
+                        <input type="password" class="input-field" id="newPassword" name="newPassword"
+                            placeholder="Nueva contraseña" />
+
+                        <p>Confirmar Nueva Contraseña</p>
+                        <input type="password" class="input-field" id="confirmNewPassword" name="confirmNewPassword"
+                            placeholder="Confirmar Nueva Contraseña" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.confirmNewPassword) { %>
+                                <%= errors.confirmNewPassword.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Genero</p>
+                        <select id="genero" name="genero">
+                            <% generos.forEach((genero)=> { %>
+                                <option value="<%= genero.id %>" <% if (user.generoId===genero.id) { %>selected<% } %>>
+                                        <%= genero.nombre %>
+                                </option>
+                                <% }); %>
+                        </select>
+
+                        <p>Provincia</p>
+                        <select id="provincia" name="provincia">
+                            <% provincias.forEach((provincia)=> { %>
+                                <option value="<%= provincia.id %>" <% if (user.domicilio.provinciaId===provincia.id) {
+                                    %>selected<% } %>>
+                                        <%= provincia.nombre %>
+                                </option>
+                                <% }); %>
+                        </select>
+                        <p>Localidad</p>
+
+                        <input type="text" class="input-field" id="localidad" name="localidad" placeholder="Localidad"
+                            value="<%= user.domicilio.localidad %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.localidad) { %>
+                                <%= errors.localidad.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Barrio</p>
+
+                        <input type="text" class="input-field" id="barrio" name="barrio" placeholder="Barrio"
+                            value="<%= user.domicilio.barrio %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.barrio) { %>
+                                <%= errors.barrio.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Calle</p>
+
+                        <input type="text" class="input-field" id="calle" name="calle" placeholder="Calle"
+                            value="<%= user.domicilio.calle %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.calle) { %>
+                                <%= errors.calle.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Numero</p>
+
+                        <input type="number" class="input-field" id="numero" name="numero" placeholder="Numero"
+                            value="<%= user.domicilio.numero %>" />
+                        <p>Codigo Postal</p>
+
+                        <input type="number" class="input-field" id="zip" name="zip" placeholder="Codigo Postal"
+                            value="<%= user.domicilio.codigoPostal %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.zip) { %>
+                                <%= errors.zip.msg %>
+                                    <% } %>
+                        </div>
+                        <p>Telefono</p>
+
+                        <input type="number" class="input-field" id="telefono" name="telefono"
+                            placeholder="Número de teléfono" value="<%= user.telefono %>" />
+
+                        <div class="upload-button">
+                            <label for="profile-image" class="custom-file-upload">
+                                Foto de Perfil
+                            </label>
+                            <input type="file" id="profile-image" name="userImage" class="file-input">
+                        </div>
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.userImage) { %>
+                                <%= errors.userImage.msg %>
+                                    <% } %>
+                        </div>
+                        <button type="submit" class="submit-btn">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <%- include("../partials/footer") %>
+</body>
+
+</html>
