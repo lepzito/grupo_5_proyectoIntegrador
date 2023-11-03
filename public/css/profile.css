@@ -1,12 +1,11 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
-.form-box{
-  margin-top: 0px;
+.conteiner {
+  display: flex;
+  flex-direction: column;
 }
 main {
   display: flex;
@@ -21,7 +20,7 @@ main {
   margin-left: 80px;
 }
 
-.login-register{
+.login-register {
   background-color: orangered;
   color: aliceblue;
   border: orangered;
@@ -30,25 +29,24 @@ main {
   margin-top: -100px;
   margin-left: 15px;
 }
-.correo{
-  margin-top: 10px;
- text-align: center;
-}
-.nombre{
+.correo {
   margin-top: 10px;
   text-align: center;
 }
-.apellido{
+.nombre {
   margin-top: 10px;
   text-align: center;
 }
-.salir{
-  margin-top: 20px;
-  margin-left: 100px;
+.apellido {
+  margin-top: 10px;
+  text-align: center;
+}
+.salir {
+  width: 50%;
+  margin: 10px auto;
   background-color: orangered;
   color: antiquewhite;
-  
 }
- a{
+a {
   color: white;
 }

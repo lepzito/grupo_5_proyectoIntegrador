@@ -1,4 +1,4 @@
-const db = require("../database/models"); // Asegúrate de importar tus modelos de Sequelize
+const db = require("../database/models");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
@@ -7,7 +7,6 @@ const userControllers = {
     res.render("./users/login");
   },
   loginProcess: function (req, res) {
-    // Busca al usuario por su dirección de correo electrónico
     db.Usuario.findOne({
       where: {
         email: req.body.email,
@@ -15,17 +14,14 @@ const userControllers = {
     })
       .then((userToLogin) => {
         if (userToLogin) {
-          // Comprueba si la contraseña proporcionada es correcta utilizando bcrypt
           const passwordCorrect = bcrypt.compareSync(
             req.body.password,
             userToLogin.password
           );
 
           if (passwordCorrect) {
-            // Elimina la contraseña antes de almacenar el usuario en la sesión
             delete userToLogin.password;
 
-            // Guarda el usuario en la sesión
             req.session.userLogged = userToLogin;
 
             if (req.body.remember_user) {
@@ -47,7 +43,6 @@ const userControllers = {
         });
       })
       .catch((error) => {
-        // Maneja cualquier error que pueda ocurrir al buscar el usuario
         console.error("Error al procesar el inicio de sesión:", error);
         return res
           .status(500)
@@ -134,7 +129,6 @@ const userControllers = {
   edit: function (req, res) {
     const userId = req.session.userLogged.id;
 
-    // Obtén los datos del usuario actualmente autenticado
     db.Usuario.findByPk(userId, {
       include: [{ association: "domicilio" }, { association: "genero" }],
     })
@@ -163,30 +157,20 @@ const userControllers = {
   },
   update: function (req, res) {
     const updatedData = req.body;
-    const userId = req.session.userLogged.id; // Supongo que tienes una sesión con el usuario actual
-
-    // Busca el usuario en la base de datos por su ID
+    const userId = req.session.userLogged.id;
     db.Usuario.findByPk(userId, {
-      include: [{ association: "domicilio" }, { association: "genero" }],
+      include: [{ association: "domicilio" }],
     })
       .then((user) => {
         if (!user) {
-          return res.status(404).send("Usuario no encontrado");
+          return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+        if (updatedData.password) {
+          const hashedPassword = bcrypt.hashSync(updatedData.password, 10);
+
+          user.password = hashedPassword;
         }
 
-        // Verifica si la contraseña actual es correcta
-        if (!bcrypt.compareSync(updatedData.currentPassword, user.password)) {
-          return res.render("./users/edit", {
-            user: user,
-            errors: {
-              currentPassword: {
-                msg: "La contraseña actual es incorrecta.",
-              },
-            },
-          });
-        }
-
-        // Actualiza los campos del usuario
         user.nombreUsuario = updatedData.nombreUsuario || user.nombreUsuario;
         user.apellidoUsuario =
           updatedData.apellidoUsuario || user.apellidoUsuario;
@@ -195,44 +179,42 @@ const userControllers = {
         user.telefono = updatedData.telefono || user.telefono;
         user.imgUser = updatedData.imgUser || user.imgUser;
 
-        // Actualiza el domicilio
+        if (user.domicilio) {
+          user.domicilio.calle = updatedData.calle || user.domicilio.calle;
+          user.domicilio.barrio = updatedData.barrio || user.domicilio.barrio;
 
-        // Si la nueva contraseña se proporcionó, actualízala
-        if (updatedData.newPassword) {
-          // Verifica que la nueva contraseña y la confirmación coincidan
-          if (updatedData.newPassword !== updatedData.confirmNewPassword) {
-            return res.render("./users/edit", {
-              user: user,
-              errors: {
-                newPassword: {
-                  msg: "Las contraseñas no coinciden.",
-                },
-                confirmNewPassword: {
-                  msg: "Las contraseñas no coinciden.",
-                },
-              },
-            });
-          }
-
-          // Actualiza la contraseña
-          user.password = bcrypt.hashSync(updatedData.newPassword, 8);
+          user.domicilio.localidad =
+            updatedData.localidad || user.domicilio.localidad;
+          user.domicilio.provinciaId =
+            updatedData.provincia || user.domicilio.provinciaId;
+          user.domicilio.numero = updatedData.numero || user.domicilio.numero;
+          user.domicilio.codigoPostal =
+            updatedData.zip || user.domicilio.codigoPostal;
         }
 
-        // Guarda los cambios en la base de datos
-        user
-          .save()
+        Promise.all([
+          user.save(),
+          user.domicilio ? user.domicilio.save() : Promise.resolve(),
+        ])
           .then(() => {
-            // Redirige al perfil actualizado
-            res.redirect("/users/profile");
+            res.clearCookie("userEmail");
+            req.session.destroy((err) => {
+              if (err) {
+                console.error(err);
+              }
+              res.redirect("/users/login");
+            });
           })
           .catch((error) => {
             console.error(error);
-            res.status(500).json({ error: "Error al actualizar el perfil." });
+            res
+              .status(500)
+              .json({ error: "Error al actualizar el perfil del usuario" });
           });
       })
       .catch((error) => {
         console.error(error);
-        res.status(500).json({ error: "Error al buscar el usuario." });
+        res.status(500).json({ error: "Error al buscar el usuario" });
       });
   },
   logout: function (req, res) {

@@ -46,7 +46,6 @@ CREATE TABLE Especificaciones (
   FOREIGN KEY (productoId) REFERENCES Producto(id)
 );
 
----usuaario---
 CREATE TABLE Genero (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL
