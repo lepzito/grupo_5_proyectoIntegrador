@@ -27,8 +27,8 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "domicilio", // Nombre de la tabla en la base de datos
-      timestamps: false, // No se utilizarán marcas de tiempo
+      tableName: "domicilio",
+      timestamps: false,
     }
   );
 

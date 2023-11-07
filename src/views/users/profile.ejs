@@ -17,37 +17,45 @@
                     <button class="login-register">¡Bienvenido <%= user.nombreUsuario %>!</button>
                 </div>
                 <img class="user-image" src="/images/users/<%= user.imgUser %>" alt="avatar">
-                <p class="nombre">
+                <p class="item">
                     Nombre: <%= user.nombreUsuario %>
                 </p>
-                <p class="apellido">
+                <p class="item">
                     Apellido: <%= user.apellidoUsuario %>
                 </p>
-                <p class="correo">
+                <p class="item">
                     Correo: <%= user.email %>
                 </p>
-                <p class="genero">
-                    Genero: Masculino
+                <p class="item">
+                    Genero: <%= user.genero ? user.genero.nombre : 'No declarado' %>
                 </p>
-                <p class="provincia">
-                    Provincia: Jujuy
+                <p class="item">
+                    Provincia: <%= user.domicilio ? (user.domicilio.provincia ? user.domicilio.provincia.nombre
+                        : 'No especificada' ) : 'No especificada' %>
                 </p>
-                <p class="localidad">
-                    Localidad: San Salvador de Jujuy
+                <p class="item">
+                    Localidad: <%= user.domicilio ? user.domicilio.localidad : 'No especificada' %>
                 </p>
-                <p class="Barrio">
-                    Barrio: Alto Comedero
+                <p class="item">
+                    Barrio: <%= user.domicilio ? user.domicilio.barrio : 'No especificado' %>
                 </p>
-                <p class="calle">
-                    Calle: 500, lote 3, manzana 5
+                <p class="item">
+                    Calle: <%= user.domicilio ? user.domicilio.calle : 'No especificada' %>
                 </p>
-                <p class="numero">
-                    Numero: 3885212081
+                <p class="item">
+                    Numero: <%= user.domicilio.numero? user.domicilio.numero : 'No especificado' %>
+                </p>
+                <p class="item">
+                    Codigo Postal: <%= user.domicilio.codigoPostal? user.domicilio.codigoPostal : 'No especificado' %>
+                </p>
+                <p class="item">
+                    Telfono: <%= user.telefono ? user.telefono : 'No especificado' %>
                 </p>
 
-                <button class="editar"><a href="/users/logout">EDITAR</a< /button>
 
-                        <button class="salir"><a href="/users/logout">SALIR</a< /button>
+                <button class="salir"><a href="/users/edit">EDITAR</a></button>
+                <button class="salir"><a href="/users/logout">SALIR</a></button>
+
 
 
             </div>

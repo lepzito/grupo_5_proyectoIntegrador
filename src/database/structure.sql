@@ -46,6 +46,8 @@ CREATE TABLE Especificaciones (
   FOREIGN KEY (productoId) REFERENCES Producto(id)
 );
 
+
+
 CREATE TABLE Genero (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL
@@ -110,3 +112,19 @@ INSERT INTO Genero (nombre) VALUES
   ('Masculino'),
   ('Femenino'),
   ('No Declarado');
+
+
+CREATE TABLE Carrito (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuarioId INT,
+  cantidad INT,
+  total DECIMAL(10,2),
+  FOREIGN KEY (usuarioId) REFERENCES Usuario(id)
+);
+CREATE TABLE ProductoCarrito (
+  carritoId INT,
+  productoId INT,
+  cantidad INT,
+  FOREIGN KEY (carritoId) REFERENCES Carrito(id),
+  FOREIGN KEY (productoId) REFERENCES Producto(id)
+);

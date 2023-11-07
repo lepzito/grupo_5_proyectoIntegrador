@@ -10,9 +10,9 @@ const {
 
 const productControllers = {
   all: function (req, res) {
-    const productsPerPage = 6; // Número de productos p or página
+    const productsPerPage = 6;
 
-    const page = req.query.page || 1; // Página actual
+    const page = req.query.page || 1;
 
     Producto.findAndCountAll({
       limit: productsPerPage,
@@ -46,7 +46,6 @@ const productControllers = {
       ],
     })
       .then(function (producto) {
-        console.log(producto.caracteristicas);
         res.render("productDetail", { product: producto });
       })
       .catch(function (error) {
@@ -57,7 +56,6 @@ const productControllers = {
   search: function (req, res) {
     const loQueBuscaElUsuario = req.query.search;
 
-    // Realiza una búsqueda en la base de datos
     Producto.findAll({
       where: {
         nombre: {
@@ -81,7 +79,6 @@ const productControllers = {
   admin: function (req, res) {
     Producto.findAll()
       .then((products) => {
-        // Renderizar la vista de administrador y pasar los datos a la vista
         res.render("admin-products", { products });
       })
       .catch((error) => {
@@ -91,7 +88,6 @@ const productControllers = {
   },
 
   create: function (req, res) {
-    // Cargar tipos, secciones y marcas
     Promise.all([Tipo.findAll(), Seccion.findAll(), Marca.findAll()])
       .then(function ([tipos, secciones, marcas]) {
         res.render("product-create", {
@@ -123,8 +119,7 @@ const productControllers = {
       img: "/images/images_products/" + req.file.filename,
     })
       .then((producto) => {
-        nuevoProducto = producto; // Almacena el nuevo producto
-        // Guardar las especificaciones
+        nuevoProducto = producto;
         const especificaciones = [];
         for (let i = 1; i <= 5; i++) {
           const nombreEspec = req.body[`especificacionNombre${i}`];
@@ -132,7 +127,7 @@ const productControllers = {
 
           if (nombreEspec && valorEspec) {
             especificaciones.push({
-              productoId: nuevoProducto.id, // Usa el ID del nuevo producto
+              productoId: nuevoProducto.id,
               nombre: nombreEspec,
               valor: valorEspec,
             });
@@ -151,13 +146,11 @@ const productControllers = {
   edit: function (req, res) {
     const id = req.params.id;
 
-    // Variables para almacenar los resultados
     let productToEdit;
     let tipos;
     let secciones;
     let marcas;
 
-    // Busca el producto en la base de datos por su ID
     Producto.findByPk(id, {
       include: { association: "especificaciones" },
     })
@@ -167,25 +160,21 @@ const productControllers = {
         }
         productToEdit = product;
 
-        // Cargar la variable "tipos" desde la base de datos
         return Tipo.findAll();
       })
       .then((tiposResult) => {
         tipos = tiposResult;
 
-        // Cargar la variable "secciones" desde la base de datos
         return Seccion.findAll();
       })
       .then((seccionesResult) => {
         secciones = seccionesResult;
 
-        // Cargar la variable "marcas" desde la base de datos
         return Marca.findAll();
       })
       .then((marcasResult) => {
         marcas = marcasResult;
 
-        // Renderiza la vista con los datos del producto y las variables "tipos," "secciones," y "marcas"
         res.render("product-edit", { productToEdit, tipos, secciones, marcas });
       })
       .catch((error) => {
@@ -198,11 +187,9 @@ const productControllers = {
       req.body;
     const id = req.params.id;
 
-    // Verifica si se envió una nueva imagen
     if (req.file) {
       const nuevaImagen = "/images/images_products/" + req.file.filename;
 
-      // Actualiza la imagen solo si se cargó una nueva
       Producto.update({ img: nuevaImagen }, { where: { id: id } })
         .then(([Updated]) => {
           if (Updated === 0) {

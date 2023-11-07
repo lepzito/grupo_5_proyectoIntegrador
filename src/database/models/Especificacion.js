@@ -28,10 +28,9 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Especificacion.associate = (models) => {
-    // Asociación con el modelo Producto (Una marca tiene muchos productos)
     Especificacion.belongsTo(models.Producto, {
-      foreignKey: "productoId", // Nombre de la columna que representa la relación
-      as: "producto", // Alias para la relación
+      foreignKey: "productoId",
+      as: "producto",
     });
   };
 

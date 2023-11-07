@@ -12,13 +12,12 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "Tipo", // Nombre de la tabla en la base de datos
-      timestamps: false, // No se utilizarán marcas de tiempo
+      tableName: "Tipo",
+      timestamps: false,
     }
   );
 
   Tipo.associate = (models) => {
-    // Asociación con el modelo Producto (Un tipo tiene muchos productos)
     Tipo.hasMany(models.Producto, {
       as: "productos",
       foreignKey: "tipoId",

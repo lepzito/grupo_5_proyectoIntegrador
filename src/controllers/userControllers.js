@@ -124,7 +124,28 @@ const userControllers = {
       });
   },
   profile: function (req, res) {
-    res.render("./users/profile", { user: req.session.userLogged });
+    const userId = req.session.userLogged.id;
+
+    db.Usuario.findByPk(userId, {
+      include: [
+        { model: db.Genero, as: "genero" },
+        {
+          model: db.Domicilio,
+          as: "domicilio",
+          include: { model: db.Provincia, as: "provincia" },
+        },
+      ],
+    })
+      .then((user) => {
+        if (!user) {
+          return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+        res.render("./users/profile", { user });
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: "Error al buscar el usuario" });
+      });
   },
   edit: function (req, res) {
     const userId = req.session.userLogged.id;

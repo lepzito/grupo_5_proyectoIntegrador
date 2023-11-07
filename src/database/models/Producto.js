@@ -33,25 +33,22 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "Producto", // Nombre de la tabla en la base de datos
-      timestamps: false, // No se utilizarán marcas de tiempo
+      tableName: "Producto",
+      timestamps: false,
     }
   );
 
   Producto.associate = (models) => {
-    // Asociación con el modelo Tipo (Un producto pertenece a un tipo)
     Producto.belongsTo(models.Tipo, {
       as: "tipo",
       foreignKey: "tipoId",
     });
 
-    // Asociación con el modelo Seccion (Un producto pertenece a una sección)
     Producto.belongsTo(models.Seccion, {
       as: "seccion",
       foreignKey: "seccionId",
     });
 
-    // Asociación con el modelo Marca (Un producto pertenece a una marca)
     Producto.belongsTo(models.Marca, {
       as: "marca",
       foreignKey: "marcaId",
@@ -59,6 +56,12 @@ module.exports = (sequelize, DataTypes) => {
     Producto.hasMany(models.Especificacion, {
       as: "especificaciones",
       foreignKey: "productoId",
+    });
+    Producto.belongsToMany(models.Carrito, {
+      as: "carritos",
+      through: models.ProductoCarrito,
+      foreignKey: "productoId",
+      otherKey: "carritoId",
     });
   };
 

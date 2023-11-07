@@ -108,3 +108,16 @@ VALUES
   (12, 'Sim', 'Nano'),
   (12, 'Red', '4G'),
   (12, 'Camara', '4mp');
+
+
+
+-- !!Primercrear un usaurio antes de poblar la tabla de carrito
+
+
+INSERT INTO Carrito (usuarioId, cantidad, total) VALUES
+  (1, 3, 150.00);
+
+  INSERT INTO ProductoCarrito (carritoId, productoId, cantidad) VALUES
+  (1, 1, 1),
+  (1, 2, 1),
+  (1, 3, 1);

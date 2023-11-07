@@ -6,6 +6,8 @@ const session = require("express-session");
 const rutasMain = require("./routes/main.js");
 const rutasProductos = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
+const rutasCarts = require("./routes/cart.js");
+
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const cookies = require("cookie-parser");
 const PORT = process.env.PORT || 3000;
@@ -37,6 +39,8 @@ app.use("/", rutasMain);
 app.use("/products", rutasProductos);
 
 app.use("/users", rutasUsers);
+
+app.use("/carrito", rutasCarts);
 /*------------------------------------------------------------------*/
 
 app.post("/procesar-datos", (req, res) => {

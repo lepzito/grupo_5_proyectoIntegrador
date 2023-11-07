@@ -10,8 +10,6 @@ router.get("/", products.all);
 router.get("/product/:id", products.detalle);
 //Search//
 router.get("/search", products.search);
-//Carrito//
-router.get("/carrito", products.carrito);
 
 //Administracion de lo Productos Crud//
 // Listado de los Productos//

@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "genero", // Nombre de la tabla en la base de datos
-      timestamps: false, // No se utilizarán marcas de tiempo
+      tableName: "genero",
+      timestamps: false,
     }
   );
 

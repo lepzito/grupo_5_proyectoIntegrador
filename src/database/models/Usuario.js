@@ -35,8 +35,8 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "usuario", // Nombre de la tabla en la base de datos
-      timestamps: false, // No se utilizarán marcas de tiempo
+      tableName: "usuario",
+      timestamps: false,
     }
   );
 
@@ -49,6 +49,10 @@ module.exports = (sequelize, DataTypes) => {
     Usuario.belongsTo(models.Domicilio, {
       as: "domicilio",
       foreignKey: "domicilioId",
+    });
+    Usuario.hasOne(models.Carrito, {
+      as: "carrito",
+      foreignKey: "usuarioId",
     });
   };
 
