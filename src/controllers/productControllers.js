@@ -136,7 +136,7 @@ const productControllers = {
         return Especificacion.bulkCreate(especificaciones);
       })
       .then(() => {
-        res.redirect("/products/");
+        res.redirect("/products/admin");
       })
       .catch((error) => {
         console.error(error);
@@ -222,7 +222,7 @@ const productControllers = {
         if (Updated === 0) {
           return res.status(404).send("Producto no encontrado");
         }
-        res.redirect(`/products`);
+        res.redirect(`/products/admin`);
       })
       .catch((error) => {
         console.error(error);
@@ -251,7 +251,7 @@ const productControllers = {
         });
       })
       .then(() => {
-        res.redirect("/products");
+        res.redirect("/products/admin");
       })
       .catch((error) => {
         console.error(error);

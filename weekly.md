@@ -1,13 +1,15 @@
-## Daily 16/10/23.
+## Daily 07/11/23.
 
--**Lucas**: termine crud de productos.
+-**Lucas**: SE TERMINARON DETALLES FINALES DEL SPRINT 6.
 
 - No tuve un inconveniente .
 
--vere el crud de usurios.
+-MERGE A MAIN.
 
--**SAMUEL**: empezo el crud usurio.
+-**Lujan**: diagrama de nuestra structure.sql
 
 - No encontro problemas.
 
--Hara el crud de usuario.
+-agrege las entidades faltantas al diagrama -**Brian**: vista profile
+-problema en la carga de domicilio
+-ya se soluciono se mergeo a develop
