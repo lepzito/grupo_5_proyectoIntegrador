@@ -55,3 +55,6 @@ https://trello.com/b/QPep3s7h/sprint-1
 ## Solo admins
 
 /products/admin
+para levantar el servidor
+npm test
+en la raiz del proyecto
