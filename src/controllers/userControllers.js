@@ -1,12 +1,22 @@
 const db = require("../database/models");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const path = require("path");
+const fs = require("fs");
 
 const userControllers = {
   login: function (req, res) {
     res.render("./users/login");
   },
   loginProcess: function (req, res) {
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("./users/login", {
+        errors: resultValidation.mapped(),
+      });
+    }
+
     db.Usuario.findOne({
       where: {
         email: req.body.email,
@@ -36,17 +46,15 @@ const userControllers = {
 
         return res.render("./users/login", {
           errors: {
-            email: {
+            credenciales: {
               msg: "Las credenciales son incorrectas",
             },
           },
         });
       })
       .catch((error) => {
-        console.error("Error al procesar el inicio de sesión:", error);
-        return res
-          .status(500)
-          .json({ error: "Error al procesar el inicio de sesión" });
+        console.error(error);
+        res.status(500).json({ error: "Error en el proceso de login" });
       });
   },
   register: function (req, res) {
@@ -65,64 +73,77 @@ const userControllers = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
+      // Si hay errores en las validaciones, eliminamos la imagen
+      if (req.file) {
+        const imagePath = path.join(
+          __dirname,
+          "../../public/images/users",
+          req.file.filename
+        );
+        fs.unlinkSync(imagePath); // Elimina la imagen sincrónicamente
+      }
+
       return res.render("./users/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
 
-    db.Usuario.findOne({ where: { email: req.body.email } })
-      .then((existingUser) => {
-        if (existingUser) {
-          return res.render("./users/register", {
-            errors: {
-              email: {
-                msg: "Este email ya está registrado",
-              },
-            },
-            oldData: req.body,
-          });
+    let provinciaId, generoId;
+
+    // Buscar el ID de la provincia
+    db.Provincia.findOne({ where: { nombre: req.body.provincia } })
+      .then((provinciaEncontrada) => {
+        if (!provinciaEncontrada) {
+          // Manejo de error si la provincia no se encuentra
+          return res.status(400).json({ error: "Provincia no válida" });
         }
 
-        db.Domicilio.create({
-          provinciaId: req.body.provincia,
+        provinciaId = provinciaEncontrada.id;
+
+        // Buscar el ID del género
+        return db.Genero.findOne({ where: { nombre: req.body.genero } });
+      })
+      .then((generoEncontrado) => {
+        if (!generoEncontrado) {
+          // Manejo de error si el género no se encuentra
+          return res.status(400).json({ error: "Género no válido" });
+        }
+
+        generoId = generoEncontrado.id;
+
+        // Crear el domicilio con el ID de la provincia
+        return db.Domicilio.create({
+          provinciaId: provinciaId,
           localidad: req.body.localidad,
           barrio: req.body.barrio,
           calle: req.body.calle,
           numero: req.body.numero,
           codigoPostal: req.body.zip,
-        })
-          .then((domicilio) => {
-            db.Usuario.create({
-              nombreUsuario: req.body.nombreUsuario,
-              apellidoUsuario: req.body.apellidoUsuario,
-              email: req.body.email,
-              password: bcrypt.hashSync(req.body.password, 8),
-              generoId: req.body.genero,
-              telefono: req.body.telefono,
-              domicilioId: domicilio.id,
-              imgUser: req.file.filename,
-            })
-              .then((newUser) => {
-                res.redirect("./login");
-              })
-              .catch((error) => {
-                console.error(error);
-                res.status(500).json({ error: "Error al crear el usuario" });
-              });
-          })
-          .catch((error) => {
-            console.error(error);
-            res.status(500).json({ error: "Error al crear el domicilio" });
-          });
+        });
+      })
+      .then((domicilio) => {
+        // Crear el usuario con el ID del domicilio y el ID del género
+        return db.Usuario.create({
+          nombreUsuario: req.body.nombreUsuario,
+          apellidoUsuario: req.body.apellidoUsuario,
+          email: req.body.email,
+          password: bcrypt.hashSync(req.body.password, 8),
+          generoId: generoId,
+          telefono: req.body.telefono,
+          domicilioId: domicilio.id,
+          imgUser: req.file.filename,
+        });
+      })
+      .then(() => {
+        res.redirect("./login");
       })
       .catch((error) => {
         console.error(error);
-        res
-          .status(500)
-          .json({ error: "Error al buscar el usuario por correo" });
+        res.status(500).json({ error: "Error en el proceso de registro" });
       });
   },
+
   profile: function (req, res) {
     const userId = req.session.userLogged.id;
 

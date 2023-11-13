@@ -30,7 +30,7 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride("_method"));
 
 /*------------------------------------------------------------------*/
 
@@ -42,7 +42,3 @@ app.use("/users", rutasUsers);
 
 app.use("/carrito", rutasCarts);
 /*------------------------------------------------------------------*/
-
-app.post("/procesar-datos", (req, res) => {
-  res.redirect("/");
-});

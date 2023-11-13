@@ -9,6 +9,7 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
 //Validatios
 
 const validations = require("../middlewares/validationMiddleware.js");
+const validationsLogin = require("../middlewares/validationMiddlewareLogin.js");
 
 //Muestro la vista de login y registro
 router.get("/login", guestMiddleware, userControllers.login);
@@ -31,7 +32,7 @@ router.post(
 );
 
 //Login envio
-router.post("/login", userControllers.loginProcess);
+router.post("/login", validationsLogin, userControllers.loginProcess);
 //Logout
 router.get("/logout", userControllers.logout);
 module.exports = router;

@@ -45,6 +45,12 @@ main {
   font-size: 15px;
   margin-bottom: 8px;
 }
+.credenciales {
+  text-align: center;
+  color: red;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
 .input-field {
   width: 100%;
   padding: 10px 0px;

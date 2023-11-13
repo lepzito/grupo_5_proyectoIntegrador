@@ -45,23 +45,32 @@
                                 <%= errors.password.msg %>
                                     <%} %>
                         </div>
-                        <p>Genero</p>
-                        <select id="genero" name="genero">
-                            <% generos.forEach((genero)=> { %>
-                                <option value="<%= genero.id %>">
-                                    <%= genero.nombre %>
-                                </option>
-                                <% }); %>
-                        </select>
-
-                        <p>Provincia</p>
-                        <select id="provincia" name="provincia">
-                            <% provincias.forEach((provincia)=> { %>
-                                <option value="<%= provincia.id %>">
-                                    <%= provincia.nombre %>
-                                </option>
-                                <% }); %>
-                        </select>
+                        <div>
+                            <p>Genero</p>
+                            <select id="genero" name="genero">
+                                <% const generos=["Masculino", "Femenino" , "No Declarado" ]; %>
+                                    <% for (const genero of generos) { %>
+                                        <option value="<%= genero %>">
+                                            <%= genero %>
+                                        </option>
+                                        <% } %>
+                            </select>
+                        </div>
+                        <div>
+                            <p>Provincia</p>
+                            <select id="provincia" name="provincia">
+                                <% const provincias=[ "Buenos Aires" , "Catamarca" , "Chaco" , "Chubut" , "Córdoba"
+                                    , "Corrientes" , "Entre Ríos" , "Formosa" , "Jujuy" , "La Pampa" , "La Rioja"
+                                    , "Mendoza" , "Misiones" , "Neuquén" , "Río Negro" , "Salta" , "San Juan"
+                                    , "San Luis" , "Santa Cruz" , "Santa Fe" , "Santiago del Estero"
+                                    , "Tierra del Fuego" , "Tucumán" , ]; %>
+                                    <% provincias.forEach((provincia)=> { %>
+                                        <option value="<%= provincia %>">
+                                            <%= provincia %>
+                                        </option>
+                                        <% }); %>
+                            </select>
+                        </div>
 
                         <input type="text" class="input-field" id="localidad" name="localidad" placeholder="Localidad"
                             value="<%= locals.oldData?oldData.localidad:null %>" />
@@ -86,16 +95,21 @@
                         </div>
                         <input type="number" class="input-field" id="numero" name="numero" placeholder="Numero"
                             value="<%= locals.oldData?oldData.numero:null %>" />
-                        <input type="number" class="input-field" id="zip" name="zip" placeholder="Codigo Postal"
-                            value="<%= locals.oldData?oldData.zip:null %>" />
                         <div class="text-danger">
-                            <% if (locals.errors && errors.zip) {%>
-                                <%= errors.zip.msg %>
+                            <% if (locals.errors && errors.numero) {%>
+                                <%= errors.numero.msg %>
                                     <%} %>
                         </div>
+                        <input type="number" class="input-field" id="zip" name="zip" placeholder="Codigo Postal"
+                            value="<%= locals.oldData?oldData.zip:null %>" />
+
                         <input type="number" class="input-field" id="telefono" name="telefono"
                             placeholder="Número de teléfono" value="<%= locals.oldData?oldData.telefono:null %>" />
-
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.telefono) {%>
+                                <%= errors.telefono.msg %>
+                                    <%} %>
+                        </div>
                         <div class="upload-button">
                             <label for="profile-image" class="custom-file-upload">
                                 Foto de Perfil
