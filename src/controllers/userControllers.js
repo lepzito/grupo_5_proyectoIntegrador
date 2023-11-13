@@ -73,77 +73,53 @@ const userControllers = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      // Si hay errores en las validaciones, eliminamos la imagen
       if (req.file) {
         const imagePath = path.join(
           __dirname,
           "../../public/images/users",
           req.file.filename
         );
-        fs.unlinkSync(imagePath); // Elimina la imagen sincrónicamente
+        fs.unlinkSync(imagePath);
       }
 
-      return res.render("./users/register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    let provinciaId, generoId;
-
-    // Buscar el ID de la provincia
-    db.Provincia.findOne({ where: { nombre: req.body.provincia } })
-      .then((provinciaEncontrada) => {
-        if (!provinciaEncontrada) {
-          // Manejo de error si la provincia no se encuentra
-          return res.status(400).json({ error: "Provincia no válida" });
+      Promise.all([db.Genero.findAll(), db.Provincia.findAll()]).then(
+        ([generos, provincias]) => {
+          res.render("./users/register", {
+            generos,
+            provincias,
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+          });
         }
-
-        provinciaId = provinciaEncontrada.id;
-
-        // Buscar el ID del género
-        return db.Genero.findOne({ where: { nombre: req.body.genero } });
-      })
-      .then((generoEncontrado) => {
-        if (!generoEncontrado) {
-          // Manejo de error si el género no se encuentra
-          return res.status(400).json({ error: "Género no válido" });
-        }
-
-        generoId = generoEncontrado.id;
-
-        // Crear el domicilio con el ID de la provincia
-        return db.Domicilio.create({
-          provinciaId: provinciaId,
-          localidad: req.body.localidad,
-          barrio: req.body.barrio,
-          calle: req.body.calle,
-          numero: req.body.numero,
-          codigoPostal: req.body.zip,
-        });
-      })
-      .then((domicilio) => {
-        // Crear el usuario con el ID del domicilio y el ID del género
-        return db.Usuario.create({
+      );
+    } else {
+      db.Domicilio.create({
+        provinciaId: req.body.provincia,
+        localidad: req.body.localidad,
+        barrio: req.body.barrio,
+        calle: req.body.calle,
+        numero: req.body.numero,
+        codigoPostal: req.body.zip,
+      }).then((domicilio) => {
+        db.Usuario.create({
           nombreUsuario: req.body.nombreUsuario,
           apellidoUsuario: req.body.apellidoUsuario,
           email: req.body.email,
           password: bcrypt.hashSync(req.body.password, 8),
-          generoId: generoId,
+          generoId: req.body.genero,
           telefono: req.body.telefono,
           domicilioId: domicilio.id,
           imgUser: req.file.filename,
-        });
-      })
-      .then(() => {
-        res.redirect("./login");
-      })
-      .catch((error) => {
-        console.error(error);
-        res.status(500).json({ error: "Error en el proceso de registro" });
+        })
+          .then(() => {
+            res.redirect("./login");
+          })
+          .catch((error) => {
+            res.status(500).json({ error: "Error al crear el usuario" });
+          });
       });
+    }
   },
-
   profile: function (req, res) {
     const userId = req.session.userLogged.id;
 

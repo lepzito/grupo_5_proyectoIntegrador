@@ -48,27 +48,21 @@
                         <div>
                             <p>Genero</p>
                             <select id="genero" name="genero">
-                                <% const generos=["Masculino", "Femenino" , "No Declarado" ]; %>
-                                    <% for (const genero of generos) { %>
-                                        <option value="<%= genero %>">
-                                            <%= genero %>
-                                        </option>
-                                        <% } %>
+                                <% for (const genero of generos) { %>
+                                    <option value="<%= genero.id %>">
+                                        <%= genero.nombre %>
+                                    </option>
+                                    <% } %>
                             </select>
                         </div>
                         <div>
                             <p>Provincia</p>
                             <select id="provincia" name="provincia">
-                                <% const provincias=[ "Buenos Aires" , "Catamarca" , "Chaco" , "Chubut" , "Córdoba"
-                                    , "Corrientes" , "Entre Ríos" , "Formosa" , "Jujuy" , "La Pampa" , "La Rioja"
-                                    , "Mendoza" , "Misiones" , "Neuquén" , "Río Negro" , "Salta" , "San Juan"
-                                    , "San Luis" , "Santa Cruz" , "Santa Fe" , "Santiago del Estero"
-                                    , "Tierra del Fuego" , "Tucumán" , ]; %>
-                                    <% provincias.forEach((provincia)=> { %>
-                                        <option value="<%= provincia %>">
-                                            <%= provincia %>
-                                        </option>
-                                        <% }); %>
+                                <% provincias.forEach((provincia)=> { %>
+                                    <option value="<%= provincia.id %>">
+                                        <%= provincia.nombre %>
+                                    </option>
+                                    <% }); %>
                             </select>
                         </div>
 
