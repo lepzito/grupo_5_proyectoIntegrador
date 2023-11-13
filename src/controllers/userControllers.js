@@ -65,63 +65,71 @@ const userControllers = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render("./users/register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    db.Usuario.findOne({ where: { email: req.body.email } })
-      .then((existingUser) => {
-        if (existingUser) {
-          return res.render("./users/register", {
-            errors: {
-              email: {
-                msg: "Este email ya está registrado",
-              },
-            },
+      Promise.all([db.Genero.findAll(), db.Provincia.findAll()])
+        .then(([generos, provincias]) => {
+          res.render("./users/register", {
+            generos,
+            provincias,
+            errors: resultValidation.mapped(),
             oldData: req.body,
           });
-        }
-
-        db.Domicilio.create({
-          provinciaId: req.body.provincia,
-          localidad: req.body.localidad,
-          barrio: req.body.barrio,
-          calle: req.body.calle,
-          numero: req.body.numero,
-          codigoPostal: req.body.zip,
         })
-          .then((domicilio) => {
-            db.Usuario.create({
-              nombreUsuario: req.body.nombreUsuario,
-              apellidoUsuario: req.body.apellidoUsuario,
-              email: req.body.email,
-              password: bcrypt.hashSync(req.body.password, 8),
-              generoId: req.body.genero,
-              telefono: req.body.telefono,
-              domicilioId: domicilio.id,
-              imgUser: req.file.filename,
-            })
-              .then((newUser) => {
-                res.redirect("./login");
-              })
-              .catch((error) => {
-                console.error(error);
-                res.status(500).json({ error: "Error al crear el usuario" });
-              });
+        .catch((error) => {
+          console.error(error);
+          res
+            .status(500)
+            .json({ error: "Error al obtener los datos necesarios" });
+        });
+    } else {
+      db.Usuario.findOne({ where: { email: req.body.email } })
+        .then((existingUser) => {
+          if (existingUser) {
+            return res.render("./users/register", {
+              errors: {
+                email: {
+                  msg: "Este email ya está registrado",
+                },
+              },
+              oldData: req.body,
+            });
+          }
+
+          db.Domicilio.create({
+            provinciaId: req.body.provincia,
+            localidad: req.body.localidad,
+            barrio: req.body.barrio,
+            calle: req.body.calle,
+            numero: req.body.numero,
+            codigoPostal: req.body.zip,
           })
-          .catch((error) => {
-            console.error(error);
-            res.status(500).json({ error: "Error al crear el domicilio" });
-          });
-      })
-      .catch((error) => {
-        console.error(error);
-        res
-          .status(500)
-          .json({ error: "Error al buscar el usuario por correo" });
-      });
+            .then((domicilio) => {
+              db.Usuario.create({
+                nombreUsuario: req.body.nombreUsuario,
+                apellidoUsuario: req.body.apellidoUsuario,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 8),
+                generoId: req.body.genero,
+                telefono: req.body.telefono,
+                domicilioId: domicilio.id,
+                imgUser: req.file.filename,
+              })
+                .then((newUser) => {
+                  res.redirect("./login");
+                })
+                .catch((error) => {
+                  res.status(500).json({ error: "Error al crear el usuario" });
+                });
+            })
+            .catch((error) => {
+              res.status(500).json({ error: "Error al crear el domicilio" });
+            });
+        })
+        .catch((error) => {
+          res
+            .status(500)
+            .json({ error: "Error al buscar el usuario por correo" });
+        });
+    }
   },
   profile: function (req, res) {
     const userId = req.session.userLogged.id;
