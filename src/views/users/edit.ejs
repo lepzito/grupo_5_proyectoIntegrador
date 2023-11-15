@@ -106,9 +106,18 @@
 
                         <input type="number" class="input-field" id="telefono" name="telefono"
                             placeholder="Número de teléfono" value="<%= user.telefono %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.telefono) {%>
+                                <%= errors.telefono.msg %>
+                                    <%} %>
+                        </div>
                         <p>Cambiar Contraseña:</p>
                         <input class="input-field" type="password" id="password" name="password">
-
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.password) {%>
+                                <%= errors.password.msg %>
+                                    <%} %>
+                        </div>
                         <div class="upload-button">
                             <label for="profile-image" class="custom-file-upload">
                                 Foto de Perfil

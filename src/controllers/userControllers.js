@@ -157,10 +157,13 @@ const userControllers = {
 
         Promise.all([db.Genero.findAll(), db.Provincia.findAll()])
           .then(([generos, provincias]) => {
-            res.render("./users/edit", { user, generos, provincias });
+            res.render("./users/edit", {
+              user,
+              generos,
+              provincias,
+            });
           })
           .catch((error) => {
-            console.error(error);
             res
               .status(500)
               .json({ error: "Error al obtener los datos necesarios" });
@@ -174,66 +177,100 @@ const userControllers = {
       });
   },
   update: function (req, res) {
-    const updatedData = req.body;
+    const resultValidation = validationResult(req);
     const userId = req.session.userLogged.id;
-    db.Usuario.findByPk(userId, {
-      include: [{ association: "domicilio" }],
-    })
-      .then((user) => {
-        if (!user) {
-          return res.status(404).json({ error: "Usuario no encontrado" });
-        }
-        if (updatedData.password) {
-          const hashedPassword = bcrypt.hashSync(updatedData.password, 10);
 
-          user.password = hashedPassword;
-        }
-
-        user.nombreUsuario = updatedData.nombreUsuario || user.nombreUsuario;
-        user.apellidoUsuario =
-          updatedData.apellidoUsuario || user.apellidoUsuario;
-        user.email = updatedData.email || user.email;
-        user.generoId = updatedData.genero || user.generoId;
-        user.telefono = updatedData.telefono || user.telefono;
-        user.imgUser = updatedData.imgUser || user.imgUser;
-
-        if (user.domicilio) {
-          user.domicilio.calle = updatedData.calle || user.domicilio.calle;
-          user.domicilio.barrio = updatedData.barrio || user.domicilio.barrio;
-
-          user.domicilio.localidad =
-            updatedData.localidad || user.domicilio.localidad;
-          user.domicilio.provinciaId =
-            updatedData.provincia || user.domicilio.provinciaId;
-          user.domicilio.numero = updatedData.numero || user.domicilio.numero;
-          user.domicilio.codigoPostal =
-            updatedData.zip || user.domicilio.codigoPostal;
-        }
-
-        Promise.all([
-          user.save(),
-          user.domicilio ? user.domicilio.save() : Promise.resolve(),
-        ])
-          .then(() => {
-            res.clearCookie("userEmail");
-            req.session.destroy((err) => {
-              if (err) {
-                console.error(err);
-              }
-              res.redirect("/users/login");
-            });
-          })
-          .catch((error) => {
-            console.error(error);
-            res
-              .status(500)
-              .json({ error: "Error al actualizar el perfil del usuario" });
-          });
+    if (resultValidation.errors.length > 0) {
+      db.Usuario.findByPk(userId, {
+        include: [{ association: "domicilio" }, { association: "genero" }],
       })
-      .catch((error) => {
-        console.error(error);
-        res.status(500).json({ error: "Error al buscar el usuario" });
-      });
+        .then((user) => {
+          if (!user) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+          }
+
+          Promise.all([db.Genero.findAll(), db.Provincia.findAll()])
+            .then(([generos, provincias]) => {
+              res.render("./users/edit", {
+                user,
+                generos,
+                provincias,
+                errors: resultValidation.mapped(),
+              });
+            })
+            .catch((error) => {
+              res
+                .status(500)
+                .json({ error: "Error al obtener los datos necesarios" });
+            });
+        })
+        .catch((error) => {
+          console.error(error);
+          res
+            .status(500)
+            .json({ error: "Error al obtener los datos del usuario" });
+        });
+    } else {
+      const updatedData = req.body;
+      db.Usuario.findByPk(userId, {
+        include: [{ association: "domicilio" }],
+      })
+        .then((user) => {
+          if (!user) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+          }
+          if (updatedData.password) {
+            const hashedPassword = bcrypt.hashSync(updatedData.password, 10);
+
+            user.password = hashedPassword;
+          }
+
+          user.nombreUsuario = updatedData.nombreUsuario || user.nombreUsuario;
+          user.apellidoUsuario =
+            updatedData.apellidoUsuario || user.apellidoUsuario;
+          user.email = updatedData.email || user.email;
+          user.generoId = updatedData.genero || user.generoId;
+          user.telefono = updatedData.telefono || user.telefono;
+          user.imgUser = updatedData.imgUser || user.imgUser;
+
+          if (user.domicilio) {
+            user.domicilio.calle = updatedData.calle || user.domicilio.calle;
+            user.domicilio.barrio = updatedData.barrio || user.domicilio.barrio;
+
+            user.domicilio.localidad =
+              updatedData.localidad || user.domicilio.localidad;
+            user.domicilio.provinciaId =
+              updatedData.provincia || user.domicilio.provinciaId;
+            user.domicilio.numero = updatedData.numero || user.domicilio.numero;
+            user.domicilio.codigoPostal =
+              updatedData.zip || user.domicilio.codigoPostal;
+          }
+
+          Promise.all([
+            user.save(),
+            user.domicilio ? user.domicilio.save() : Promise.resolve(),
+          ])
+            .then(() => {
+              res.clearCookie("userEmail");
+              req.session.destroy((err) => {
+                if (err) {
+                  console.error(err);
+                }
+                res.redirect("/users/login");
+              });
+            })
+            .catch((error) => {
+              console.error(error);
+              res
+                .status(500)
+                .json({ error: "Error al actualizar el perfil del usuario" });
+            });
+        })
+        .catch((error) => {
+          console.error(error);
+          res.status(500).json({ error: "Error al buscar el usuario" });
+        });
+    }
   },
   logout: function (req, res) {
     res.clearCookie("userEmail");

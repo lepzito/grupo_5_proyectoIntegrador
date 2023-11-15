@@ -10,6 +10,7 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
 
 const validations = require("../middlewares/validationMiddleware.js");
 const validationsLogin = require("../middlewares/validationMiddlewareLogin.js");
+const validationsEdit = require("../middlewares/validationMiddlewareEdit.js");
 
 //Muestro la vista de login y registro
 router.get("/login", guestMiddleware, userControllers.login);
@@ -27,7 +28,7 @@ router.post(
 router.post(
   "/edit",
   uploadUser.single("userImage"),
-  validations,
+  validationsEdit,
   userControllers.update
 );
 
