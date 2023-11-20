@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const products = require("../controllers/productControllers.js");
 const upload = require("../middlewares/multer.js");
+const validations = require("../middlewares/productsFormValidations/validationCreate.js");
+const validationsEdit = require("../middlewares/productsFormValidations/validationEdit.js");
 
 /*--------------------Rutas de Productos----------------------------------------------*/
 
@@ -16,11 +18,16 @@ router.get("/search", products.search);
 router.get("/admin", products.admin);
 //Ediccion//
 router.get("/:id/edit", products.edit);
-router.put("/:id", upload.single("productImage"), products.update);
+router.put(
+  "/:id",
+  upload.single("productImage"),
+  validationsEdit,
+  products.update
+);
 //Crear producto//
 router.get("/create", products.create);
 //Store//
-router.post("/", upload.single("productImage"), products.store);
+router.post("/", upload.single("productImage"), validations, products.store);
 //Eliminar un producto//
 //-------------//
 router.delete("/:id", products.destroy);

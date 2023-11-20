@@ -1,6 +1,6 @@
 const path = require("path");
 const { body } = require("express-validator");
-const db = require("../database/models");
+const db = require("../../database/models");
 const Sequelize = require("sequelize");
 
 const validationsEdit = [
@@ -34,7 +34,7 @@ const validationsEdit = [
     .custom((value, { req }) => {
       let file = req.file;
 
-      let acceptedExtensions = [".jpg", ".png"];
+      let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
       if (!file) {
         throw new Error("Agrega una imagen");
       } else {

@@ -24,17 +24,33 @@
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
                 <input type="text" id="nombre" name="nombre" value="<%= productToEdit.nombre %>" />
+                <small class="text-danger">
+                  <% if (locals.errors && errors.nombre) {%>
+                    <%= errors.nombre.msg %>
+                      <%} %>
+                </small>
               </div>
               <div class="form-container__input">
                 <label for="precio">Precio del producto:</label>
                 <input type="text" id="precio" name="precio" value="<%= productToEdit.precio %>" />
+                <small class="text-danger">
+                  <% if (locals.errors && errors.precio) {%>
+                    <%= errors.precio.msg %>
+                      <%} %>
+                </small>
               </div>
               <!-- Resto de los campos de edición -->
               <div class="form-container__input">
                 <label for="descuento">Descuento:</label>
                 <input type="text" id="descuento" name="descuento" value="<%= productToEdit.descuento %>"
                   pattern="[0-9]+" title="Ingresa solo números" />
+                <small class="text-danger">
+                  <% if (locals.errors && errors.descuento) {%>
+                    <%= errors.descuento.msg %>
+                      <%} %>
+                </small>
               </div>
+
 
               <!-- Campos para editar "tipo" y "sección" -->
               <div class="form-container__input">
@@ -47,6 +63,11 @@
                     </option>
                     <% }); %>
                 </select>
+                <small class="text-danger">
+                  <% if (locals.errors && errors.tipo) {%>
+                    <%= errors.tipo.msg %>
+                      <%} %>
+                </small>
               </div>
               <div class="form-container__input">
                 <label for="seccion">Sección:</label>
@@ -59,6 +80,11 @@
                     </option>
                     <% }); %>
                 </select>
+                <small class="text-danger">
+                  <% if (locals.errors && errors.seccion) {%>
+                    <%= errors.seccion.msg %>
+                      <%} %>
+                </small>
               </div>
               <div class="form-container__input">
                 <label for="marca">Marca:</label>
@@ -70,20 +96,38 @@
                     </option>
                     <% }); %>
                 </select>
+                <small class="text-danger">
+                  <% if (locals.errors && errors.marca) {%>
+                    <%= errors.marca.msg %>
+                      <%} %>
+                </small>
               </div>
 
               <div class="form-container__input">
                 <label for="descripcion">Descripción:</label>
                 <textarea name="descripcion" id="descripcion"><%= productToEdit.descripcion %></textarea>
+                <small class="text-danger">
+                  <% if (locals.errors && errors.descripcion) {%>
+                    <%= errors.descripcion.msg %>
+                      <%} %>
+                </small>
               </div>
               <div class="form-container__input">
                 <label for="img">Imágenes del producto</label>
                 <input type="file" name="productImage" />
+                <small class="text-danger">
+                  <% if (locals.errors && errors.productImage) {%>
+                    <%= errors.productImage.msg %>
+                      <%} %>
+                </small>
               </div>
               <div class="form-container__button">
                 <button type="submit" class="buy-now-button">
                   Guardar cambios
                 </button>
+              </div>
+              <div class="form-container__button">
+                <a href="/products/admin">Volver</a>
               </div>
             </div>
 

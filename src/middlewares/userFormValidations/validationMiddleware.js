@@ -1,11 +1,20 @@
 const path = require("path");
 const { body } = require("express-validator");
-const db = require("../database/models");
+const db = require("../../database/models");
 const Sequelize = require("sequelize");
 
 const validations = [
-  body("nombreUsuario").notEmpty().withMessage("Agrega un nombre"),
-  body("apellidoUsuario").notEmpty().withMessage("Agrega un apellido"),
+  body("nombreUsuario")
+    .notEmpty()
+    .withMessage("Agrega un nombre")
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener al menos 2 caracteres"),
+
+  body("apellidoUsuario")
+    .notEmpty()
+    .withMessage("Agrega un apellido")
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener al menos 2 caracteres"),
   body("email")
     .notEmpty()
     .withMessage("Agrega un email")
@@ -42,7 +51,7 @@ const validations = [
   body("userImage").custom((value, { req }) => {
     let file = req.file;
 
-    let acceptedExtensions = [".jpg", ".png"];
+    let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
     if (!file) {
       throw new Error("Agrega una imagen");
     } else {

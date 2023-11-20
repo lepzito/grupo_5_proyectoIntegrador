@@ -8,9 +8,9 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
 
 //Validatios
 
-const validations = require("../middlewares/validationMiddleware.js");
-const validationsLogin = require("../middlewares/validationMiddlewareLogin.js");
-const validationsEdit = require("../middlewares/validationMiddlewareEdit.js");
+const validations = require("../middlewares/userFormValidations/validationMiddleware.js");
+const validationsLogin = require("../middlewares/userFormValidations/validationMiddlewareLogin.js");
+const validationsEdit = require("../middlewares/userFormValidations/validationMiddlewareEdit.js");
 
 //Muestro la vista de login y registro
 router.get("/login", guestMiddleware, userControllers.login);
