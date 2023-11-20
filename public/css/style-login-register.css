@@ -118,6 +118,10 @@ select {
 p {
   color: gray;
 }
+small {
+  display: none;
+  color: red;
+}
 /* Moviles */
 @media screen and (min-width: 250px) and (max-width: 480px) {
   main {

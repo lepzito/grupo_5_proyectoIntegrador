@@ -4,6 +4,7 @@
 <head>
     <%- include("../partials/head") %>
         <link rel="stylesheet" href="\css\style-login-register.css" />
+        <script src="\js\register.js"></script>
         <title>Register</title>
 </head>
 
@@ -17,6 +18,7 @@
                     <div class="login-register">Crea tu cuenta</div>
                     <form action="/users/register" method="POST" id="register" class="input-group"
                         enctype="multipart/form-data">
+                        <small class="validation" id="nombreUsuarioValidation"></small>
                         <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
                             placeholder="Nombre" value="<%= locals.oldData?oldData.nombreUsuario:null %>" />
                         <div class="text-danger">
@@ -24,6 +26,7 @@
                                 <%= errors.nombreUsuario.msg %>
                                     <%} %>
                         </div>
+                        <small class="validation" id="apellidoUsuarioValidation"></small>
                         <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
                             placeholder="Apellido" value="<%= locals.oldData?oldData.apellidoUsuario:null %>" />
                         <div class="text-danger">
@@ -31,6 +34,7 @@
                                 <%= errors.apellidoUsuario.msg %>
                                     <%} %>
                         </div>
+                        <small class="validation" id="emailValidation"></small>
                         <input type="text" class="input-field" id="email" name="email" placeholder="Email"
                             value="<%= locals.oldData?oldData.email:null %>" />
                         <div class="text-danger">
@@ -38,6 +42,7 @@
                                 <%= errors.email.msg %>
                                     <%} %>
                         </div>
+                        <small class="validation" id="passwordValidation"></small>
                         <input type="password" class="input-field" id="password" name="password"
                             placeholder="Contraseña" />
                         <div class="text-danger">
@@ -104,6 +109,7 @@
                                 <%= errors.telefono.msg %>
                                     <%} %>
                         </div>
+                        <small class="validation" id="imageValidation"></small>
                         <div class="upload-button">
                             <label for="profile-image" class="custom-file-upload">
                                 Foto de Perfil
