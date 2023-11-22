@@ -95,6 +95,10 @@ table th {
 .text-danger {
   color: red;
 }
+.validation {
+  display: none;
+  color: red;
+}
 @media (min-width: 600px) and (max-width: 1024px) {
   .form-container {
     display: flex;

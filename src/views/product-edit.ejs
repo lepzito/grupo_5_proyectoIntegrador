@@ -5,6 +5,7 @@
   <%- include("./partials/head") %>
     <title>Estas Editando ...</title>
     <link rel="stylesheet" href="\css\edit-create-form.css" />
+    <script src="\js\products\edit.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,8 @@
         <div class="row"></div>
         <div class="form-container">
 
-          <form action="/products/<%= productToEdit.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+          <form action="/products/<%= productToEdit.id %>?_method=PUT" method="post" id="product-form"
+            enctype="multipart/form-data">
             <div>
               <h1>Estás editando: <%= productToEdit.nombre %>
               </h1>
@@ -23,6 +25,7 @@
             <div>
               <div class="form-container__input">
                 <label for="nombre">Nombre del producto:</label>
+                <small class="validation" id="nombreValidation"></small>
                 <input type="text" id="nombre" name="nombre" value="<%= productToEdit.nombre %>" />
                 <small class="text-danger">
                   <% if (locals.errors && errors.nombre) {%>
@@ -32,6 +35,7 @@
               </div>
               <div class="form-container__input">
                 <label for="precio">Precio del producto:</label>
+                <small class="validation" id="precioValidation"></small>
                 <input type="text" id="precio" name="precio" value="<%= productToEdit.precio %>" />
                 <small class="text-danger">
                   <% if (locals.errors && errors.precio) {%>
@@ -54,7 +58,8 @@
 
               <!-- Campos para editar "tipo" y "sección" -->
               <div class="form-container__input">
-                <label for="tipo">Categoría:</label>
+                <label for="tipo">Tipo:</label>
+                <small class="validation" id="categoriaValidation"></small>
                 <select name="tipo" id="tipo">
                   <option value="">Tipo de Producto</option>
                   <% tipos.forEach(function(tipo) { %>
@@ -71,6 +76,7 @@
               </div>
               <div class="form-container__input">
                 <label for="seccion">Sección:</label>
+                <small class="validation" id="seccionValidation"></small>
                 <select name="seccion" id="seccion">
                   <option value="">Ninguna</option>
                   <% secciones.forEach(function(seccion) { %>
@@ -88,6 +94,7 @@
               </div>
               <div class="form-container__input">
                 <label for="marca">Marca:</label>
+                <small class="validation" id="marcaValidation"></small>
                 <select name="marca" id="marca">
                   <option value="">Selecciona una marca</option>
                   <% marcas.forEach(function(marca) { %>
@@ -105,6 +112,7 @@
 
               <div class="form-container__input">
                 <label for="descripcion">Descripción:</label>
+                <small class="validation" id="descripcionValidation"></small>
                 <textarea name="descripcion" id="descripcion"><%= productToEdit.descripcion %></textarea>
                 <small class="text-danger">
                   <% if (locals.errors && errors.descripcion) {%>
@@ -114,6 +122,7 @@
               </div>
               <div class="form-container__input">
                 <label for="img">Imágenes del producto</label>
+                <small class="validation" id="imagenValidation"></small>
                 <input type="file" name="productImage" />
                 <small class="text-danger">
                   <% if (locals.errors && errors.productImage) {%>
