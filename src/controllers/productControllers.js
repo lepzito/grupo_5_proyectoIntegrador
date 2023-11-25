@@ -203,20 +203,12 @@ const productControllers = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      if (req.file) {
-        const imagePath = path.join(
-          __dirname,
-          "../../public/images/images_products",
-          req.file.filename
-        );
-        fs.unlinkSync(imagePath);
-      }
-
       let productToEdit;
       let tipos;
       let secciones;
       let marcas;
 
+      // Buscar el producto y cargar datos relacionados
       Producto.findByPk(id, { include: { association: "especificaciones" } })
         .then((product) => {
           productToEdit = product;
@@ -225,22 +217,20 @@ const productControllers = {
             return res.status(404).send("Producto no encontrado");
           }
 
-          return Tipo.findAll();
+          // Obtener tipos, secciones y marcas
+          return Promise.all([
+            Tipo.findAll(),
+            Seccion.findAll(),
+            Marca.findAll(),
+          ]);
         })
-        .then((tiposResult) => {
+        .then(([tiposResult, seccionesResult, marcasResult]) => {
           tipos = tiposResult;
-
-          return Seccion.findAll();
-        })
-        .then((seccionesResult) => {
           secciones = seccionesResult;
-
-          return Marca.findAll();
-        })
-        .then((marcasResult) => {
           marcas = marcasResult;
 
-          res.render("product-edit", {
+          // Renderizar el formulario con errores
+          return res.render("product-edit", {
             productToEdit,
             tipos,
             secciones,
@@ -250,99 +240,45 @@ const productControllers = {
           });
         })
         .catch((error) => {
+          // Manejar el error interno del servidor
           return res.status(500).send("Error interno del servidor");
         });
     } else {
-      let transaction;
+      // Redirigir a la página de administración de productos si no hay cambios
+      if (
+        req.body.nombre === req.body.oldNombre &&
+        req.body.precio === req.body.oldPrecio &&
+        req.body.descripcion === req.body.oldDescripcion
+      ) {
+        return res.redirect(`/products/admin`);
+      }
 
-      Producto.findByPk(id, { include: { association: "especificaciones" } })
-        .then((productToEdit) => {
-          if (!productToEdit) {
-            return res.status(404).send("Producto no encontrado");
-          }
+      // Actualizar campos del producto
+      const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
+        req.body;
 
-          const oldImagePath = productToEdit.img;
-
-          return sequelize
-            .transaction()
-            .then((trans) => {
-              transaction = trans;
-
-              if (req.file) {
-                const nuevaImagen =
-                  "/images/images_products/" + req.file.filename;
-
-                // Eliminar la imagen anterior solo si hay una nueva imagen
-                if (oldImagePath) {
-                  const oldImagePathFull = path.join(
-                    __dirname,
-                    "../../public",
-                    oldImagePath
-                  );
-                  fs.unlinkSync(oldImagePathFull);
-                }
-
-                // Actualizar la imagen en la base de datos
-                return Producto.update(
-                  { img: nuevaImagen },
-                  { where: { id: id }, transaction }
-                );
-              }
-
-              // Si no hay nueva imagen, continuar sin actualizar la imagen
-              return Promise.resolve();
-            })
-            .then(() => {
-              // Actualizar otros campos del producto
-              const {
-                nombre,
-                precio,
-                descripcion,
-                descuento,
-                tipo,
-                marca,
-                seccion,
-              } = req.body;
-              return Producto.update(
-                {
-                  nombre,
-                  precio: parseFloat(precio),
-                  descripcion,
-                  descuento: parseFloat(descuento),
-                  tipoId: parseInt(tipo),
-                  marcaId: parseInt(marca),
-                  seccionId: parseInt(seccion),
-                },
-                {
-                  where: { id: id },
-                  transaction,
-                }
-              );
-            })
-            .then(() => {
-              // Confirmar la transacción
-              transaction.commit();
-              res.redirect(`/products/admin`);
-            })
-            .catch((error) => {
-              // Revertir la transacción en caso de error
-              if (transaction) {
-                transaction.rollback();
-              }
-
-              if (req.file) {
-                const imagePath = path.join(
-                  __dirname,
-                  "../../public/images/images_products",
-                  req.file.filename
-                );
-                fs.unlinkSync(imagePath);
-              }
-
-              return res.status(500).send("Error interno del servidor");
-            });
+      // Actualizar producto
+      Producto.update(
+        {
+          nombre,
+          precio: parseFloat(precio),
+          descripcion,
+          descuento: parseFloat(descuento),
+          tipoId: parseInt(tipo),
+          marcaId: parseInt(marca),
+          seccionId: parseInt(seccion),
+        },
+        {
+          where: { id: id },
+        }
+      )
+        .then(() => {
+          // Redirigir a la página de administración de productos
+          return res.redirect(`/products/admin`);
         })
         .catch((error) => {
+          console.error("Error en actualización:", error);
+          // Manejar el error interno del servidor
           return res.status(500).send("Error interno del servidor");
         });
     }

@@ -3,9 +3,9 @@
 
 <head>
   <%- include("./partials/head") %>
-    <title>Estas Editando ...</title>
     <link rel="stylesheet" href="\css\edit-create-form.css" />
     <script src="\js\products\edit.js"></script>
+    <title>Estas Editando ...</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="row"></div>
         <div class="form-container">
 
-          <form action="/products/<%= productToEdit.id %>?_method=PUT" method="post" id="product-form"
+          <form action="/products/<%= productToEdit.id %>?_method=PUT" method="post" id="productEdit"
             enctype="multipart/form-data">
             <div>
               <h1>Estás editando: <%= productToEdit.nombre %>
@@ -59,9 +59,7 @@
               <!-- Campos para editar "tipo" y "sección" -->
               <div class="form-container__input">
                 <label for="tipo">Tipo:</label>
-                <small class="validation" id="categoriaValidation"></small>
                 <select name="tipo" id="tipo">
-                  <option value="">Tipo de Producto</option>
                   <% tipos.forEach(function(tipo) { %>
                     <option value="<%= tipo.id %>" <% if (tipo.id===productToEdit.tipoId) { %> selected <% } %>>
                         <%= tipo.nombre %>
@@ -76,10 +74,8 @@
               </div>
               <div class="form-container__input">
                 <label for="seccion">Sección:</label>
-                <small class="validation" id="seccionValidation"></small>
                 <select name="seccion" id="seccion">
-                  <option value="">Ninguna</option>
-                  <% secciones.forEach(function(seccion) { %>
+                  s <% secciones.forEach(function(seccion) { %>
                     <option value="<%= seccion.id %>" <% if (seccion.id===productToEdit.seccionId) { %> selected <% } %>
                         >
                         <%= seccion.nombre %>
@@ -94,9 +90,7 @@
               </div>
               <div class="form-container__input">
                 <label for="marca">Marca:</label>
-                <small class="validation" id="marcaValidation"></small>
                 <select name="marca" id="marca">
-                  <option value="">Selecciona una marca</option>
                   <% marcas.forEach(function(marca) { %>
                     <option value="<%= marca.id %>" <% if (marca.id===productToEdit.marcaId) { %> selected <% } %>>
                         <%= marca.nombre %>
@@ -121,9 +115,9 @@
                 </small>
               </div>
               <div class="form-container__input">
-                <label for="img">Imágenes del producto</label>
+                <label for="productImage">Imágenes del producto</label>
                 <small class="validation" id="imagenValidation"></small>
-                <input type="file" name="productImage" />
+                <input type="file" name="productImage" id="productImage" />
                 <small class="text-danger">
                   <% if (locals.errors && errors.productImage) {%>
                     <%= errors.productImage.msg %>
