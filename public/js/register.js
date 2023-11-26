@@ -91,35 +91,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (value === "") {
       showError(input, validation, requiredMessage);
-    } else {
-      if (!validateLength(value, minLength)) {
-        showError(input, validation, lengthMessage);
-      } else {
-        if (input === nombreUsuarioInput || input === apellidoUsuarioInput) {
-          if (!validateLetters(value)) {
-            showError(input, validation, lettersMessage);
-          } else {
-            hideError(input, validation);
-          }
-        }
+      return false;
+    }
 
-        if (input === emailInput) {
-          if (!validateEmail(value)) {
-            showError(input, validation, "Correo electrónico no válido");
-          } else {
-            hideError(input, validation);
-          }
-        }
+    if (!validateLength(value, minLength)) {
+      showError(input, validation, lengthMessage);
+      return false;
+    }
 
-        if (input === passwordInput) {
-          if (!validatePassword(value)) {
-            showError(input, validation, "Contraseña no válida");
-          } else {
-            hideError(input, validation);
-          }
-        }
+    // Las siguientes validaciones son específicas para algunos campos
+    if (
+      (input === nombreUsuarioInput || input === apellidoUsuarioInput) &&
+      !validateLetters(value)
+    ) {
+      showError(input, validation, lettersMessage);
+      return false;
+    }
+
+    if (input === emailInput && !validateEmail(value)) {
+      showError(input, validation, "Correo electrónico no válido");
+      return false;
+    }
+
+    if (input === passwordInput) {
+      const passwordErrors = validatePassword(value);
+      if (passwordErrors.length > 0) {
+        showError(input, validation, passwordErrors.join("<br/>"));
+        return false;
       }
     }
+
+    // Si todas las validaciones pasan, ocultar los errores y retornar true
+    hideError(input, validation);
+    return true;
   }
 
   nombreUsuarioInput.addEventListener("blur", function () {

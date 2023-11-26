@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.getElementById("email");
   const emailValidation = document.getElementById("emailValidation");
 
+  const passwordInput = document.getElementById("password");
+  const passwordValidation = document.getElementById("passwordValidation");
+
+  const imageInput = document.getElementById("profile-image");
+  const imageValidation = document.getElementById("imageValidation");
+
   const form = document.getElementById("edit-profile");
 
   function showError(input, validation, message) {
@@ -148,7 +154,34 @@ document.addEventListener("DOMContentLoaded", function () {
   emailInput.addEventListener("blur", function () {
     validateInput(emailInput, emailValidation, 1, "Este campo es obligatorio");
   });
+  function validateImage(file) {
+    if (file) {
+      const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+      const fileName = file.name.toLowerCase();
+      const fileExtension = fileName.split(".").pop();
 
+      if (!allowedExtensions.includes(fileExtension)) {
+        showError(
+          imageInput,
+          imageValidation,
+          "Formato de archivo no válido. Por favor, selecciona un archivo JPG, JPEG, PNG o GIF."
+        );
+        return false;
+      } else {
+        hideError(imageValidation);
+        return true;
+      }
+    } else {
+      // No se seleccionó ningún archivo, por lo que no hay error.
+      hideError(imageValidation);
+      return true;
+    }
+  }
+
+  imageInput.addEventListener("change", function () {
+    const file = this.files[0]; // Obtén el primer archivo seleccionado
+    validateImage(file);
+  });
   form.addEventListener("submit", function (event) {
     // Realiza la validación para cada campo antes de enviar el formulario
     const nombreUsuarioValid = validateInput(
@@ -176,7 +209,15 @@ document.addEventListener("DOMContentLoaded", function () {
       "Este campo es obligatorio"
     );
 
-    if (!nombreUsuarioValid || !apellidoUsuarioValid || !emailValid) {
+    const file = imageInput.files[0];
+    const imageValid = validateImage(file);
+
+    if (
+      !nombreUsuarioValid ||
+      !apellidoUsuarioValid ||
+      !emailValid ||
+      !imageValid
+    ) {
       event.preventDefault();
     }
   });

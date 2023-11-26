@@ -181,6 +181,14 @@ const userControllers = {
     const userId = req.session.userLogged.id;
 
     if (resultValidation.errors.length > 0) {
+      if (req.file) {
+        const imagePath = path.join(
+          __dirname,
+          "../../public/images/users",
+          req.file.filename
+        );
+        fs.unlinkSync(imagePath);
+      }
       db.Usuario.findByPk(userId, {
         include: [{ association: "domicilio" }, { association: "genero" }],
       })
@@ -212,6 +220,7 @@ const userControllers = {
         });
     } else {
       const updatedData = req.body;
+
       db.Usuario.findByPk(userId, {
         include: [{ association: "domicilio" }],
       })
