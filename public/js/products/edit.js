@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     "descripcionValidation"
   );
 
+  const imagenInput = document.getElementById("productImage");
+  const imagenValidation = document.getElementById("imagenValidation");
+
   const form = document.getElementById("productEdit");
 
   function showError(input, validation, message) {
@@ -47,9 +50,61 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  function validateImage() {
+    const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+    const fileName = imagenInput.value.toLowerCase();
+
+    if (fileName && !validateFileExtension(fileName, allowedExtensions)) {
+      showError(
+        imagenInput,
+        imagenValidation,
+        "Formato de archivo no válido. Por favor, selecciona un archivo JPG, JPEG, PNG o GIF."
+      );
+      return false;
+    } else {
+      hideError(imagenValidation);
+      return true;
+    }
+  }
+
+  function validateFileExtension(fileName, allowedExtensions) {
+    const fileExtension = fileName.split(".").pop().toLowerCase();
+    return allowedExtensions.includes(fileExtension);
+  }
+  nombreInput.addEventListener("blur", function () {
+    validateInput(
+      nombreInput,
+      nombreValidation,
+      5,
+      "Este campo es obligatorio",
+      "El nombre debe tener al menos 5 caracteres"
+    );
+  });
+
+  precioInput.addEventListener("blur", function () {
+    validateInput(
+      precioInput,
+      precioValidation,
+      1,
+      "Este campo es obligatorio"
+    );
+  });
+
+  descripcionInput.addEventListener("blur", function () {
+    validateInput(
+      descripcionInput,
+      descripcionValidation,
+      20,
+      "Este campo es obligatorio",
+      "La descripción debe tener al menos 20 caracteres"
+    );
+  });
+
+  imagenInput.addEventListener("change", function () {
+    validateImage();
+  });
 
   form.addEventListener("submit", function (event) {
-    // Realiza la validación para cada campo antes de enviar el formulario
     const nombreValid = validateInput(
       nombreInput,
       nombreValidation,
@@ -73,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "La descripción debe tener al menos 20 caracteres"
     );
 
-    if (!nombreValid || !precioValid || !descripcionValid) {
+    const imagenValid = validateImage();
+
+    if (!nombreValid || !precioValid || !descripcionValid || !imagenValid) {
       event.preventDefault();
-    } else {
-      console.log("Formulario válido, permitiendo el envío.");
     }
   });
 });

@@ -18,6 +18,7 @@ router.get("/search", products.search);
 router.get("/admin", products.admin);
 //Ediccion//
 router.get("/:id/edit", products.edit);
+
 router.put(
   "/:id",
   upload.single("productImage"),

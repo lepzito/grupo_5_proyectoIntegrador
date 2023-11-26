@@ -61,9 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (value === "") {
       showError(input, validation, requiredMessage);
+      return false;
     } else {
       if (!validateLength(value, minLength)) {
         showError(input, validation, lengthMessage);
+        return false;
       } else {
         if (
           input === categoriaInput ||
@@ -72,18 +74,23 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
           if (!validateSelect(value)) {
             showError(input, validation, selectMessage);
+            return false;
           } else {
             hideError(validation);
+            return true;
           }
         } else if (input === imageInput) {
           const fileName = value.toLowerCase();
           if (!validateFileExtension(fileName, allowedExtensions)) {
             showError(input, validation, fileMessage);
+            return false;
           } else {
             hideError(validation);
+            return true;
           }
         } else {
           hideError(validation);
+          return true;
         }
       }
     }
@@ -138,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
   imageInput.addEventListener("change", function () {
     const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
     const fileName = this.value.toLowerCase();
-    const fileExtension = fileName.split(".").pop();
 
     if (!validateFileExtension(fileName, allowedExtensions)) {
       showError(

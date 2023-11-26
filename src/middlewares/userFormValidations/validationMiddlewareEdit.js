@@ -29,27 +29,26 @@ const validationsEdit = [
   body("numero").notEmpty().withMessage("Agrega una número"),
   body("telefono").notEmpty().withMessage("Agrega una teléfono"),
 
-  body("userImage")
-    .optional()
-    .custom((value, { req }) => {
-      let file = req.file;
+  body("userImage").custom((value, { req }) => {
+    let file = req.file;
 
-      let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
-      if (!file) {
-        throw new Error("Agrega una imagen");
-      } else {
-        let fileExtension = path.extname(file.originalname);
-
-        if (!acceptedExtensions.includes(fileExtension)) {
-          throw new Error(
-            `Las extensiones de imagenes permitidas son: ${acceptedExtensions.join(
-              ", "
-            )}`
-          );
-        }
-      }
+    if (!file) {
       return true;
-    }),
+    }
+
+    let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
+    let fileExtension = path.extname(file.originalname);
+
+    if (!acceptedExtensions.includes(fileExtension)) {
+      throw new Error(
+        `Las extensiones de imágenes permitidas son: ${acceptedExtensions.join(
+          ", "
+        )}`
+      );
+    }
+
+    return true;
+  }),
   body("password")
     .optional()
     .custom((value, { req }) => {

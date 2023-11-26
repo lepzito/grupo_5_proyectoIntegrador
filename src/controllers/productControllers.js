@@ -168,9 +168,7 @@ const productControllers = {
     let secciones;
     let marcas;
 
-    Producto.findByPk(id, {
-      include: { association: "especificaciones" },
-    })
+    Producto.findByPk(id)
       .then((product) => {
         if (!product) {
           return res.status(404).send("Producto no encontrado");
@@ -203,12 +201,19 @@ const productControllers = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
+      if (req.file) {
+        const imagePath = path.join(
+          __dirname,
+          "../../public/images/images_products",
+          req.file.filename
+        );
+        fs.unlinkSync(imagePath);
+      }
       let productToEdit;
       let tipos;
       let secciones;
       let marcas;
 
-      // Buscar el producto y cargar datos relacionados
       Producto.findByPk(id, { include: { association: "especificaciones" } })
         .then((product) => {
           productToEdit = product;
@@ -267,6 +272,9 @@ const productControllers = {
           tipoId: parseInt(tipo),
           marcaId: parseInt(marca),
           seccionId: parseInt(seccion),
+          ...(req.file && {
+            img: "/images/images_products/" + req.file.filename,
+          }),
         },
         {
           where: { id: id },
