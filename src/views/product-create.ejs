@@ -2,6 +2,7 @@
 <html lang="en">
 <%- include("./partials/head") %>
   <link rel="stylesheet" href="\css\edit-create-form.css" />
+  <script src="\js\products\create.js"></script>
   <title>Estas Creando ...</title>
 
   <body>
@@ -11,26 +12,44 @@
         <div class="container">
           <div class="row"></div>
           <div class="form-container">
-            <form action="/products" method="post" enctype="multipart/form-data">
+            <form action="/products" method="post" id="product-form" enctype="multipart/form-data">
               <div>
                 <h1>Estás creando un producto...</h1>
               </div>
               <div>
                 <div class="form-container__input">
                   <label for="nombre">Nombre del producto:</label>
+                  <small class="validation" id="nombreValidation"></small>
                   <input type="text" id="nombre" name="nombre" />
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.nombre) {%>
+                      <%= errors.nombre.msg %>
+                        <%} %>
+                  </small>
                 </div>
                 <div class="form-container__input">
                   <label for="precio">Precio del producto:</label>
-                  <input type="text" id="precio" name="precio" />
+                  <small class="validation" id="precioValidation"></small>
+                  <input type="number" id="precio" name="precio" />
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.precio) {%>
+                      <%= errors.precio.msg %>
+                        <%} %>
+                  </small>
                 </div>
                 <div class="form-container__input">
                   <label for="descuento">Descuento:</label>
-                  <input type="text" id="descuento" name="descuento" />
+                  <input type="number" id="descuento" name="descuento" />
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.descuento) {%>
+                      <%= errors.descuento.msg %>
+                        <%} %>
+                  </small>
                 </div>
 
                 <div class="form-container__input">
-                  <label for="tipo">Categoría:</label>
+                  <label for="tipo">Tipo:</label>
+                  <small class="validation" id="categoriaValidation"></small>
                   <select name="tipo" id="tipo">
                     <option value="">Tipo de Producto</option>
                     <% tipos.forEach(function(tipo) { %>
@@ -39,10 +58,16 @@
                       </option>
                       <% }); %>
                   </select>
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.tipo) {%>
+                      <%= errors.tipo.msg %>
+                        <%} %>
+                  </small>
                 </div>
 
                 <div class="form-container__input">
                   <label for="seccion">Sección:</label>
+                  <small class="validation" id="seccionValidation"></small>
                   <select name="seccion" id="seccion">
                     <option value="">Selecciona una Opcion</option>
                     <% secciones.forEach(function(seccion) { %>
@@ -51,9 +76,15 @@
                       </option>
                       <% }); %>
                   </select>
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.seccion) {%>
+                      <%= errors.seccion.msg %>
+                        <%} %>
+                  </small>
                 </div>
                 <div class="form-container__input">
                   <label for="marca">Marca:</label>
+                  <small class="validation" id="marcaValidation"></small>
                   <select name="marca" id="marca">
                     <option value="">Selecciona una marca</option>
                     <% marcas.forEach(function(marca) { %>
@@ -62,26 +93,44 @@
                       </option>
                       <% }); %>
                   </select>
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.marca) {%>
+                      <%= errors.marca.msg %>
+                        <%} %>
+                  </small>
                 </div>
 
                 <div class="form-container__input">
                   <label for="descripcion">Descripción:</label>
+                  <small class="validation" id="descripcionValidation"></small>
                   <textarea name="descripcion" id="descripcion" placeholder="250 max length" rows="7"
                     cols="50"></textarea>
+                  <small class="text-danger">
+                    <% if (locals.errors && errors.descripcion) {%>
+                      <%= errors.descripcion.msg %>
+                        <%} %>
+                  </small>
                 </div>
                 <% for (let i=1; i <=5; i++) { %>
                   <div class="form-container__input">
-                    <label for="especificacionNombre<%= i %>">Nombre de Especificación <%= i %>:</label>
+                    <label for="especificacionNombre<%= i %>">Nombre de especificación <%= i %>:</label>
                     <input type="text" id="especificacionNombre<%= i %>" name="especificacionNombre<%= i %>"
                       placeholder="Tamaño de Pantalla" />
-                    <label for="especificacionValor<%= i %>">Valor de Especificación <%= i %>:</label>
+                    <label for="especificacionValor<%= i %>">Valor de especificación <%= i %>:</label>
                     <input type="text" id="especificacionValor<%= i %>" name="especificacionValor<%= i %>"
                       placeholder="32 pulgadas" />
+
                   </div>
                   <% } %>
                     <div class="form-container__input">
                       <label for="img">Imágenes del producto</label>
-                      <input type="file" name="productImage" />
+                      <small class="validation" id="imagenValidation"></small>
+                      <input type="file" name="productImage" id="img" />
+                      <small class="text-danger">
+                        <% if (locals.errors && errors.productImage) {%>
+                          <%= errors.productImage.msg %>
+                            <%} %>
+                      </small>
                     </div>
 
                     <div class="form-container__button">

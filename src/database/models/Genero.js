@@ -17,12 +17,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  Genero.associate = (models) => {
-    Genero.hasMany(models.Usuario, {
-      as: "usuarios",
-      foreignKey: "generoId",
-    });
-  };
-
   return Genero;
 };

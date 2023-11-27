@@ -4,6 +4,8 @@
 <head>
   <%- include("../partials/head") %>
     <link rel="stylesheet" href="\css\style-login-register.css" />
+    <script src="\js\login.js"></script>
+
     <title>Login</title>
 </head>
 
@@ -14,27 +16,40 @@
     <main>
       <div class="conteiner">
         <div class="form-box">
-          <% if (locals.errors&&errors.email) {%>
+
+
+          <div class="login-register">Iniciar Sesion</div>
+          <!-- Login -->
+          <div class="credenciales">
+            <% if (locals.errors&&errors.credenciales) {%>
+              <%= errors.credenciales.msg %>
+                <%} %>
+          </div>
+          <form action="/users/login" method="POST" id="login" class="input-group">
+            <small class="validation" id="emailValidation"></small>
+
+            <input type="text" name="email" class="input-field" id="email" placeholder=" Email" />
             <div class="text-danger">
-              <p>
+              <% if (locals.errors && errors.email) {%>
                 <%= errors.email.msg %>
-              </p>
+                  <%} %>
             </div>
+            <small class="validation" id="passwordValidation"></small>
 
-            <%} %>
-              <div class="login-register">Iniciar Sesion</div>
-              <!-- Login -->
-
-              <form action="/users/login" method="POST" id="login" class="input-group">
-                <input type="text" name="email" class="input-field" placeholder="Email" />
-                <input type="password" name="password" class="input-field" placeholder="Contraseña" />
-                <input type="checkbox" class="check-box" name="remember_user" />
-                <span>Recordar Usuario</span>
-                <button type="submit" class="submit-btn">Acceder</button>
-                <p class="registrarse">
-                  ¿Nuevo en la pagina? <a href="/users/register">Crea tu cuenta :D</a>
-                </p>
-              </form>
+            <input type="password" name="password" id="password" class="input-field" placeholder="Contraseña" />
+            <div class="text-danger">
+              <% if (locals.errors && errors.password) {%>
+                <%= errors.password.msg %>
+                  <%} %>
+            </div>
+            <input type="checkbox" class="check-box" name="remember_user" />
+            <span>Recordar Usuario</span>
+            <button type="submit" class="submit-btn" id="loginBtn">Acceder</button>
+            <p class="registrarse">
+              ¿Nuevo en la pagina? <a href="/users/register">Crea tu cuenta :D</a>
+            </p>
+            <small class="validation" id="loginValidation"></small>
+          </form>
 
         </div>
       </div>

@@ -4,6 +4,8 @@
 <head>
     <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/style-login-register.css" />
+        <script src="\js\edit.js"></script>
+
         <title>Editar Perfil</title>
 </head>
 
@@ -18,7 +20,7 @@
                     <form action="/users/edit" method="POST" id="edit-profile" class="input-group"
                         enctype="multipart/form-data">
                         <p>Nombre</p>
-
+                        <small class="validation" id="nombreUsuarioValidation"></small>
                         <input type="text" class="input-field" id="nombreUsuario" name="nombreUsuario"
                             placeholder="Nombre" value="<%= user.nombreUsuario %>" />
                         <div class="text-danger">
@@ -27,6 +29,7 @@
                                     <% } %>
                         </div>
                         <p>Apellido</p>
+                        <small class="validation" id="apellidoUsuarioValidation"></small>
 
                         <input type="text" class="input-field" id="apellidoUsuario" name="apellidoUsuario"
                             placeholder="Apellido" value="<%= user.apellidoUsuario %>" />
@@ -36,6 +39,8 @@
                                     <% } %>
                         </div>
                         <p>Email</p>
+                        <small class="validation" id="emailValidation"></small>
+
                         <input type="text" class="input-field" id="email" name="email" placeholder="Email"
                             value="<%= user.email %>" />
                         <div class="text-danger">
@@ -106,10 +111,22 @@
 
                         <input type="number" class="input-field" id="telefono" name="telefono"
                             placeholder="Número de teléfono" value="<%= user.telefono %>" />
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.telefono) {%>
+                                <%= errors.telefono.msg %>
+                                    <%} %>
+                        </div>
                         <p>Cambiar Contraseña:</p>
+                        <small class="validation" id="passwordValidation"></small>
                         <input class="input-field" type="password" id="password" name="password">
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.password) {%>
+                                <%= errors.password.msg %>
+                                    <%} %>
+                        </div>
 
                         <div class="upload-button">
+                            <small class="validation" id="imageValidation"></small>
                             <label for="profile-image" class="custom-file-upload">
                                 Foto de Perfil
                             </label>

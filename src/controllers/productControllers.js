@@ -7,6 +7,9 @@ const {
   Marca,
   Especificacion,
 } = require("../database/models");
+const { validationResult } = require("express-validator");
+const path = require("path");
+const fs = require("fs");
 
 const productControllers = {
   all: function (req, res) {
@@ -102,46 +105,60 @@ const productControllers = {
       });
   },
   store: function (req, res) {
-    console.log(req.body);
-    const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
-      req.body;
+    const resultValidation = validationResult(req);
 
-    let nuevoProducto;
-
-    Producto.create({
-      nombre,
-      precio: parseFloat(precio),
-      descripcion,
-      descuento: parseFloat(descuento),
-      tipoId: parseInt(tipo),
-      marcaId: parseInt(marca),
-      seccionId: parseInt(seccion),
-      img: "/images/images_products/" + req.file.filename,
-    })
-      .then((producto) => {
-        nuevoProducto = producto;
-        const especificaciones = [];
-        for (let i = 1; i <= 5; i++) {
-          const nombreEspec = req.body[`especificacionNombre${i}`];
-          const valorEspec = req.body[`especificacionValor${i}`];
-
-          if (nombreEspec && valorEspec) {
-            especificaciones.push({
-              productoId: nuevoProducto.id,
-              nombre: nombreEspec,
-              valor: valorEspec,
-            });
-          }
+    if (resultValidation.errors.length > 0) {
+      Promise.all([Tipo.findAll(), Seccion.findAll(), Marca.findAll()]).then(
+        function ([tipos, secciones, marcas]) {
+          res.render("product-create", {
+            tipos: tipos,
+            secciones: secciones,
+            marcas: marcas,
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+          });
         }
-        return Especificacion.bulkCreate(especificaciones);
+      );
+    } else {
+      const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
+        req.body;
+
+      let nuevoProducto;
+
+      Producto.create({
+        nombre,
+        precio: parseFloat(precio),
+        descripcion,
+        descuento: parseFloat(descuento),
+        tipoId: parseInt(tipo),
+        marcaId: parseInt(marca),
+        seccionId: parseInt(seccion),
+        img: "/images/images_products/" + req.file.filename,
       })
-      .then(() => {
-        res.redirect("/products/admin");
-      })
-      .catch((error) => {
-        console.error(error);
-        res.status(500).send("Error interno del servidor");
-      });
+        .then((producto) => {
+          nuevoProducto = producto;
+          const especificaciones = [];
+          for (let i = 1; i <= 5; i++) {
+            const nombreEspec = req.body[`especificacionNombre${i}`];
+            const valorEspec = req.body[`especificacionValor${i}`];
+
+            if (nombreEspec && valorEspec) {
+              especificaciones.push({
+                productoId: nuevoProducto.id,
+                nombre: nombreEspec,
+                valor: valorEspec,
+              });
+            }
+          }
+          return Especificacion.bulkCreate(especificaciones);
+        })
+        .then(() => {
+          res.redirect("/products/admin");
+        })
+        .catch((error) => {
+          res.status(500).send("Error interno del servidor");
+        });
+    }
   },
   edit: function (req, res) {
     const id = req.params.id;
@@ -151,9 +168,7 @@ const productControllers = {
     let secciones;
     let marcas;
 
-    Producto.findByPk(id, {
-      include: { association: "especificaciones" },
-    })
+    Producto.findByPk(id)
       .then((product) => {
         if (!product) {
           return res.status(404).send("Producto no encontrado");
@@ -178,56 +193,103 @@ const productControllers = {
         res.render("product-edit", { productToEdit, tipos, secciones, marcas });
       })
       .catch((error) => {
-        console.error(error);
         res.status(500).send("Error interno del servidor");
       });
   },
   update: (req, res) => {
-    const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
-      req.body;
     const id = req.params.id;
+    const resultValidation = validationResult(req);
 
-    if (req.file) {
-      const nuevaImagen = "/images/images_products/" + req.file.filename;
+    if (resultValidation.errors.length > 0) {
+      if (req.file) {
+        const imagePath = path.join(
+          __dirname,
+          "../../public/images/images_products",
+          req.file.filename
+        );
+        fs.unlinkSync(imagePath);
+      }
+      let productToEdit;
+      let tipos;
+      let secciones;
+      let marcas;
 
-      Producto.update({ img: nuevaImagen }, { where: { id: id } })
-        .then(([Updated]) => {
-          if (Updated === 0) {
+      Producto.findByPk(id, { include: { association: "especificaciones" } })
+        .then((product) => {
+          productToEdit = product;
+
+          if (!productToEdit) {
             return res.status(404).send("Producto no encontrado");
           }
+
+          // Obtener tipos, secciones y marcas
+          return Promise.all([
+            Tipo.findAll(),
+            Seccion.findAll(),
+            Marca.findAll(),
+          ]);
+        })
+        .then(([tiposResult, seccionesResult, marcasResult]) => {
+          tipos = tiposResult;
+          secciones = seccionesResult;
+          marcas = marcasResult;
+
+          // Renderizar el formulario con errores
+          return res.render("product-edit", {
+            productToEdit,
+            tipos,
+            secciones,
+            marcas,
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+          });
         })
         .catch((error) => {
-          console.error(error);
-          return res
-            .status(500)
-            .send("Error al actualizar la imagen del producto");
+          // Manejar el error interno del servidor
+          return res.status(500).send("Error interno del servidor");
+        });
+    } else {
+      // Redirigir a la página de administración de productos si no hay cambios
+      if (
+        req.body.nombre === req.body.oldNombre &&
+        req.body.precio === req.body.oldPrecio &&
+        req.body.descripcion === req.body.oldDescripcion
+      ) {
+        return res.redirect(`/products/admin`);
+      }
+
+      // Actualizar campos del producto
+      const { nombre, precio, descripcion, descuento, tipo, marca, seccion } =
+        req.body;
+
+      // Actualizar producto
+      Producto.update(
+        {
+          nombre,
+          precio: parseFloat(precio),
+          descripcion,
+          descuento: parseFloat(descuento),
+          tipoId: parseInt(tipo),
+          marcaId: parseInt(marca),
+          seccionId: parseInt(seccion),
+          ...(req.file && {
+            img: "/images/images_products/" + req.file.filename,
+          }),
+        },
+        {
+          where: { id: id },
+        }
+      )
+        .then(() => {
+          // Redirigir a la página de administración de productos
+          return res.redirect(`/products/admin`);
+        })
+        .catch((error) => {
+          console.error("Error en actualización:", error);
+          // Manejar el error interno del servidor
+          return res.status(500).send("Error interno del servidor");
         });
     }
-
-    Producto.update(
-      {
-        nombre,
-        precio: parseFloat(precio),
-        descripcion,
-        descuento: parseFloat(descuento),
-        tipoId: parseInt(tipo),
-        marcaId: parseInt(marca),
-        seccionId: parseInt(seccion),
-      },
-      {
-        where: { id: id },
-      }
-    )
-      .then(([Updated]) => {
-        if (Updated === 0) {
-          return res.status(404).send("Producto no encontrado");
-        }
-        res.redirect(`/products/admin`);
-      })
-      .catch((error) => {
-        console.error(error);
-        res.status(500).send("Error interno del servidor");
-      });
   },
   destroy: (req, res) => {
     let id = req.params.id;
@@ -239,8 +301,6 @@ const productControllers = {
         return product.getEspecificaciones();
       })
       .then((especificaciones) => {
-        console.log("Especificaciones a eliminar:", especificaciones);
-
         return Promise.all(
           especificaciones.map((especificacion) => especificacion.destroy())
         );
@@ -254,7 +314,6 @@ const productControllers = {
         res.redirect("/products/admin");
       })
       .catch((error) => {
-        console.error(error);
         res.status(500).send("Error interno del servidor");
       });
   },
