@@ -17,48 +17,61 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateEmail(value) {
+    if (value === "") {
+      showError(emailValidation, "Por favor, ingresa tu correo electrónico.");
+      return false;
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(value);
+    if (!emailRegex.test(value)) {
+      showError(emailValidation, "Ingresa un correo electrónico válido.");
+      return false;
+    }
+
+    hideError(emailValidation);
+    return true;
   }
 
   function validatePassword(value) {
-    return value.trim() !== "";
+    if (value.trim() === "") {
+      showError(passwordValidation, "Por favor, ingresa tu contraseña.");
+      return false;
+    }
+
+    hideError(passwordValidation);
+    return true;
   }
 
   function validateLoginForm() {
     const emailValue = emailInput.value.trim();
-    const passwordValue = passwordInput.value.trim();
+    const passwordValue = passwordInput.value;
 
-    hideError(emailValidation);
-    hideError(passwordValidation);
     hideError(loginValidation);
 
     let hasError = false;
 
     if (!validateEmail(emailValue)) {
-      showError(emailValidation, "Ingresa un correo electrónico válido.");
       hasError = true;
     }
 
     if (!validatePassword(passwordValue)) {
-      showError(passwordValidation, "Ingresa una contraseña.");
       hasError = true;
     }
 
     return hasError;
   }
 
+  emailInput.addEventListener("blur", function () {
+    validateEmail(emailInput.value.trim());
+  });
+
+  passwordInput.addEventListener("blur", function () {
+    validatePassword(passwordInput.value);
+  });
+
   loginBtn.addEventListener("click", function (event) {
     if (validateLoginForm()) {
       event.preventDefault();
     }
-  });
-
-  emailInput.addEventListener("blur", function () {
-    validateLoginForm();
-  });
-
-  passwordInput.addEventListener("blur", function () {
-    validateLoginForm();
   });
 });
