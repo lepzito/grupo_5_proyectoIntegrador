@@ -1,4 +1,4 @@
-## Retrospectiva del Sprint 5 - Estrella de Mar
+## Retrospectiva del Sprint 6 - Estrella de Mar
 
 ## Logros y aspectos positivos
 
@@ -9,6 +9,7 @@
 - La comunicacion entre los miembros del equipo, es algo que todavia no hemos logrado solucionar.
 - Tambien el hecho de poder ponernos al dia con el playground, si bien todos tenemos nuestras responsabilidades ajenas al curso, no olvidar que si nos atrasamos luego retomar las clases y practicas es mas complicado seguir el
   el ritmo de la cursada.
+  -Interpretar mejor los pedidos en los sprints
 
 ## Start Doing
 
@@ -63,3 +64,4 @@
 ## Conclusiones
 
 - Tener buena comunicacion, ser responsables y estar al día con el playground es indispensable para la asiganacion de tareas y asi poder desarrollar un buen trabajo en equipo.
+- Consultar a los profes sobre como vamos en el sprint no ayudara a sacarnos mas las dudas y presentar un buen proyecto.
