@@ -52,7 +52,6 @@ const validationsEdit = [
   body("password")
     .optional()
     .custom((value, { req }) => {
-      // Aplicar reglas de validación solo si se proporciona una nueva contraseña
       if (req.body.password) {
         return Promise.all([
           body("password")

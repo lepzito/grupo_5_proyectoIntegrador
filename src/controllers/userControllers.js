@@ -233,7 +233,10 @@ const userControllers = {
 
             user.password = hashedPassword;
           }
-
+          if (req.file) {
+            // Actualiza con la nueva imagen
+            user.imgUser = req.file.filename;
+          }
           user.nombreUsuario = updatedData.nombreUsuario || user.nombreUsuario;
           user.apellidoUsuario =
             updatedData.apellidoUsuario || user.apellidoUsuario;

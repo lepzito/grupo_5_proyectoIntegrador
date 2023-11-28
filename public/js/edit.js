@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validatePassword(value) {
+    const isEmpty = value.trim() === "";
     const minLength = 8;
     const uppercaseRegex = /[A-Z]/;
     const lowercaseRegex = /[a-z]/;
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const errorMessages = [];
 
-    if (value.length > 0) {
+    if (!isEmpty) {
       if (value.length < minLength) {
         errorMessages.push("- La contraseña debe tener al menos 8 caracteres.");
       }
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    return errorMessages;
+    return { isEmpty, errorMessages };
   }
 
   function validateInput(
@@ -154,6 +155,20 @@ document.addEventListener("DOMContentLoaded", function () {
   emailInput.addEventListener("blur", function () {
     validateInput(emailInput, emailValidation, 1, "Este campo es obligatorio");
   });
+  passwordInput.addEventListener("blur", function () {
+    const { isEmpty, errorMessages } = validatePassword(
+      passwordInput.value.trim()
+    );
+
+    if (isEmpty) {
+      hideError(passwordInput, passwordValidation);
+    } else if (errorMessages.length > 0) {
+      showError(passwordInput, passwordValidation, errorMessages.join("<br/>"));
+    } else {
+      hideError(passwordInput, passwordValidation);
+    }
+  });
+
   function validateImage(file) {
     if (file) {
       const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
@@ -211,12 +226,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const file = imageInput.files[0];
     const imageValid = validateImage(file);
+    const { isEmpty, errorMessages } = validatePassword(
+      passwordInput.value.trim()
+    );
 
     if (
       !nombreUsuarioValid ||
       !apellidoUsuarioValid ||
       !emailValid ||
-      !imageValid
+      !imageValid ||
+      isEmpty ||
+      errorMessages.length > 0
     ) {
       event.preventDefault();
     }
