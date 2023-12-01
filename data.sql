@@ -111,8 +111,12 @@ VALUES
 
 
 
--- !!Primercrear un usaurio antes de poblar la tabla de carrito
+-- !!Primercrear un usuario antes de poblar la tabla de carrito
+-- !!USUARIO ADMINISTRADOR
 
+
+INSERT INTO Usuario (email, password) 
+VALUES("admin@tecnojuy.com","1234")
 
 INSERT INTO Carrito (usuarioId, cantidad, total) VALUES
   (1, 3, 150.00);

@@ -5,7 +5,6 @@ const uploadUser = require("../middlewares/multerForUsers.js");
 //Aqui va el middleware de ruta que no permite ver algunas vistas si el usraio esta logeado
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
-
 //Validatios
 
 const validations = require("../middlewares/userFormValidations/validationMiddleware.js");

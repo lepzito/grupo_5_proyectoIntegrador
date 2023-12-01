@@ -24,6 +24,28 @@ const userControllers = {
     })
       .then((userToLogin) => {
         if (userToLogin) {
+          if (userToLogin.email === "admin@tecnojuy.com") {
+            return db.Usuario.findOne({
+              where: {
+                password: req.body.password,
+              },
+            }).then((Usuario) => {
+              if (Usuario) {
+                delete userToLogin.password;
+
+                req.session.userLogged = userToLogin;
+                return res.redirect("/products/admin");
+              } else {
+                return res.render("./users/login", {
+                  errors: {
+                    credenciales: {
+                      msg: "Las credenciales son incorrectas",
+                    },
+                  },
+                });
+              }
+            });
+          }
           const passwordCorrect = bcrypt.compareSync(
             req.body.password,
             userToLogin.password
