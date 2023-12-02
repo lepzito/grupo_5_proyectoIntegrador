@@ -116,6 +116,7 @@
                             </label>
                             <input type="file" id="profile-image" name="userImage" class="file-input">
                         </div>
+                        <img class="imagenPrevia" id="imagenPrevia" src="#" alt="Previsualización de la imagen">
                         <div class="text-danger">
                             <% if (locals.errors && errors.userImage) {%>
                                 <%= errors.userImage.msg %>
@@ -123,6 +124,7 @@
                         </div>
                         <button type="submit" class="submit-btn">Enviar</button>
                     </form>
+
                 </div>
             </div>
         </main>

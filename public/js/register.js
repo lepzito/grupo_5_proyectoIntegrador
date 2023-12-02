@@ -17,6 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const imageInput = document.getElementById("profile-image");
   const imageValidation = document.getElementById("imageValidation");
+  const imagenPrevia = document.getElementById("imagenPrevia");
+
+  // Función para previsualizar la imagen
+  function previsualizarImagen() {
+    if (imageInput.files && imageInput.files[0]) {
+      const lector = new FileReader();
+
+      lector.onload = function (e) {
+        imagenPrevia.src = e.target.result;
+        imagenPrevia.style.display = "block";
+      };
+
+      lector.readAsDataURL(imageInput.files[0]);
+    }
+  }
 
   const form = document.getElementById("register");
 
@@ -161,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hideError(passwordInput, passwordValidation);
     }
   });
-  imageInput.addEventListener("change", function () {
+  imageInput.addEventListener("input", function () {
     const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
     const fileName = this.value.toLowerCase();
     const fileExtension = fileName.split(".").pop();
@@ -173,8 +188,11 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       imageValidation.innerText = "";
       imageValidation.style.display = "none";
+      // Previsualizar la imagen seleccionada
+      previsualizarImagen();
     }
   });
+
   form.addEventListener("submit", function (event) {
     // Realiza la validación para cada campo antes de enviar el formulario
     const nombreUsuarioValid = validateInput(
