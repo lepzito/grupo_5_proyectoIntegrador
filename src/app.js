@@ -10,7 +10,7 @@ const rutasCarts = require("./routes/cart.js");
 
 //Aquí llamo a la ruta de las api de productos
 const apiProductsRouter = require("./routes/api/products");
-const apiUsersRouter = require("./routes/api/users.js");
+const apiUsersRouter = require("./routes/api/users");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const cookies = require("cookie-parser");
@@ -48,4 +48,4 @@ app.use("/carrito", rutasCarts);
 /*------------------------------------------------------------------*/
 //Aquí creo la colección de mis recursos de movies (APIs)
 app.use("/api/products", apiProductsRouter);
-app.use("api/users", apiUsersRouter);
+app.use("/api/users", apiUsersRouter);

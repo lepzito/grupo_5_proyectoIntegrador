@@ -3,9 +3,9 @@ const db = require("../../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
-const userController = {
+const userApiController = {
   list: (req, res) => {
-    db.User.findAll()
+    db.Usuario.findAll()
       .then((users) => {
         const response = {
           count: users.length,
@@ -41,20 +41,16 @@ const userController = {
           return res.status(404).json({ error: "Usuario no encontrado" });
         }
 
-        // Puedes construir la URL de la imagen aquí si tienes esa información en tu modelo
-        const imageUrl = `/api/users/${userId}/image`;
-
         const response = {
           id: usuario.id,
           nombreUsuario: usuario.nombreUsuario,
           apellidoUsuario: usuario.apellidoUsuario,
           email: usuario.email,
           telefono: usuario.telefono,
-          imgUser: imageUrl,
+          imgUser: `/images/users/${usuario.imgUser}`,
           genero: usuario.genero ? usuario.genero.nombre : null,
           domicilio: usuario.domicilio
             ? {
-                id: usuario.domicilio.id,
                 localidad: usuario.domicilio.localidad,
                 barrio: usuario.domicilio.barrio,
                 calle: usuario.domicilio.calle,
@@ -73,4 +69,4 @@ const userController = {
   },
 };
 
-module.exports = userController;
+module.exports = userApiController;
