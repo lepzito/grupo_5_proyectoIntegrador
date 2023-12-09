@@ -5,43 +5,47 @@ const { Op } = require("sequelize");
 const moment = require("moment");
 const productAPIController = {
   list: (req, res) => {
+    const page = req.query.page || 1;
+    const limit = 10;
+    const offset = (page - 1) * limit;
+
     db.Producto.findAll({
-      include: [
-        { model: db.Tipo, as: "tipo" },
-        { model: db.Seccion, as: "seccion" },
-        { model: db.Marca, as: "marca" },
-      ],
+      include: [{ model: db.Tipo, as: "tipo" }],
+      limit: limit,
+      offset: offset,
     })
       .then((products) => {
-        // Contar la cantidad total de productos
-        const count = products.length;
+        db.Producto.count().then((totalCount) => {
+          const countByCategory = {};
+          products.forEach((product) => {
+            const categoryName = product.tipo
+              ? product.tipo.nombre
+              : "Sin Categoría";
+            countByCategory[categoryName] =
+              (countByCategory[categoryName] || 0) + 1;
+          });
 
-        // Contar productos por categoría (usando la asociación con Tipo)
-        const countByCategory = {};
-        products.forEach((product) => {
-          const categoryName = product.tipo
-            ? product.tipo.nombre
-            : "Sin Categoría";
-          countByCategory[categoryName] =
-            (countByCategory[categoryName] || 0) + 1;
+          const response = {
+            count: products.length,
+            totalCount: totalCount,
+            countByCategory: countByCategory,
+            products: products.map((product) => ({
+              id: product.id,
+              nombre: product.nombre,
+              descripcion: product.descripcion,
+              categoria: product.tipo.nombre,
+              detalle: `/api/products/${product.id}`,
+            })),
+            next:
+              page * limit < totalCount
+                ? `/api/products/?page=${parseInt(page) + 1}`
+                : null,
+            previous:
+              page > 1 ? `/api/products/?page=${parseInt(page) - 1}` : null,
+          };
+
+          res.json(response);
         });
-
-        // Construir la respuesta final
-        const response = {
-          count: count,
-          countByCategory: countByCategory,
-          products: products.map((product) => ({
-            id: product.id,
-            name: product.nombre,
-            description: product.descripcion,
-            categories: product.tipo
-              ? [product.tipo.nombre]
-              : ["Sin Categoría"],
-            detail: `/api/products/${product.id}`, // Ajusta la URL según tu estructura de rutas
-          })),
-        };
-
-        res.json(response);
       })
       .catch((error) => {
         res.status(500).json({ error: "Error interno del servidor" });
