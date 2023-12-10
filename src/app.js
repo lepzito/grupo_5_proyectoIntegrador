@@ -14,7 +14,13 @@ const apiUsersRouter = require("./routes/api/users");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const cookies = require("cookie-parser");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const cors = require("cors");
+
+app.use(cors());
+
+/*------------------------------------------------------------------*/
+
 app.listen(PORT, () => console.log("Servidor corriendo en el puerto " + PORT));
 
 /*------------------------------------------------------------------*/
