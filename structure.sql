@@ -117,14 +117,16 @@ INSERT INTO Genero (nombre) VALUES
 CREATE TABLE Carrito (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuarioId INT,
-  cantidad INT,
-  total DECIMAL(10,2),
+  status TINYINT(3) UNSIGNED NOT NULL,
   FOREIGN KEY (usuarioId) REFERENCES Usuario(id)
 );
-CREATE TABLE ProductoCarrito (
-  carritoId INT,
+
+-- Crear la tabla Carrito_Producto
+CREATE TABLE Carrito_Producto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
   productoId INT,
-  cantidad INT,
-  FOREIGN KEY (carritoId) REFERENCES Carrito(id),
-  FOREIGN KEY (productoId) REFERENCES Producto(id)
+  carritoId INT,
+  cantidad INT UNSIGNED NOT NULL,
+  FOREIGN KEY (productoId) REFERENCES Producto(id),
+  FOREIGN KEY (carritoId) REFERENCES Carrito(id)
 );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card/Card";
-import CategoryCard from "./GenreCard/CategoryCard";
+import CategoryCard from "./CategoryCard/CategoryCard";
 
 const ContentRow = () => {
   const [countByCategory, setCountByCategory] = useState({});
