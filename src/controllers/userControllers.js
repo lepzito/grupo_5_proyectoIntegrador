@@ -21,6 +21,12 @@ const userControllers = {
       where: {
         email: req.body.email,
       },
+      include: {
+        model: db.Carrito,
+        as: "carrito",
+        where: { status: 1 },
+        limit: 1,
+      }, // Limitamos a 1 para obtener solo el primer carrito activo
     })
       .then((userToLogin) => {
         if (userToLogin) {
@@ -33,6 +39,31 @@ const userControllers = {
             delete userToLogin.password;
 
             req.session.userLogged = userToLogin;
+
+            // Verificar si el usuario tiene un carrito activo con status 1
+            let activeCart = userToLogin.carrito[0]; // Tomamos solo el primer carrito activo
+
+            if (!activeCart) {
+              // Si no tiene un carrito activo, crea uno nuevo con status 1
+              return db.Carrito.create({
+                usuarioId: userToLogin.id,
+                status: 1,
+              }).then((newCart) => {
+                // Almacenar el carritoId en userLogged
+                req.session.userLogged.carritoId = newCart.id;
+
+                if (req.body.remember_user) {
+                  res.cookie("userEmail", req.body.email, {
+                    maxAge: 1000 * 60 * 30,
+                  });
+                }
+
+                return res.redirect("./profile");
+              });
+            }
+
+            // Si tiene un carrito activo, mantenerlo y devolverlo
+            req.session.userLogged.carritoId = activeCart.id;
 
             if (req.body.remember_user) {
               res.cookie("userEmail", req.body.email, {

@@ -28,6 +28,7 @@ router.put(
 //Crear producto//
 router.get("/create", products.create);
 //Store//
+router.get("/cart/:id", products.addToCart);
 router.post("/", upload.single("productImage"), validations, products.store);
 //Eliminar un producto//
 //-------------//

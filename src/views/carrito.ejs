@@ -26,18 +26,59 @@
                 <span>Precio: $<%= product.precio %></span>
               </div>
               <div class="product-amount">
+                <input type="hidden" id="idProducto" value="<%= product.ProductoCarrito.productoId %>">
+                <span>Cantidad: <input type="number" data-idproducto="<%= product.ProductoCarrito.productoId %>"
+                    name="cantidad" class="inputCantidad" style="width: 40px;"
+                    value="<%= product.ProductoCarrito.cantidad %>">
+                </span>
               </div>
+              <div class="product-subtotal">
+                <span>Subtotal: $<%= (product.precio * product.ProductoCarrito.cantidad).toLocaleString('es-AR',
+                    {minimumFractionDigits: 2, maximumFractionDigits: 2}) %></span>
+              </div>
+            </div>
             </div>
             <div class="container-button">
             </div>
           </article>
           <% }); } else { %>
             <p>Tu carrito está vacío.</p>
-            <% } %>
       </section>
+      <% } %>
     </main>
 
     <%- include("./partials/footer") %>
+      <script>
+
+        // Capturamos los inputs de cantidad a comprar de cada producto en el carrito
+        const inputCantidad = document.querySelectorAll("input.inputCantidad");
+
+        inputCantidad.forEach(input => {
+          input.addEventListener("change", async function (e) {
+
+            // Del input actual, nos guardamos el valor almacenado en el atributo data-idproducto
+            let idProducto = input.dataset.idproducto;
+
+            // Configuraciones para el fetch
+            const config = {
+              method: "POST",
+              body: JSON.stringify({ cantidad: e.target.value }), // Ajuste al nombre del campo
+              headers: {
+                "Content-Type": "application/json" // Ajuste en la capitalización de "application"
+              }
+            }
+            const response = await fetch("http://localhost:3001/carrito/api/" + idProducto, config);
+            const data = response.json();
+            if (!response.status == 201) {
+              console.log("response", response)
+            } else {
+              if (e.target.value == 0) {
+                input.parentNode.parentNode.parentNode.parentNode.remove();
+              }
+            }
+          });
+        });
+      </script>
 </body>
 
 </html>
