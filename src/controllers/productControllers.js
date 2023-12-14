@@ -293,11 +293,17 @@ const productControllers = {
   },
   destroy: (req, res) => {
     let id = req.params.id;
+    let imagePathToDelete; // Variable para almacenar la ruta de la imagen
+
     Producto.findByPk(id)
       .then((product) => {
         if (!product) {
           return res.status(404).send("Producto no encontrado");
         }
+
+        // Obtén la ruta de la imagen actual
+        imagePathToDelete = path.join(__dirname, "../../public" + product.img);
+
         return product.getEspecificaciones();
       })
       .then((especificaciones) => {
@@ -311,9 +317,13 @@ const productControllers = {
         });
       })
       .then(() => {
+        // Eliminar la imagen del servidor después de eliminar el producto de la base de datos
+        fs.unlinkSync(imagePathToDelete);
+
         res.redirect("/products/admin");
       })
       .catch((error) => {
+        console.error("Error en eliminación:", error);
         res.status(500).send("Error interno del servidor");
       });
   },

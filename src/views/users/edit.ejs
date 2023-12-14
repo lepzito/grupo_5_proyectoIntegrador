@@ -128,10 +128,12 @@
                         <div class="upload-button">
                             <small class="validation" id="imageValidation"></small>
                             <label for="profile-image" class="custom-file-upload">
-                                Foto de Perfil
+                                Cambiar foto de perfil
                             </label>
                             <input type="file" id="profile-image" name="userImage" class="file-input">
                         </div>
+                        <img class="imagenActual" id="imagenActual" src="/images/users/<%= user.imgUser %>"
+                            alt="Imagen Actual">
                         <div class="text-danger">
                             <% if (locals.errors && errors.userImage) { %>
                                 <%= errors.userImage.msg %>

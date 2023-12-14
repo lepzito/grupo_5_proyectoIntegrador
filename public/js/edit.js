@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const imageInput = document.getElementById("profile-image");
   const imageValidation = document.getElementById("imageValidation");
-
+  const imagenActual = document.getElementById("imagenActual");
   const form = document.getElementById("edit-profile");
 
   function showError(input, validation, message) {
@@ -183,17 +183,22 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         return false;
       } else {
-        hideError(imageValidation);
+        hideError(imageInput, imageValidation);
+
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          imagenActual.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
         return true;
       }
     } else {
-      // No se seleccionó ningún archivo, por lo que no hay error.
       hideError(imageValidation);
       return true;
     }
   }
 
-  imageInput.addEventListener("change", function () {
+  imageInput.addEventListener("input", function () {
     const file = this.files[0]; // Obtén el primer archivo seleccionado
     validateImage(file);
   });
