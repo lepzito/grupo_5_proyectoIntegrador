@@ -28,13 +28,8 @@ router.put(
 //Crear producto//
 router.get("/create", checkAdminMiddleware, products.create);
 //Store//
-router.post(
-  "/",
-  upload.single("productImage"),
-  validations,
-  checkAdminMiddleware,
-  products.store
-);
+router.get("/cart/:id", products.addToCart);
+router.post("/", upload.single("productImage"), validations, products.store);
 //Eliminar un producto//
 //-------------//
 router.delete("/:id", products.destroy);

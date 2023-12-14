@@ -108,7 +108,7 @@
                   Comprar Ahora
                 </button>
                 <button class="agregar-carrito" type="submit">
-                  Agregar al carrito
+                  <a href="/products/cart/<%= product.id %>"> Agregar al carrito</a>
                 </button>
               </div>
             </div>
@@ -117,8 +117,8 @@
           <div class="buttons">
             <button class="comprar-ahora" type="submit">Comprar Ahora</button>
             <button class="agregar-carrito" type="submit">
-              Agregar al carrito
-            </button>
+              <a href="/products/cart/<%= product.id %>"> Agregar al carrito</a>
+            </button></a>
           </div>
         </div>
       </div>

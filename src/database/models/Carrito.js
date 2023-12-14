@@ -10,11 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       usuarioId: {
         type: DataTypes.INTEGER,
       },
-      cantidad: {
-        type: DataTypes.INTEGER,
-      },
-      total: {
-        type: DataTypes.DECIMAL(10, 2),
+      status: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
       },
     },
     {

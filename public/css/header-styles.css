@@ -138,6 +138,7 @@ nav a {
 #toggler,
 label {
   display: none;
+  margin-left: 13px;
 }
 label i {
   color: white;

@@ -4,6 +4,7 @@
 
 <head>
   <%- include("./partials/head") %>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="\css\slider-infito.css" />
     <link rel="stylesheet" href="/css/product-card.css" />
     <link rel="stylesheet" href="/css/products.css" />
@@ -123,18 +124,21 @@
             </div>
 
           </div>
+          <div class="pagination">
+            <% if (currentPage> 1) { %>
+              <a href="/products?page=<%= currentPage - 1 %>" class="pagination-button"><i
+                  class="fa-solid fa-angles-left"></i></a>
+              <% } %>
+
+                <span class="pagination-info">Página <%= currentPage %> de <%= totalPages %></span>
+
+                <% if (currentPage < totalPages) { %>
+                  <a href="/products?page=<%= currentPage + 1 %>" class="pagination-button"><i
+                      class="fa-solid fa-angles-right"></i></i></a>
+                  <% } %>
+          </div>
         </section>
-        <div class="pagination">
-          <% if (currentPage> 1) { %>
-            <a href="/products?page=<%= currentPage - 1 %>" class="pagination-button">Anterior</a>
-            <% } %>
 
-              <span class="pagination-info">Página <%= currentPage %> de <%= totalPages %></span>
-
-              <% if (currentPage < totalPages) { %>
-                <a href="/products?page=<%= currentPage + 1 %>" class="pagination-button">Siguiente</a>
-                <% } %>
-        </div>
 
 
       </div>

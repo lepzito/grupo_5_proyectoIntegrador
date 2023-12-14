@@ -8,9 +8,19 @@ const rutasProductos = require("./routes/products.js");
 const rutasUsers = require("./routes/users.js");
 const rutasCarts = require("./routes/cart.js");
 
+//Aquí llamo a la ruta de las api de productos
+const apiProductsRouter = require("./routes/api/products");
+const apiUsersRouter = require("./routes/api/users");
+
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const cookies = require("cookie-parser");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const cors = require("cors");
+
+app.use(cors());
+
+/*------------------------------------------------------------------*/
+
 app.listen(PORT, () => console.log("Servidor corriendo en el puerto " + PORT));
 
 /*------------------------------------------------------------------*/
@@ -42,3 +52,6 @@ app.use("/users", rutasUsers);
 
 app.use("/carrito", rutasCarts);
 /*------------------------------------------------------------------*/
+//Aquí creo la colección de mis recursos de movies (APIs)
+app.use("/api/products", apiProductsRouter);
+app.use("/api/users", apiUsersRouter);

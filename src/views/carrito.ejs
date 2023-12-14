@@ -13,6 +13,7 @@
       <h1>TU CARRITO DE COMPRAS</h1>
       <section class="sectionContainer">
         <% if (carrito && carrito.productos.length> 0) {
+          let totalPago = 0; // Inicializa la variable para el total a pagar
           carrito.productos.forEach((product) => { %>
           <article class="sectionContainer__container-buyDesc">
             <div>
@@ -26,18 +27,79 @@
                 <span>Precio: $<%= product.precio %></span>
               </div>
               <div class="product-amount">
+                <input type="hidden" id="idProducto" value="<%= product.ProductoCarrito.productoId %>">
+                <span>Cantidad: <input type="number" data-idproducto="<%= product.ProductoCarrito.productoId %>"
+                    name="cantidad" class="inputCantidad" style="width: 40px;"
+                    value="<%= product.ProductoCarrito.cantidad %>">
+                </span>
               </div>
+              <div class="product-subtotal">
+                <% const subtotal=product.precio * product.ProductoCarrito.cantidad; %>
+                  <span>Subtotal: $<%= subtotal.toLocaleString('es-AR', {minimumFractionDigits: 2,
+                      maximumFractionDigits: 2}) %></span>
+                  <% totalPago +=subtotal; // Suma al total a pagar %>
+              </div>
+            </div>
             </div>
             <div class="container-button">
             </div>
           </article>
-          <% }); } else { %>
-            <p>Tu carrito está vacío.</p>
-            <% } %>
+          <% }); %>
+            <div class="sectionContainer__checkout">
+              <p>Total a Pagar: $<span id="totalPago">
+                  <%= totalPago.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) %>
+                </span></p>
+              <label for="metodoEnvio">Método de Envío:</label>
+              <select id="metodoEnvio" name="metodoEnvio">
+                <option value="correoArgentino">Correo Argentino</option>
+                <option value="adreani">Adreani</option>
+                <option value="retiroSucursal">Retiro en Sucursal</option>
+              </select>
+              <button onclick="realizarPago()">Pagar</button>
+            </div>
+            <% } else { %>
+              <p>Tu carrito está vacío.</p>
+              <% } %>
       </section>
     </main>
 
     <%- include("./partials/footer") %>
+      <script>
+
+        const inputCantidad = document.querySelectorAll("input.inputCantidad");
+
+        inputCantidad.forEach(input => {
+          input.addEventListener("change", async function (e) {
+
+            // Del input actual, nos guardamos el valor almacenado en el atributo data-idproducto
+            let idProducto = input.dataset.idproducto;
+
+            // Configuraciones para el fetch
+            const config = {
+              method: "POST",
+              body: JSON.stringify({ cantidad: e.target.value }), // Ajuste al nombre del campo
+              headers: {
+                "Content-Type": "application/json" // Ajuste en la capitalización de "application"
+              }
+            }
+
+            // Fetch para realizar el cambio de cantidad de productos en el carrito
+            const response = await fetch(`http://localhost:3001/carrito/api/${idProducto}`, config);
+
+            // Si no se pudo realizar el cambio, realizamos alguna acción.
+            if (!response.ok) {
+              // mostramos mensaje de error
+              console.log("Error al actualizar la cantidad");
+            } else {
+              const data = await response.json();
+              if (e.target.value == 0) {
+                // Si la respuesta fue correcta y el valor del input era cero, eliminamos el producto de la pantalla sin refrescar
+                input.parentNode.parentNode.parentNode.parentNode.remove();
+              }
+            }
+          });
+        });
+      </script>
 </body>
 
 </html>

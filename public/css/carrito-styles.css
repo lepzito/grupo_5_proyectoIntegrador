@@ -91,7 +91,36 @@ h1 {
   background-color: #fa6023;
   font-weight: bold;
 }
-
+.sectionContainer__checkout {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 50%;
+  grid-gap: 10px;
+}
+.sectionContainer__checkout label {
+  display: block;
+}
+.sectionContainer__checkout p {
+  font-size: 22px;
+  font-weight: bold;
+}
+.sectionContainer__checkout select {
+  border-color: black;
+  margin: 0 auto;
+  width: 50%;
+}
+.sectionContainer__checkout button {
+  border-color: #fa6023;
+  background-color: orange;
+  color: #fff;
+  font-style: italic;
+  padding: 3%;
+  width: 30%;
+  margin: 0 auto;
+}
 /* Estilos para tablets con un ancho mínimo de 669px y un máximo de 1024px */
 
 @media (min-width: 500px) and (max-width: 1023px) {

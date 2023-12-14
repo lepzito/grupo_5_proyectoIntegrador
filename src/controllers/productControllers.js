@@ -6,6 +6,8 @@ const {
   Seccion,
   Marca,
   Especificacion,
+  Carrito,
+  ProductoCarrito,
 } = require("../database/models");
 const { validationResult } = require("express-validator");
 const path = require("path");
@@ -291,6 +293,55 @@ const productControllers = {
         });
     }
   },
+  addToCart: (req, res) => {
+    const productId = req.params.id;
+    const carritoId = req.session.userLogged.carrito[0].id;
+    Carrito.findOne({
+      where: {
+        id: carritoId,
+        status: 1, // Aseguramos que el carrito esté activo
+      },
+      include: "productos",
+    })
+      .then((cart) => {
+        // Buscamos si el producto ya está en el carrito
+        const productFound = cart.productos.find((p) => p.id == productId);
+        // Si existe el producto incrementamos la cantidad
+        if (productFound) {
+          ProductoCarrito.update(
+            {
+              cantidad: productFound.ProductoCarrito.cantidad + 1, // Incrementamos la cantidad
+            },
+            {
+              where: {
+                carritoId: carritoId,
+                productoId: productId,
+              },
+            }
+          );
+        } else {
+          // Si el producto no se encontraba en el carrito, lo agregamos con cantidad 1
+          return ProductoCarrito.create({
+            carritoId: cart.id,
+            productoId: productId,
+            cantidad: 1,
+          });
+        }
+      })
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch((error) => {
+        console.error("Error al agregar al carrito:", error);
+        // Manejo de errores, puedes redirigir a una página de error o hacer otra acción.
+        if (error.message === "No se encontró el carrito.") {
+          res.status(404).send("No se encontró el carrito.");
+        } else {
+          res.status(500).send("Error interno del servidor");
+        }
+      });
+  },
+
   destroy: (req, res) => {
     let id = req.params.id;
     let imagePathToDelete; // Variable para almacenar la ruta de la imagen

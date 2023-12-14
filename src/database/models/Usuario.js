@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       as: "domicilio",
       foreignKey: "domicilioId",
     });
-    Usuario.hasOne(models.Carrito, {
+    Usuario.hasMany(models.Carrito, {
       as: "carrito",
       foreignKey: "usuarioId",
     });
