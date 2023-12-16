@@ -122,8 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
               passwordValidation,
               passwordErrors.join("<br/>")
             );
+            return false;
           } else {
             hideError(passwordInput, passwordValidation);
+            return true;
           }
         }
       }
@@ -170,12 +172,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function validateImage(file) {
+    console.log("Validating image...");
+
     if (file) {
       const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
       const fileName = file.name.toLowerCase();
       const fileExtension = fileName.split(".").pop();
 
+      console.log("File Extension:", fileExtension);
+
       if (!allowedExtensions.includes(fileExtension)) {
+        console.log("Invalid file format.");
         showError(
           imageInput,
           imageValidation,
@@ -183,67 +190,20 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         return false;
       } else {
-        hideError(imageInput, imageValidation);
-
         let reader = new FileReader();
         reader.onload = function (e) {
           imagenActual.src = e.target.result;
         };
+        reader.onerror = function (e) {};
         reader.readAsDataURL(file);
         return true;
       }
     } else {
-      hideError(imageValidation);
       return true;
     }
   }
-
   imageInput.addEventListener("input", function () {
-    const file = this.files[0]; // Obtén el primer archivo seleccionado
+    file = this.files[0]; // Obtén el primer archivo seleccionado
     validateImage(file);
-  });
-  form.addEventListener("submit", function (event) {
-    // Realiza la validación para cada campo antes de enviar el formulario
-    const nombreUsuarioValid = validateInput(
-      nombreUsuarioInput,
-      nombreUsuarioValidation,
-      2,
-      "Este campo es obligatorio",
-      "El nombre debe tener al menos 2 caracteres",
-      "Ingrese solo letras"
-    );
-
-    const apellidoUsuarioValid = validateInput(
-      apellidoUsuarioInput,
-      apellidoUsuarioValidation,
-      2,
-      "Este campo es obligatorio",
-      "El apellido debe tener al menos 2 caracteres",
-      "Ingrese solo letras"
-    );
-
-    const emailValid = validateInput(
-      emailInput,
-      emailValidation,
-      1,
-      "Este campo es obligatorio"
-    );
-
-    const file = imageInput.files[0];
-    const imageValid = validateImage(file);
-    const { isEmpty, errorMessages } = validatePassword(
-      passwordInput.value.trim()
-    );
-
-    if (
-      !nombreUsuarioValid ||
-      !apellidoUsuarioValid ||
-      !emailValid ||
-      !imageValid ||
-      isEmpty ||
-      errorMessages.length > 0
-    ) {
-      event.preventDefault();
-    }
   });
 });

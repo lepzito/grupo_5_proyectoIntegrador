@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <ul
-      className="navbar-nav bg-dark bg-gradient sidebar sidebar-dark accordion"
+      className="navbar-nav bg-warning  p-2 sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
       {/* <!-- Sidebar - Brand --> */}
@@ -33,41 +33,41 @@ function Sidebar() {
       <hr className="sidebar-divider" />
 
       {/* <!-- Heading --> */}
-      <div className="sidebar-heading">Actions</div>
+      <div className="sidebar-heading text-info">Actions</div>
 
       {/* <!-- Nav Item - Pages --> */}
       <li className="nav-item">
         <Link className="nav-link collapsed" to="/buscador">
-          <i className="fas fa-fw fa-search"></i>
-          <span>Buscador</span>
+          <i className="fas fa-fw fa-search text-danger "></i>
+          <span className="text-dark">Buscador</span>
         </Link>
       </li>
       {/* <!-- Nav Item - Pages --> */}
       <li className="nav-item">
         <Link className="nav-link collapsed" to="/rowproducts">
-          <i className="fas fa-fw fa-folder"></i>
-          <span>Row Products</span>
+          <i className="fas fa-fw fa-folder text-danger"></i>
+          <span className="text-dark">Row Products</span>
         </Link>
       </li>
 
       {/* <!-- Nav Item - Charts --> */}
       <li className="nav-item">
         <Link className="nav-link" to="/contentrow">
-          <i className="fas fa-fw fa-chart-area"></i>
-          <span>Content Row</span>
+          <i className="fas fa-fw fa-chart-area text-danger"></i>
+          <span className="text-dark"> Content Row</span>
         </Link>
       </li>
 
       {/* <!-- Nav Item - Tables --> */}
       <li className="nav-item">
         <Link className="nav-link" to="/table">
-          <i className="fas fa-fw fa-table"></i>
-          <span>Table</span>
+          <i className="fas fa-fw fa-table text-danger"></i>
+          <span className="text-dark">Table</span>
         </Link>
       </li>
 
       {/* <!-- Divider --> */}
-      <hr className="sidebar-divider d-none d-md-block" />
+      <hr className="sidebar-divider d-none d-md-block bg-dark" />
     </ul>
   );
 }

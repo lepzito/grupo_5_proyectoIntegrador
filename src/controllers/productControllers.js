@@ -296,6 +296,7 @@ const productControllers = {
   addToCart: (req, res) => {
     const productId = req.params.id;
     const carritoId = req.session.userLogged.carrito[0].id;
+    console.log(carritoId);
     Carrito.findOne({
       where: {
         id: carritoId,

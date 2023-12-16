@@ -64,7 +64,7 @@ const userControllers = {
 
             // Verificar si el usuario tiene un carrito activo con status 1
             let activeCart = userToLogin.carrito[0]; // Tomamos solo el primer carrito activo
-
+            console.log(activeCart);
             if (!activeCart) {
               // Si no tiene un carrito activo, crea uno nuevo con status 1
               return db.Carrito.create({

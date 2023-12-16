@@ -40,7 +40,6 @@ function App() {
                   href="/"
                   id="alertsDropdown"
                 >
-                  <i className="fas fa-bell fa-fw"></i>
                   {/* <!-- Counter - Alerts --> */}
                   <span className="badge badge-danger badge-counter"></span>
                 </a>
@@ -53,7 +52,6 @@ function App() {
                   href="/"
                   id="messagesDropdown"
                 >
-                  <i className="fas fa-envelope fa-fw"></i>
                   {/* <!-- Counter - Messages --> */}
                   <span className="badge badge-danger badge-counter"></span>
                 </a>
@@ -68,7 +66,7 @@ function App() {
                   href="/"
                   id="userDropdown"
                 >
-                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">
+                  <span className="font-weight-bold mr-2 d-none d-lg-inline text-gray-600 small">
                     Administrador
                   </span>
                   <img

@@ -147,6 +147,10 @@ hr {
 .buttons-2 {
   display: none;
 }
+.agregar-carrito a {
+  text-decoration: none;
+  color: aliceblue;
+}
 /*Aqui en mobiles se oculta la linea hr */
 @media screen and (max-width: 481px) {
   .content-medios-precio-nombre hr,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Row from "./Row";
-import { getProductById, getProducts } from "../../services/productService";
+import { getProductById } from "../../services/productService";
 
 const Table = () => {
   const [products, setProducts] = useState([]);
@@ -51,11 +51,11 @@ const Table = () => {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Precio(ARS)</th>
-            <th>Descuento%</th>
-            <th>Marca</th>
-            <th>Categoria</th>
+            <th className="bg-info text-dark">Nombre</th>
+            <th className="bg-info text-dark">Precio(ARS)</th>
+            <th className="bg-info text-dark">Descuento%</th>
+            <th className="bg-info text-dark">Marca</th>
+            <th className="bg-info text-dark">Categoria</th>
           </tr>
         </thead>
         <tbody>

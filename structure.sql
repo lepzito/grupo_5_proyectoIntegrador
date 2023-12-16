@@ -132,7 +132,7 @@ CREATE TABLE ProductoCarrito (
 );
 
 -- Insertar un nuevo carrito para el usuario con id igual a 1
-INSERT INTO Carrito (usuarioId, status) VALUES (1, 1);
+INSERT INTO Carrito (usuarioId, status) VALUES (2, 1);
 -- Supongamos que el id del carrito recién insertado es 1
 INSERT INTO ProductoCarrito (productoId, carritoId, cantidad)
 VALUES (1, 1, 5);
