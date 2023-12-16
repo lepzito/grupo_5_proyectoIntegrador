@@ -114,9 +114,11 @@ INSERT INTO Genero (nombre) VALUES
   ('No Declarado');
 
 
+
+
 CREATE TABLE Carrito (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  usuarioId INT UNSIGNED NOT NULL,
+  usuarioId INT,
   status TINYINT(3) UNSIGNED NOT NULL,
   FOREIGN KEY (usuarioId) REFERENCES Usuario(id)
 );
@@ -130,6 +132,11 @@ CREATE TABLE ProductoCarrito (
   FOREIGN KEY (productoId) REFERENCES Producto(id),
   FOREIGN KEY (carritoId) REFERENCES Carrito(id)
 );
+
+
+
+-- Hasta aqui se crea el  primero
+
 
 -- Insertar un nuevo carrito para el usuario con id igual a 1
 INSERT INTO Carrito (usuarioId, status) VALUES (2, 1);
