@@ -48,9 +48,9 @@ Nuestro equipo está compuesto por 8 alumnos del curso de Full Stack Web Develop
 
 ¡Gracias por visitar TECNO - JUY!
 
-## Link de Tablero de TRELLO
+## Video del proyecto
 
-https://trello.com/b/QPep3s7h/sprint-1
+https://youtu.be/o3_Q-5XJKp8
 
 ## Solo admins
 
